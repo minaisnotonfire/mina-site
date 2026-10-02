@@ -88,8 +88,7 @@
       background-repeat: repeat-y;
     }
 
-    /* corrected title effect:
-       brown letters + thin pink border + visible pink polkadots */
+    /* BROWN TO PINK GRADIENT TITLE */
 
     .header h1 {
       position: absolute;
@@ -101,41 +100,25 @@
       font-size: 54px;
       font-weight: bold;
 
-      color: #8b5e3c;
-
-      -webkit-text-stroke: 1.2px #ffb6d9;
-
-      text-shadow:
-        1px 1px 0 #fff5fa,
-        0 0 3px rgba(255,255,255,0.35);
-
-      z-index: 2;
-    }
-
-    .header h1::after {
-      content: "mina's internet corner";
-
-      position: absolute;
-      left: 0;
-      top: 0;
-
-      color: transparent;
-
-      background:
-        radial-gradient(
-          circle,
-          #ff9fcf 28%,
-          transparent 30%
-        ) 0 0 / 18px 18px;
+      background: linear-gradient(
+        90deg,
+        #8b5e3c 0%,
+        #b77b57 30%,
+        #d891aa 52%,
+        #ff9fcb 72%,
+        #ffb6d9 100%
+      );
 
       -webkit-background-clip: text;
       background-clip: text;
 
       -webkit-text-fill-color: transparent;
 
-      -webkit-text-stroke: 0;
+      -webkit-text-stroke: 1.2px #ffd6e8;
 
-      pointer-events: none;
+      text-shadow:
+        1px 1px 0 rgba(255,255,255,0.35),
+        0 0 4px rgba(255,255,255,0.30);
     }
 
     .header p {
