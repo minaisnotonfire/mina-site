@@ -4,116 +4,588 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Mina's Website</title>
+  <title>mina's internet corner</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Bonbon&family=Sour+Gummy:wght@400;700&family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      background: #fff4c7;
-      font-family: Arial, sans-serif;
-      overflow-x: hidden;
+
+      background:
+        linear-gradient(
+          rgba(255,240,245,0.55),
+          rgba(255,250,220,0.55)
+        ),
+        url("https://fries-and-ice-cream.neocities.org/assests/diapink.gif");
+
+      background-repeat: repeat;
+
+      font-family: "Sour Gummy", Arial, sans-serif;
+      color: #665566;
+    }
+
+    a {
+      color: #ff69b4;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #87cefa;
+      text-decoration: underline;
     }
 
     .site {
-      width: 950px;
-      margin: 40px auto;
+      width: 1050px;
+      margin: 25px auto;
       position: relative;
-      min-height: 700px;
+      min-height: 900px;
     }
 
+    /* HEADER */
+
     .header {
-      text-align: center;
-      margin-bottom: 20px;
+      width: 800px;
+      height: 180px;
+
+      margin: 0 auto 10px;
+
+      position: relative;
+
+      background-image:
+        url("https://fries-and-ice-cream.neocities.org/listingsandrings/header6YAY.png");
+
+      background-size: cover;
+      background-position: center;
+
+      border: 4px double pink;
+      border-radius: 15px;
+
+      overflow: hidden;
+
+      box-shadow: 5px 5px 0 rgba(255,182,193,0.4);
+    }
+
+    .header-stripe {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      width: 45px;
+      height: 100%;
+
+      background-image:
+        url("https://fries-and-ice-cream.neocities.org/newcutestuff/pinkstrihor.gif");
+
+      background-repeat: repeat-y;
     }
 
     .header h1 {
-      font-size: 36px;
+      position: absolute;
+
+      right: 70px;
+      bottom: 45px;
+
       margin: 0;
+
+      font-family: "Bonbon", cursive;
+      font-size: 54px;
+
+      background: linear-gradient(
+        90deg,
+        #ffffff,
+        #7fffd4,
+        #ffffff,
+        #ffb6c1
+      );
+
+      background-size: 200%;
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      animation: shine 5s linear infinite;
+
+      -webkit-text-stroke: 1px #d3d3d3;
     }
 
     .header p {
-      margin-top: 5px;
-    }
-
-    .left,
-    .middle,
-    .right {
       position: absolute;
-      top: 120px;
+
+      right: 75px;
+      bottom: 18px;
+
+      color: #ff69b4;
+
+      font-family: "Unkempt", cursive;
+      font-weight: bold;
     }
 
-    .left {
-      left: 0;
-      width: 170px;
+    @keyframes shine {
+      0% {
+        background-position: -200% center;
+      }
+
+      100% {
+        background-position: 200% center;
+      }
     }
 
-    .middle {
-      left: 200px;
-      width: 550px;
+    /* STAMP MARQUEE */
+
+    .marquee-box {
+      width: 800px;
+      height: 55px;
+
+      margin: 10px auto 18px;
+
+      border: 3px solid #add8e6;
+      border-radius: 8px;
+
+      background: #ffffe0;
+
+      overflow: hidden;
     }
 
-    .right {
-      left: 780px;
-      width: 170px;
+    .marquee-box img {
+      height: 45px;
+      margin: 3px 5px;
     }
+
+    /* THREE COLUMN LAYOUT */
+
+    .columns {
+      display: grid;
+      grid-template-columns: 185px 570px 210px;
+      gap: 20px;
+
+      align-items: start;
+    }
+
+    /* BOXES */
 
     .box {
-      background: white;
-      border: 3px solid black;
+      background:
+        rgba(255,255,255,0.88);
+
+      border: 4px double #ffc0cb;
+      border-radius: 12px;
+
       padding: 12px;
+
       margin-bottom: 15px;
+
+      box-shadow:
+        4px 4px 0 rgba(170,240,209,0.25);
+    }
+
+    .box h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+
+      font-family: "Unkempt", cursive;
+      color: #ff69b4;
+
+      border-bottom: 4px solid transparent;
+
+      border-image:
+        linear-gradient(
+          to right,
+          #ffc0cb,
+          #c5e384,
+          #afeeee
+        ) 1;
+    }
+
+    /* NAV */
+
+    .nav {
+      background:
+        rgba(255,255,255,0.9),
+        url("https://fries-and-ice-cream.neocities.org/newcutestuff/bluepolkarose.gif");
     }
 
     .nav a {
       display: block;
-      margin: 8px 0;
-      text-decoration: none;
-      color: hotpink;
+
+      padding: 5px 4px;
+      margin: 4px 0;
+
       font-weight: bold;
+
+      border-radius: 7px;
+
+      transition: transform .2s;
+    }
+
+    .nav a:hover {
+      transform: translateX(5px);
+      background: #fff0f7;
+    }
+
+    /* CURRENTLY */
+
+    .currently {
+      background:
+        linear-gradient(
+          rgba(255,255,255,.8),
+          rgba(255,255,255,.8)
+        ),
+        url("https://fries-and-ice-cream.neocities.org/stamps%20and%20more/bowclouds.webp");
+    }
+
+    .currently p {
+      margin: 8px 0;
+      font-size: 14px;
+    }
+
+    /* CENTER */
+
+    .middle {
+      position: relative;
     }
 
     iframe {
       width: 100%;
-      height: 500px;
-      border: 3px solid black;
-      background: white;
+      height: 585px;
+
+      border: 5px double #87ceeb;
+      border-radius: 12px;
+
+      background: #fffdf8;
+
+      box-shadow:
+        5px 5px 0 rgba(255,192,203,.3);
     }
 
-    img {
-      max-width: 100%;
+    /* LITTLE DECORATION ABOVE CENTER */
+
+    .center-bow {
+      position: absolute;
+
+      width: 220px;
+
+      top: -70px;
+      left: 175px;
+
+      pointer-events: none;
+      z-index: 3;
     }
+
+    /* PROFILE */
+
+    .profile-box {
+      text-align: center;
+
+      background:
+        linear-gradient(
+          rgba(255,255,255,.75),
+          rgba(255,255,255,.75)
+        ),
+        url("https://fries-and-ice-cream.neocities.org/pixel/puppycolor.jpg");
+    }
+
+    .profile-pic {
+      width: 145px;
+      height: 145px;
+
+      object-fit: cover;
+
+      border-radius: 50%;
+
+      border: 5px double #ffb6c1;
+
+      display: block;
+      margin: 0 auto 8px;
+
+      animation: floaty 2s ease-in-out infinite;
+    }
+
+    @keyframes floaty {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-4px);
+      }
+    }
+
+    .profile-name {
+      font-family: "Bonbon", cursive;
+
+      font-size: 30px;
+
+      color: #ff69b4;
+    }
+
+    /* SOCIALS */
+
+    .socials a {
+      display: block;
+
+      background: #fff6fa;
+
+      border: 2px dashed pink;
+
+      border-radius: 8px;
+
+      padding: 6px;
+
+      margin: 6px 0;
+
+      text-align: center;
+    }
+
+    /* STAMPS */
+
+    .stamp-box {
+      height: 180px;
+
+      overflow-y: auto;
+
+      background:
+        linear-gradient(
+          rgba(255,255,255,.6),
+          rgba(255,255,255,.6)
+        ),
+        url("https://fries-and-ice-cream.neocities.org/stamps%20and%20more/rainbowdia.gif");
+
+      padding: 5px;
+    }
+
+    .stamps {
+      display: flex;
+      flex-wrap: wrap;
+
+      justify-content: center;
+
+      gap: 3px;
+    }
+
+    .stamps img {
+      width: 88px;
+
+      transition: transform .2s;
+    }
+
+    .stamps img:hover {
+      transform: scale(1.12);
+    }
+
+    /* DECORATIONS */
+
+    .cuddlebug {
+      position: fixed;
+
+      width: 150px;
+
+      left: 15px;
+      bottom: 20px;
+
+      animation: upp 1s linear infinite;
+    }
+
+    .nyangham {
+      position: fixed;
+
+      width: 110px;
+
+      right: 25px;
+      bottom: 20px;
+
+      animation: upp 1s linear infinite;
+    }
+
+    .glitcake {
+      width: 120px;
+
+      display: block;
+
+      margin: 0 auto;
+
+      animation: spin 10s linear infinite;
+    }
+
+    @keyframes upp {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-3px);
+      }
+    }
+
+    @keyframes spin {
+
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* SCROLLBAR */
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background:
+        rgba(170,240,209,.2);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #fdfd96;
+
+      border: 1px solid pink;
+
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #ffc0cb;
+    }
+
   </style>
 </head>
 
+
 <body>
 
-  <div class="site">
+<div class="site">
 
-    <div class="header">
-      <h1>★ mina's internet corner ★</h1>
-      <p>welcome to my little website :3</p>
-    </div>
+
+  <!-- HEADER -->
+
+  <div class="header">
+
+    <div class="header-stripe"></div>
+
+    <h1>mina's internet corner</h1>
+
+    <p>
+      digital diary + pictures + games + movies ♡
+    </p>
+
+  </div>
+
+
+  <!-- MOVING STAMP STRIP -->
+
+  <div class="marquee-box">
+
+    <marquee direction="right">
+
+      <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/gabykirakira.png">
+
+      <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/mikumaid.gif">
+
+      <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/bunny.gif">
+
+      <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/pompomstamp.png">
+
+      <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/girly.gif">
+
+      <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/sweetsstamp.gif">
+
+      <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/lisafrankstmp.gif">
+
+    </marquee>
+
+  </div>
+
+
+  <div class="columns">
+
+
+    <!-- LEFT SIDE -->
 
     <div class="left">
 
       <div class="box nav">
-        <b>navigation</b>
 
-        <a href="home.html" target="content">home</a>
-        <a href="about.html" target="content">about me</a>
-        <a href="diary.html" target="content">diary</a>
-        <a href="games.html" target="content">games</a>
+        <h3>navigation ♡</h3>
+
+        <a href="home.html" target="content">
+          ★ home
+        </a>
+
+        <a href="diary.html" target="content">
+          ★ diary
+        </a>
+
+        <a href="photos.html" target="content">
+          ★ photo diary
+        </a>
+
+        <a href="games.html" target="content">
+          ★ games
+        </a>
+
+        <a href="movies.html" target="content">
+          ★ movies
+        </a>
+
+        <a href="about.html" target="content">
+          ★ about me
+        </a>
+
       </div>
 
+
+      <div class="box currently">
+
+        <h3>currently...</h3>
+
+        <p>🎮 playing: fnaf</p>
+
+        <p>🎬 watching: ???</p>
+
+        <p>🎧 listening: ???</p>
+
+        <p>💭 mood: whimsical</p>
+
+      </div>
+
+
       <div class="box">
-        <b>currently</b>
-        <p>playing: fnaf</p>
-        <p>mood: whimsical</p>
+
+        <img
+          class="glitcake"
+          src="https://fries-and-ice-cream.neocities.org/listingsandrings/glitcake.gif"
+        >
+
       </div>
 
     </div>
 
+
+
+    <!-- CENTER -->
+
     <div class="middle">
+
+      <img
+        class="center-bow"
+        src="https://fries-and-ice-cream.neocities.org/heisei/tiedbow.png"
+      >
 
       <iframe
         src="home.html"
@@ -122,25 +594,97 @@
 
     </div>
 
+
+
+    <!-- RIGHT SIDE -->
+
     <div class="right">
 
-      <div class="box">
-        <b>stamps</b>
-        <p>put your deviantart stamps here!</p>
+
+      <div class="box profile-box">
+
+        <img
+          class="profile-pic"
+          src="YOUR-IMGUR-PHOTO-HERE"
+        >
+
+        <div class="profile-name">
+          mina ★
+        </div>
+
+        <p>
+          welcome to my digital scrapbook :3
+        </p>
+
       </div>
 
-      <div class="box">
-        <b>links</b>
-        <p>instagram</p>
-        <p>letterboxd</p>
-        <p>whatever u want</p>
+
+      <div class="box socials">
+
+        <h3>find me</h3>
+
+        <a
+          href="YOUR-INSTAGRAM-LINK"
+          target="_blank">
+          instagram ♡
+        </a>
+
+        <a
+          href="YOUR-LETTERBOXD-LINK"
+          target="_blank">
+          letterboxd ★
+        </a>
+
       </div>
+
+
+      <div class="box">
+
+        <h3>stamps ♡</h3>
+
+        <div class="stamp-box">
+
+          <div class="stamps">
+
+            <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/ostamp.gif">
+
+            <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/rilastmp.gif">
+
+            <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/flutterstmp.gif">
+
+            <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/tokistmp.gif">
+
+            <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/lifestmp.png">
+
+            <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/gals.gif">
+
+          </div>
+
+        </div>
+
+      </div>
+
 
     </div>
 
   </div>
 
-  <!-- rebuild -->
+</div>
+
+
+
+<!-- FLOATING OLD WEB DECORATIONS -->
+
+<img
+  class="cuddlebug"
+  src="https://fries-and-ice-cream.neocities.org/assests/cuddlebug.png"
+>
+
+<img
+  class="nyangham"
+  src="https://fries-and-ice-cream.neocities.org/pixel/nyangham.png"
+>
+
 
 </body>
 </html>
