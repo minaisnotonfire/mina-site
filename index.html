@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mina's Website</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #fff4c7;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .site {
+      width: 950px;
+      margin: 40px auto;
+      position: relative;
+      min-height: 700px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      font-size: 36px;
+      margin: 0;
+    }
+
+    .header p {
+      margin-top: 5px;
+    }
+
+    .left,
+    .middle,
+    .right {
+      position: absolute;
+      top: 120px;
+    }
+
+    .left {
+      left: 0;
+      width: 170px;
+    }
+
+    .middle {
+      left: 200px;
+      width: 550px;
+    }
+
+    .right {
+      left: 780px;
+      width: 170px;
+    }
+
+    .box {
+      background: white;
+      border: 3px solid black;
+      padding: 12px;
+      margin-bottom: 15px;
+    }
+
+    .nav a {
+      display: block;
+      margin: 8px 0;
+      text-decoration: none;
+      color: hotpink;
+      font-weight: bold;
+    }
+
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: 3px solid black;
+      background: white;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="site">
+
+    <div class="header">
+      <h1>★ mina's internet corner ★</h1>
+      <p>welcome to my little website :3</p>
+    </div>
+
+    <div class="left">
+
+      <div class="box nav">
+        <b>navigation</b>
+
+        <a href="home.html" target="content">home</a>
+        <a href="about.html" target="content">about me</a>
+        <a href="diary.html" target="content">diary</a>
+        <a href="games.html" target="content">games</a>
+      </div>
+
+      <div class="box">
+        <b>currently</b>
+        <p>playing: fnaf</p>
+        <p>mood: whimsical</p>
+      </div>
+
+    </div>
+
+    <div class="middle">
+
+      <iframe
+        src="home.html"
+        name="content">
+      </iframe>
+
+    </div>
+
+    <div class="right">
+
+      <div class="box">
+        <b>stamps</b>
+        <p>put your deviantart stamps here!</p>
+      </div>
+
+      <div class="box">
+        <b>links</b>
+        <p>instagram</p>
+        <p>letterboxd</p>
+        <p>whatever u want</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
