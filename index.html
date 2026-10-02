@@ -54,7 +54,9 @@
     .header {
       width: 800px;
       height: 180px;
+
       margin: 0 auto 10px;
+
       position: relative;
 
       background-image:
@@ -87,8 +89,10 @@
 
     .header h1 {
       position: absolute;
+
       right: 65px;
       bottom: 45px;
+
       margin: 0;
 
       font-family: "Bonbon", cursive;
@@ -114,6 +118,7 @@
 
     .header p {
       position: absolute;
+
       right: 75px;
       bottom: 18px;
 
@@ -161,6 +166,7 @@
         210px;
 
       gap: 20px;
+
       align-items: start;
     }
 
@@ -212,6 +218,7 @@
       margin: 4px 0;
 
       font-weight: bold;
+
       border-radius: 7px;
 
       transition:
@@ -265,6 +272,7 @@
       left: 175px;
 
       pointer-events: none;
+
       z-index: 3;
     }
 
@@ -488,11 +496,15 @@
       background: #ffc0cb;
     }
 
-    /* LAYERED DOTBUN STICKER */
+    /* layered stickers */
 
     .sticker-wrap {
       position: relative;
+      overflow: visible;
+      z-index: 20;
     }
+
+    /* existing bunny sticker */
 
     .dotbun-sticker {
       position: absolute;
@@ -525,9 +537,41 @@
       );
     }
 
+    /* NY puppy sticker */
+
+    .ny-puppy-sticker {
+      position: absolute;
+
+      width: 205px;
+
+      right: -20px;
+      bottom: -150px;
+
+      z-index: 70;
+
+      transform: rotate(-4deg);
+
+      filter: drop-shadow(
+        6px 8px 7px rgba(0,0,0,0.20)
+      );
+
+      transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+    }
+
+    .ny-puppy-sticker:hover {
+      transform:
+        rotate(-4deg)
+        scale(1.06);
+
+      filter: drop-shadow(
+        8px 10px 9px rgba(0,0,0,0.24)
+      );
+    }
+
   </style>
 </head>
-
 
 <body>
 
@@ -546,7 +590,6 @@
     </p>
 
   </div>
-
 
   <!-- MOVING STAMPS -->
 
@@ -574,45 +617,29 @@
 
   </div>
 
-
   <div class="columns">
-
 
     <!-- LEFT SIDE -->
 
     <div class="left">
 
-
       <div class="box nav">
 
         <h3>navigation ♡</h3>
 
-        <a href="home.html" target="content">
-          ★ home
-        </a>
+        <a href="home.html" target="content">★ home</a>
 
-        <a href="diary.html" target="content">
-          ★ diary
-        </a>
+        <a href="diary.html" target="content">★ diary</a>
 
-        <a href="photos.html" target="content">
-          ★ photo diary
-        </a>
+        <a href="photos.html" target="content">★ photo diary</a>
 
-        <a href="games.html" target="content">
-          ★ games
-        </a>
+        <a href="games.html" target="content">★ games</a>
 
-        <a href="movies.html" target="content">
-          ★ movies
-        </a>
+        <a href="movies.html" target="content">★ movies</a>
 
-        <a href="about.html" target="content">
-          ★ about me
-        </a>
+        <a href="about.html" target="content">★ about me</a>
 
       </div>
-
 
       <div class="box currently">
 
@@ -627,7 +654,6 @@
         <p>💭 mood: whimsical</p>
 
       </div>
-
 
       <div class="box decor-panel">
 
@@ -647,8 +673,6 @@
 
     </div>
 
-
-
     <!-- CENTER -->
 
     <div class="middle">
@@ -658,14 +682,12 @@
         src="https://fries-and-ice-cream.neocities.org/heisei/tiedbow.png"
       >
 
-
       <iframe
         src="home.html"
         name="content">
       </iframe>
 
-
-      <!-- MOVING PIN STRIP + LAYERED STICKER -->
+      <!-- MOVING PIN STRIP + LAYERED STICKERS -->
 
       <div class="sticker-wrap">
 
@@ -675,38 +697,44 @@
 
             <img
               class="spinning-pin"
-              src="https://fries-and-ice-cream.neocities.org/rakko.png">
+              src="https://fries-and-ice-cream.neocities.org/rakko.png"
+            >
 
             <img
               class="spinning-pin"
-              src="https://fries-and-ice-cream.neocities.org/pinkwings.png">
+              src="https://fries-and-ice-cream.neocities.org/pinkwings.png"
+            >
 
             <img
               class="spinning-pin"
-              src="https://fries-and-ice-cream.neocities.org/dolphin.png">
+              src="https://fries-and-ice-cream.neocities.org/dolphin.png"
+            >
 
             <img
               class="spinning-pin"
-              src="https://fries-and-ice-cream.neocities.org/cookie.png">
+              src="https://fries-and-ice-cream.neocities.org/cookie.png"
+            >
 
             <img
               class="spinning-pin"
-              src="https://fries-and-ice-cream.neocities.org/biscuit2.png">
+              src="https://fries-and-ice-cream.neocities.org/biscuit2.png"
+            >
 
             <img
               class="spinning-pin"
-              src="https://fries-and-ice-cream.neocities.org/KIIIKIII%20pin.png">
+              src="https://fries-and-ice-cream.neocities.org/KIIIKIII%20pin.png"
+            >
 
             <img
               class="spinning-pin"
-              src="https://fries-and-ice-cream.neocities.org/nct%20wish%20pin.png">
+              src="https://fries-and-ice-cream.neocities.org/nct%20wish%20pin.png"
+            >
 
           </marquee>
 
         </div>
 
-
-        <!-- BUNNY STICKER -->
+        <!-- existing bunny sticker -->
 
         <img
           class="dotbun-sticker"
@@ -714,18 +742,21 @@
           alt=""
         >
 
+        <!-- NY puppy sticker -->
+
+        <img
+          class="ny-puppy-sticker"
+          src="https://fries-and-ice-cream.neocities.org/newcutestuff/swagham.png"
+          alt=""
+        >
+
       </div>
 
     </div>
 
-
-
     <!-- RIGHT SIDE -->
 
     <div class="right">
-
-
-      <!-- PROFILE -->
 
       <div class="box profile-box">
 
@@ -744,9 +775,6 @@
 
       </div>
 
-
-      <!-- SOCIALS -->
-
       <div class="box socials">
 
         <h3>find me</h3>
@@ -764,9 +792,6 @@
         </a>
 
       </div>
-
-
-      <!-- STAMPS -->
 
       <div class="box">
 
@@ -794,9 +819,6 @@
 
       </div>
 
-
-      <!-- CAMERA -->
-
       <div class="box decor-panel">
 
         <img
@@ -805,9 +827,6 @@
         >
 
       </div>
-
-
-      <!-- CAKE + LACE -->
 
       <div class="box decor-panel">
 
@@ -823,14 +842,11 @@
 
       </div>
 
-
     </div>
 
   </div>
 
 </div>
-
-
 
 <!-- FLOATING DECORATIONS -->
 
@@ -844,9 +860,6 @@
   src="https://fries-and-ice-cream.neocities.org/pixel/nyangham.png"
 >
 
-
 </body>
 
-</html>
-</body>
 </html>
