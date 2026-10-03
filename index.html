@@ -4,1056 +4,512 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>mina's internet corner</title>
+
+  <title>home</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bonbon&family=Sour+Gummy:wght@400;700&family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bonbon&family=Sour+Gummy:wght@400;700&family=Unkempt:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
 
     * {
       box-sizing: border-box;
 
-      cursor: url('https://cdn.cursors-4u.net/previews/puppy-13-a9c1ade9-32.webp') 32 32, auto !important;
-    }
-
-    html {
-      min-height: 100%;
+      cursor:
+        url('https://cdn.cursors-4u.net/previews/puppy-13-a9c1ade9-32.webp')
+        32 32,
+        auto !important;
     }
 
     body {
       margin: 0;
-      position: relative;
 
-      background:
-        linear-gradient(
-          rgba(255,240,245,0.35),
-          rgba(255,250,220,0.35)
-        ),
-        url("https://fries-and-ice-cream.neocities.org/assests/diapink.gif");
-
-      background-repeat: repeat;
-
-      font-family: "Sour Gummy", Arial, sans-serif;
-      color: #665566;
-
-      min-height: 100vh;
-
-      isolation: isolate;
-    }
-
-    a,
-    button {
-      cursor: url('https://cdn.cursors-4u.net/previews/puppy-13-a9c1ade9-32.webp') 32 32, auto !important;
-    }
-
-    /* PASTEL STAR EFFECT - BEHIND THE SITE */
-
-    body::before {
-      content: "";
-
-      position: fixed;
-
-      top: -110%;
-      left: -50%;
-
-      width: 300%;
-      height: 300%;
-
-      background-image:
-        url("https://64.media.tumblr.com/849c4259435e5ff9789dd42e23fbf003/tumblr_p422nhq6vi1qzm8dwo1_640.gifv");
-
-      opacity: 0.4;
-
-      pointer-events: none;
-
-      z-index: -1;
-
-      animation:
-        grain 20s steps(10) infinite;
-    }
-
-    @keyframes grain {
-
-      0% {
-        transform: translate(0%, 0%);
-      }
-
-      70% {
-        transform: translate(0%, 15%);
-      }
-
-      100% {
-        transform: translate(0%, 0%);
-      }
-
-    }
-
-    a {
-      color: #ff69b4;
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: #87cefa;
-      text-decoration: underline;
-    }
-
-    .site {
-      width: 1050px;
-
-      margin: 25px auto;
-
-      position: relative;
-
-      min-height: 1200px;
-
-      z-index: 2;
-    }
-
-    .header {
-      width: 800px;
-      height: 180px;
-
-      margin: 0 auto 10px;
-
-      position: relative;
-
-      background-image:
-        url("https://fries-and-ice-cream.neocities.org/listingsandrings/header6YAY.png");
-
-      background-size: cover;
-      background-position: center;
-
-      border: 4px double pink;
-      border-radius: 15px;
-
-      overflow: hidden;
-
-      box-shadow:
-        5px 5px 0 rgba(255,182,193,0.4);
-    }
-
-    .header-stripe {
-      position: absolute;
-
-      right: 0;
-      top: 0;
-
-      width: 45px;
-      height: 100%;
-
-      background-image:
-        url("https://fries-and-ice-cream.neocities.org/newcutestuff/pinkstrihor.gif");
-
-      background-repeat: repeat-y;
-    }
-
-    .title-card {
-      position: absolute;
-
-      left: 50%;
-      bottom: 28px;
-
-      transform: translateX(-50%);
-
-      width: max-content;
-
-      text-align: center;
-
-      z-index: 2;
-    }
-
-    .header h1 {
-      position: relative;
-      display: inline-block;
-
-      margin: 0 0 6px 0;
-
-      font-family: "Bonbon", cursive;
-      font-size: 50px;
-      line-height: 1;
-
-      white-space: nowrap;
-
-      color: #8b5e3c;
-
-      -webkit-text-stroke: 1.5px #ff9fcb;
-
-      text-shadow:
-        2px 2px 0 #fff7ee,
-        -2px 2px 0 #fff7ee,
-        2px -2px 0 #fff7ee,
-        -2px -2px 0 #fff7ee,
-        0 0 6px rgba(255,255,255,0.75);
-    }
-
-    .header h1::after {
-      content: "mina's internet corner";
-
-      position: absolute;
-      inset: 0;
-
-      color: transparent;
-
-      background-image:
-        radial-gradient(
-          circle,
-          #ff8fc8 22%,
-          transparent 24%
-        );
-
-      background-size: 16px 16px;
-
-      -webkit-background-clip: text;
-      background-clip: text;
-
-      -webkit-text-fill-color: transparent;
-
-      pointer-events: none;
-
-      opacity: 0.95;
-    }
-
-    .header p {
-      margin: 0;
-
-      color: #ff69b4;
-
-      font-family: "Unkempt", cursive;
-      font-weight: bold;
-      font-size: 17px;
-
-      text-shadow:
-        1px 1px 0 white,
-        -1px 1px 0 white,
-        1px -1px 0 white,
-        -1px -1px 0 white;
-    }
-
-    .marquee-box {
-      width: 800px;
-      height: 55px;
-
-      margin: 10px auto 18px;
-
-      border: 3px solid #add8e6;
-      border-radius: 10px;
-
-      background:
-        linear-gradient(
-          rgba(255,255,220,0.92),
-          rgba(255,248,228,0.92)
-        );
-
-      box-shadow:
-        4px 4px 0 rgba(255,192,203,0.28);
-
-      overflow: hidden;
-    }
-
-    .marquee-box img {
-      height: 45px;
-      margin: 3px 5px;
-    }
-
-    .columns {
-      display: grid;
-
-      grid-template-columns:
-        185px
-        570px
-        210px;
-
-      gap: 20px;
-
-      align-items: start;
-    }
-
-    .box {
-      background: rgba(255,255,255,0.88);
-
-      border: 4px double #ffc0cb;
-      border-radius: 12px;
-
-      padding: 12px;
-
-      margin-bottom: 15px;
-
-      box-shadow:
-        4px 4px 0 rgba(170,240,209,0.25);
-    }
-
-    .box h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-
-      font-family: "Unkempt", cursive;
-      color: #ff69b4;
-
-      border-bottom: 4px solid transparent;
-
-      border-image:
-        linear-gradient(
-          to right,
-          #ffc0cb,
-          #c5e384,
-          #afeeee
-        ) 1;
-    }
-
-    .nav {
-      background:
-        linear-gradient(
-          rgba(255,255,255,.85),
-          rgba(255,255,255,.85)
-        ),
-        url("https://fries-and-ice-cream.neocities.org/newcutestuff/bluepolkarose.gif");
-    }
-
-    .nav a {
-      display: block;
-
-      padding: 5px 4px;
-      margin: 4px 0;
-
-      font-weight: bold;
-
-      border-radius: 7px;
-
-      transition:
-        transform .2s,
-        background .2s;
-    }
-
-    .nav a:hover {
-      transform: translateX(5px);
-      background: #fff0f7;
-    }
-
-    .currently {
-      background:
-        linear-gradient(
-          rgba(255,255,255,.8),
-          rgba(255,255,255,.8)
-        ),
-        url("https://fries-and-ice-cream.neocities.org/stamps%20and%20more/bowclouds.webp");
-    }
-
-    .currently p {
-      margin: 8px 0;
-      font-size: 14px;
-    }
-
-    .middle {
-      position: relative;
-      min-width: 0;
-    }
-
-    iframe {
-      width: 100%;
-      height: 585px;
-
-      border: 5px double #87ceeb;
-      border-radius: 12px;
+      padding: 34px 28px 45px;
 
       background: #fffdf8;
 
+      font-family: "Sour Gummy", Arial, sans-serif;
+
+      color: #000;
+    }
+
+    h1 {
+      margin: 0 0 20px;
+
+      font-family: "Sour Gummy", sans-serif;
+
+      font-size: 31px;
+
+      color: #ff66ad;
+    }
+
+    .intro {
+      font-size: 16px;
+      line-height: 1.15;
+    }
+
+    .intro p {
+      margin: 0 0 15px;
+    }
+
+
+    /* RANDOM FACT GENERATOR */
+
+    .fact-generator {
+      width: 82%;
+
+      margin: 55px auto 20px;
+
+      padding: 22px 18px 18px;
+
+      position: relative;
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          rgba(255,255,255,.82),
+          rgba(255,250,245,.82)
+        ),
+        url("https://fries-and-ice-cream.neocities.org/newcutestuff/bluepolkarose.gif");
+
+      border: 5px double #ffb6cf;
+
+      border-radius: 18px;
+
+      outline: 2px dashed #b9ece8;
+      outline-offset: -10px;
+
       box-shadow:
-        5px 5px 0 rgba(255,192,203,.3);
+        5px 5px 0 rgba(174,238,238,.30),
+        inset 0 0 18px rgba(255,192,203,.20);
     }
 
-    .center-bow {
+
+    .fact-generator::before {
+      content: "♡";
+
       position: absolute;
 
-      width: 220px;
+      left: 15px;
+      top: 12px;
 
-      top: -70px;
-      left: 175px;
+      color: #ffa4c8;
 
-      pointer-events: none;
-
-      z-index: 3;
+      font-size: 18px;
     }
 
-    .iframe-cuddlebug {
+
+    .fact-generator::after {
+      content: "☆";
+
       position: absolute;
 
-      width: 105px;
+      right: 15px;
+      top: 12px;
 
-      left: -28px;
-      top: 520px;
+      color: #a9ded9;
 
-      z-index: 15;
-
-      pointer-events: none;
-
-      animation: upp 1.4s ease-in-out infinite;
-
-      filter:
-        drop-shadow(
-          3px 4px 3px rgba(0,0,0,0.12)
-        );
+      font-size: 19px;
     }
 
-    .profile-box {
-      text-align: center;
 
-      background:
-        linear-gradient(
-          rgba(255,255,255,.72),
-          rgba(255,255,255,.72)
-        ),
-        url("https://fries-and-ice-cream.neocities.org/pixel/puppycolor.jpg");
+    .fact-sparkles {
+      margin-bottom: 6px;
+
+      color: #ff91bd;
+
+      font-size: 18px;
+
+      letter-spacing: 8px;
     }
 
-    .profile-pic {
-      width: 145px;
-      height: 145px;
 
-      object-fit: cover;
+    .fact-title {
+      display: inline-block;
 
-      border-radius: 50%;
+      padding: 6px 18px;
 
-      border: 5px double #ffb6c1;
+      background: #fff8e8;
 
-      display: block;
+      border: 3px double #e8a8bc;
 
-      margin: 0 auto 8px;
+      border-radius: 20px;
 
-      animation: floaty 2s ease-in-out infinite;
+      color: #9a6252;
+
+      font-family: "Unkempt", cursive;
+
+      font-size: 22px;
+
+      font-weight: bold;
+
+      transform: rotate(-1deg);
+
+      box-shadow:
+        2px 3px 0 rgba(255,182,193,.25);
     }
 
-    .profile-name {
-      font-family: "Bonbon", cursive;
-      font-size: 30px;
-      color: #ff69b4;
+
+    .fact-subtitle {
+      margin: 8px 0 14px;
+
+      color: #b47c91;
+
+      font-size: 13px;
     }
 
-    @keyframes floaty {
 
-      0%,
-      100% {
-        transform: translateY(0);
-      }
+    .fact-paper {
+      width: 88%;
 
-      50% {
-        transform: translateY(-4px);
-      }
+      min-height: 68px;
 
-    }
+      margin: 0 auto 15px;
 
-    .socials a {
-      display: block;
+      padding: 14px;
 
-      background: #fff6fa;
-
-      border: 2px dashed pink;
-      border-radius: 8px;
-
-      padding: 6px;
-
-      margin: 6px 0;
-
-      text-align: center;
-    }
-
-    .stamp-box {
-      height: 180px;
-
-      overflow-y: auto;
-
-      background:
-        linear-gradient(
-          rgba(255,255,255,.6),
-          rgba(255,255,255,.6)
-        ),
-        url("https://fries-and-ice-cream.neocities.org/stamps%20and%20more/rainbowdia.gif");
-
-      padding: 5px;
-    }
-
-    .stamps {
       display: flex;
-      flex-wrap: wrap;
+
+      align-items: center;
 
       justify-content: center;
 
-      gap: 3px;
-    }
+      background:
+        repeating-linear-gradient(
+          0deg,
+          #fffdf6,
+          #fffdf6 23px,
+          #dff4f3 24px
+        );
 
-    .stamps img {
-      width: auto;
-      height: 60px;
+      border: 2px dashed #f3a7c1;
 
-      max-width: 100%;
-
-      object-fit: contain;
-
-      transition: transform .2s;
-    }
-
-    .stamps img:hover {
-      transform: scale(1.08);
-    }
-
-    .decor-panel {
-      text-align: center;
-    }
-
-    .glitcake {
-      width: 120px;
-
-      animation: spin 10s linear infinite;
-    }
-
-    .pin-strip {
-      width: 100%;
-      height: 115px;
-
-      margin-top: 18px;
-
-      overflow: hidden;
-
-      border: 4px solid #aaf0d1;
       border-radius: 10px;
-
-      background-image:
-        url("https://fries-and-ice-cream.neocities.org/piano.jpg");
-
-      background-size: cover;
-      background-position: center;
 
       box-shadow:
-        4px 4px 0 rgba(255,192,203,.3);
+        inset 0 0 10px rgba(255,218,230,.35);
+
+      color: #6f5966;
+
+      font-size: 16px;
+
+      line-height: 1.4;
     }
 
-    .spinning-pin {
-      width: 90px;
-      height: 90px;
 
-      object-fit: contain;
+    .fact-button {
+      padding: 8px 17px;
 
-      margin: 8px;
-
-      animation: pinSpin 3s linear infinite;
-    }
-
-    @keyframes pinSpin {
-
-      from {
-        transform: rotate(0deg);
-      }
-
-      to {
-        transform: rotate(360deg);
-      }
-
-    }
-
-    @keyframes spin {
-
-      from {
-        transform: rotate(0deg);
-      }
-
-      to {
-        transform: rotate(360deg);
-      }
-
-    }
-
-    .nyangham {
-      position: fixed;
-
-      width: 110px;
-
-      right: 25px;
-      bottom: 20px;
-
-      animation: upp 1s linear infinite;
-    }
-
-    @keyframes upp {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-3px);
-      }
-
-    }
-
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-
-    ::-webkit-scrollbar-track {
       background:
-        rgba(170,240,209,.2);
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #fdfd96;
-
-      border: 1px solid pink;
-
-      border-radius: 10px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: #ffc0cb;
-    }
-
-    .sticker-wrap {
-      position: relative;
-      overflow: visible;
-      z-index: 20;
-    }
-
-    .dotbun-sticker {
-      position: absolute;
-
-      width: 175px;
-
-      right: -65px;
-      bottom: -55px;
-
-      z-index: 50;
-
-      transform: rotate(-7deg);
-
-      filter:
-        drop-shadow(
-          5px 7px 6px rgba(0,0,0,0.18)
+        linear-gradient(
+          #fffaf0,
+          #ffe7f0
         );
 
+      border: 3px double #91dede;
+
+      border-radius: 12px;
+
+      color: #a25e7d;
+
+      font-family: "Sour Gummy", sans-serif;
+
+      font-size: 15px;
+
+      font-weight: bold;
+
+      box-shadow:
+        3px 3px 0 rgba(255,192,203,.35);
+
       transition:
-        transform 0.25s ease,
-        filter 0.25s ease;
+        transform .2s,
+        background .2s,
+        box-shadow .2s;
     }
 
-    .dotbun-sticker:hover {
+
+    .fact-button:hover {
       transform:
-        rotate(-7deg)
-        scale(1.07);
-    }
+        translateY(-2px)
+        rotate(-1deg)
+        scale(1.04);
 
-    .ny-puppy-sticker {
-      position: absolute;
-
-      width: 205px;
-
-      left: 95px;
-      bottom: -120px;
-
-      z-index: 70;
-
-      transform: rotate(-8deg);
-
-      filter:
-        drop-shadow(
-          6px 8px 7px rgba(0,0,0,0.20)
+      background:
+        linear-gradient(
+          #fff0f7,
+          #e8ffff
         );
 
-      transition:
-        transform 0.25s ease,
-        filter 0.25s ease;
+      box-shadow:
+        4px 5px 0 rgba(255,192,203,.35);
     }
 
-    .ny-puppy-sticker:hover {
+
+    .fact-button:active {
       transform:
-        rotate(-8deg)
-        scale(1.06);
+        translateY(1px)
+        scale(.98);
     }
 
-    .beloved-photo-frame {
-      position: relative;
 
-      width: 160px;
-      height: 160px;
+    .fact-bottom {
+      margin-top: 14px;
 
-      margin: -20px auto 0;
+      color: #a9ded9;
+
+      font-size: 13px;
+
+      letter-spacing: 7px;
     }
 
-    .beloved-photo {
-      position: absolute;
 
-      width: 84px;
-      height: auto;
-
-      left: 38px;
-      top: 41px;
-
-      z-index: 1;
-
-      object-fit: contain;
+    .fact-pop {
+      animation: factPop .35s ease;
     }
 
-    .beloved-overlay {
-      position: absolute;
 
-      left: 0;
-      top: 0;
+    @keyframes factPop {
 
-      width: 160px;
-      height: auto;
+      0% {
+        opacity: 0;
 
-      z-index: 2;
+        transform: scale(.92);
+      }
 
-      pointer-events: none;
-    }
+      60% {
+        transform: scale(1.04);
+      }
 
-    .camera-frame {
-      position: relative;
+      100% {
+        opacity: 1;
 
-      width: 170px;
+        transform: scale(1);
+      }
 
-      margin: 0 auto;
-
-      transition: transform 0.4s ease;
-
-      transform-origin: center center;
-    }
-
-    .camera-frame:hover {
-      transform: scale(1.08);
-    }
-
-    .camera-overlay {
-      position: relative;
-
-      display: block;
-
-      width: 170px;
-
-      z-index: 2;
-
-      pointer-events: none;
-    }
-
-    .camera-photo {
-      position: absolute;
-
-      left: 27px;
-      top: 69px;
-
-      width: 64px;
-      height: 50px;
-
-      object-fit: cover;
-      object-position: center;
-
-      z-index: 3;
-
-      border-radius: 1px;
-
-      pointer-events: none;
     }
 
   </style>
 </head>
 
+
 <body>
 
-<div class="site">
+  <h1>
+    haiiii ★
+  </h1>
 
-  <!-- HEADER -->
 
-  <div class="header">
+  <div class="intro">
 
-    <div class="header-stripe"></div>
+    <p>
+      welcome to my website!
+    </p>
 
-    <div class="title-card">
+    <p>
+      this is my little corner of the internet for games, pictures, diary entries,
+      friends, random interests and whatever else i feel like putting here.
+    </p>
 
-      <h1>
-        mina's internet corner
-      </h1>
+  </div>
 
-      <p>
-        digital diary + pictures + games + movies ♡
-      </p>
 
+  <!-- RANDOM FACT ABOUT ME -->
+
+  <div class="fact-generator">
+
+    <div class="fact-sparkles">
+      ☆ ♡ ☆
+    </div>
+
+
+    <div class="fact-title">
+      random fact abt me!
+    </div>
+
+
+    <div class="fact-subtitle">
+      click to learn something random about mina ♡
+    </div>
+
+
+    <div class="fact-paper">
+
+      <span id="randomFact">
+        press the button!!
+      </span>
+
+    </div>
+
+
+    <button
+      class="fact-button"
+      onclick="generateFact()"
+    >
+      ✧ click to generate ✧
+    </button>
+
+
+    <div class="fact-bottom">
+      ♡ ★ ♡ ★ ♡
     </div>
 
   </div>
 
-  <!-- TOP STAMP CAROUSEL -->
 
-  <div class="marquee-box">
+  <script>
 
-    <marquee direction="right" scrollamount="4">
+    const facts = [
 
-      <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/gabykirakira.png">
-      <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/ostamp.gif">
-      <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/mikumaid.gif">
-      <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/gals.gif">
-      <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/bunny.gif">
-      <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/pompomstamp.png">
-      <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/lisafrankstmp.gif">
-      <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/flutterstmp.gif">
-      <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/rilastmp.gif">
-      <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/tokistmp.gif">
-      <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/lifestmp.png">
-      <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/rickystmp.png">
-      <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/greenstmp.webp">
-      <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/fism.gif">
-      <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/mopupu.png">
-      <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/mamestmp.png">
-      <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/ballet.png">
-      <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/pianostmp.png">
-      <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/girly.gif">
-      <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/pockstmp.png">
+      "i get a fortnite victory royale basically every time",
 
-    </marquee>
+      "i volunteer a lot",
 
-  </div>
+      "i love analyzing birth charts",
 
-  <div class="columns">
+      "i am a sagittarius!",
 
-    <!-- LEFT -->
+      "i love roblox",
 
-    <div class="left">
+      "foo fighters and incubus are my favorite bands",
 
-      <div class="box nav">
+      "i love cats an unreasonable amount",
 
-        <h3>navigation ♡</h3>
+      "i'm obsessed with horror and weird lore",
 
-        <a href="home.html" target="content">★ home</a>
-        <a href="diary.html" target="content">★ diary</a>
-        <a href="photos.html" target="content">★ photo diary</a>
-        <a href="games.html" target="content">★ games</a>
-        <a href="movies.html" target="content">★ movies</a>
-        <a href="about.html" target="content">★ about me</a>
+      "i'm more of a pc gamer than a console gamer",
 
-      </div>
+      "i love story-heavy games",
 
-      <div class="box currently">
+      "i can hyperfixate on something for hours",
 
-        <h3>currently...</h3>
+      "i love bugs, especially beetles and ants",
 
-        <p>🎮 playing: fnaf</p>
-        <p>🎬 watching: ???</p>
-        <p>🎧 listening: ???</p>
-        <p>💭 mood: whimsical</p>
+      "i'm a huge fnaf fan",
 
-      </div>
+      "i love sci-fi and star wars",
 
-      <div class="box decor-panel">
+      "i'm really into psychology",
 
-        <img
-          class="glitcake"
-          src="https://fries-and-ice-cream.neocities.org/listingsandrings/glitcake.gif"
-          alt=""
-        >
+      "i love collecting little trinkets and cute things",
 
-        <br>
+      "i love cute things and creepy things equally",
 
-        <div class="beloved-photo-frame">
+      "i'm either super quiet or talking way too much",
 
-          <img
-            class="beloved-photo"
-            src="photos/beloved2.png"
-            alt="beloved"
-          >
+      "i love making things by hand",
 
-          <img
-            class="beloved-overlay"
-            src="https://fries-and-ice-cream.neocities.org/listingsandrings/beloved_frame.png"
-            alt=""
-          >
+      "i love weird niche interests",
 
-        </div>
+      "i take way too many pictures of my cat",
 
-      </div>
+      "i can spend forever psychoanalyzing fictional characters",
 
-    </div>
+      "i love comparing people's birth chart placements",
 
-    <!-- CENTER -->
+      "i'm always finding some random new thing to obsess over",
 
-    <div class="middle">
+      "i love anything whimsical, dreamy, or slightly weird",
 
-      <img
-        class="center-bow"
-        src="https://fries-and-ice-cream.neocities.org/heisei/tiedbow.png"
-        alt=""
-      >
+      "i love old games and internet nostalgia",
 
-      <iframe
-        src="home.html"
-        name="content"
-      ></iframe>
+      "i love helping out at events and volunteering",
 
-      <img
-        class="iframe-cuddlebug"
-        src="https://fries-and-ice-cream.neocities.org/assests/cuddlebug.png"
-        alt=""
-      >
+      "i love horror games but would probably die instantly in one",
 
-      <div class="sticker-wrap">
+      "i could talk about my favorite games for hours",
 
-        <div class="pin-strip">
+      "i love learning random facts about people",
 
-          <marquee direction="right">
+      "i love decorating literally everything",
 
-            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/rakko.png">
-            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/pinkwings.png">
-            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/dolphin.png">
-            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/cookie.png">
-            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/biscuit2.png">
-            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/KIIIKIII%20pin.png">
-            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/nct%20wish%20pin.png">
+      "i always somehow end up with a new hyperfixation",
 
-          </marquee>
+      "i love personality systems and overanalyzing people",
 
-        </div>
+      "i will absolutely judge a fictional character by their birth chart",
 
-        <img
-          class="dotbun-sticker"
-          src="https://fries-and-ice-cream.neocities.org/dotbun.png"
-          alt=""
-        >
+      "i love roblox games that look like they were made in 2012",
 
-        <img
-          class="ny-puppy-sticker"
-          src="https://fries-and-ice-cream.neocities.org/newcutestuff/swagham.png"
-          alt=""
-        >
+      "i play fortnite like rent is due",
 
-      </div>
+      "i can turn almost anything into a niche interest",
 
-    </div>
+      "i love games where something is deeply wrong for no reason",
 
-    <!-- RIGHT -->
+      "i love music that makes me stare dramatically out a car window",
 
-    <div class="right">
+      "i have way too many opinions about fictional people",
 
-      <div class="box profile-box">
+      "i will defend my favorite game like i worked on it",
 
-        <img
-          class="profile-pic"
-          src="photos/pfp2.png"
-          alt="mina"
-        >
+      "i'm always one search away from a new obsession",
 
-        <div class="profile-name">
-          mina ★
-        </div>
+      "i take personality tests like they are legally binding",
 
-        <p>
-          welcome to my digital scrapbook :3
-        </p>
+      "i love horror until i actually hear a noise in my house",
 
-      </div>
+      "i could probably make a tier list about anything",
 
-      <div class="box socials">
+      "i love lore more than i love understanding the actual plot",
 
-        <h3>find me</h3>
+      "i will open roblox for five minutes and disappear for three hours",
 
-        <a
-          href="https://www.instagram.com/miinaisnotonfire/"
-          target="_blank"
-        >
-          instagram ♡
-        </a>
+      "i'm convinced every friend group needs at least one weird lore person"
 
-        <a
-          href="https://letterboxd.com/ilovemycatss/"
-          target="_blank"
-        >
-          letterboxd ★
-        </a>
+    ];
 
-        <a
-          href="https://backloggd.com/u/minaisnotonfire/"
-          target="_blank"
-        >
-          backloggd 🖰
-        </a>
 
-      </div>
+    let lastFact = -1;
 
-      <!-- STAMPS -->
 
-      <div class="box">
+    function generateFact() {
 
-        <h3>stamps ♡</h3>
+      let randomIndex;
 
-        <div class="stamp-box">
 
-          <div class="stamps">
+      do {
 
-            <img src="https://blinkie-net.neocities.org/Stamps/2/devilish.png" alt="">
+        randomIndex =
+          Math.floor(
+            Math.random() * facts.length
+          );
 
-            <img src="https://blinkie-net.neocities.org/Stamps/4/bubbline.png" alt="">
+      }
 
-            <img src="https://blinkie-net.neocities.org/Stamps/4/cereal.gif" alt="">
+      while (
+        randomIndex === lastFact &&
+        facts.length > 1
+      );
 
-            <img src="https://blinkie-net.neocities.org/Stamps/4/fanf.gif" alt="">
 
-            <img src="https://blinkie-net.neocities.org/Stamps/5/24.png" alt="">
+      lastFact = randomIndex;
 
-            <img src="https://blinkie-net.neocities.org/Stamps/7/nyancat.gif" alt="">
 
-          </div>
+      const fact =
+        document.getElementById("randomFact");
 
-        </div>
 
-      </div>
+      fact.classList.remove("fact-pop");
 
-      <!-- CAMERA -->
 
-      <div class="box decor-panel">
+      void fact.offsetWidth;
 
-        <div class="camera-frame">
 
-          <img
-            class="camera-overlay"
-            src="https://fries-and-ice-cream.neocities.org/listingsandrings/dotcam.png"
-            alt=""
-          >
+      fact.textContent =
+        facts[randomIndex];
 
-          <img
-            class="camera-photo"
-            src="photos/friend.jpeg"
-            alt="me and my friend"
-          >
 
-        </div>
+      fact.classList.add("fact-pop");
 
-      </div>
+    }
 
-      <div class="box decor-panel">
-
-        <img
-          style="width:170px;"
-          src="https://fries-and-ice-cream.neocities.org/listingsandrings/pinkcake.jpg"
-          alt=""
-        >
-
-        <img
-          style="width:170px;"
-          src="https://fries-and-ice-cream.neocities.org/listingsandrings/sprinklelace.png"
-          alt=""
-        >
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-<img
-  class="nyangham"
-  src="https://fries-and-ice-cream.neocities.org/pixel/nyangham.png"
-  alt=""
->
+  </script>
 
 </body>
 
