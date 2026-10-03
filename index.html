@@ -112,8 +112,11 @@
     .site {
       width: 1050px;
       margin: 25px auto;
+
       position: relative;
+
       min-height: 1200px;
+
       z-index: 2;
     }
 
@@ -145,6 +148,7 @@
 
     .header-stripe {
       position: absolute;
+
       right: 0;
       top: 0;
 
@@ -174,6 +178,7 @@
 
     .header h1 {
       position: relative;
+
       display: inline-block;
 
       margin: 0 0 6px 0;
@@ -524,7 +529,7 @@
     }
 
 
-    /* CENTER BOW - UP + RIGHT + CROPPED */
+    /* CENTER BOW */
 
     .center-bow {
       position: absolute;
@@ -1040,7 +1045,6 @@
       ♫ now playing
     </div>
 
-
     <div class="music-controls">
 
       <button
@@ -1051,16 +1055,13 @@
         ◀
       </button>
 
-
       <button
         type="button"
         id="playButton"
-        onclick="toggleMusic()"
         title="play / pause"
       >
         ▶
       </button>
-
 
       <button
         type="button"
@@ -1072,7 +1073,6 @@
 
     </div>
 
-
     <div class="song-display">
 
       <span id="songName">
@@ -1080,7 +1080,6 @@
       </span>
 
     </div>
-
 
     <div class="volume-area">
 
@@ -1106,7 +1105,7 @@
 
   <audio
     id="musicAudio"
-    preload="metadata"
+    preload="auto"
   ></audio>
 
 
@@ -1410,22 +1409,18 @@ const songs = [
     file: "music/allie-x-bitch.mp3",
     name: "bitch — allie x"
   },
-
   {
     file: "music/chick-habit.mp3",
     name: "chick habit — april march"
   },
-
   {
     file: "music/jane-remover-how-to-teleport.mp3",
     name: "how to teleport — jane remover"
   },
-
   {
     file: "music/secret-lyrics-the-pierces.mp3",
     name: "secret — the pierces"
   },
-
   {
     file: "music/vivica.mp3",
     name: "vivica — jack off jill"
@@ -1459,9 +1454,10 @@ let currentSong = 0;
 
 let targetVolume = 0.22;
 
-let fadeTimer = null;
+let fadeTimer;
 
 
+/* LOAD SONG */
 
 function loadSong() {
 
@@ -1471,62 +1467,31 @@ function loadSong() {
   songName.textContent =
     songs[currentSong].name;
 
+  audio.load();
+
 }
 
 
+/* GENTLE FADE */
 
-function startFade() {
+function fadeIn() {
 
-  clearInterval(
-    fadeTimer
-  );
+  clearInterval(fadeTimer);
 
-
-  audio.volume =
-    0.01;
-
-
-  const steps =
-    40;
-
-
-  const stepTime =
-    2500 / steps;
-
-
-  const amount =
-    (targetVolume - 0.01) /
-    steps;
-
+  audio.volume = 0;
 
   fadeTimer =
     setInterval(() => {
 
-
-      if (audio.paused) {
-
-        clearInterval(
-          fadeTimer
-        );
-
-        return;
-
-      }
-
-
-      const nextVolume =
-        audio.volume +
-        amount;
-
+      let newVolume =
+        audio.volume + 0.01;
 
       if (
-        nextVolume >=
-        targetVolume
+        newVolume >= targetVolume
       ) {
 
         audio.volume =
           targetVolume;
-
 
         clearInterval(
           fadeTimer
@@ -1537,215 +1502,191 @@ function startFade() {
       else {
 
         audio.volume =
-          nextVolume;
+          newVolume;
 
       }
 
-
-    }, stepTime);
-
-}
-
-
-
-function toggleMusic() {
-
-  if (audio.paused) {
-
-    audio.volume =
-      0.01;
-
-
-    audio.play()
-
-      .then(() => {
-
-        playButton.textContent =
-          "Ⅱ";
-
-
-        startFade();
-
-      })
-
-
-      .catch(error => {
-
-        console.log(
-          "music failed to play:",
-          error
-        );
-
-
-        playButton.textContent =
-          "▶";
-
-      });
-
-  }
-
-  else {
-
-    clearInterval(
-      fadeTimer
-    );
-
-
-    audio.pause();
-
-
-    playButton.textContent =
-      "▶";
-
-  }
+    }, 100);
 
 }
 
 
+/* PLAY / PAUSE */
 
-function nextSong() {
-
-  const shouldKeepPlaying =
-    !audio.paused;
-
-
-  clearInterval(
-    fadeTimer
-  );
-
-
-  currentSong =
-    (
-      currentSong +
-      1
-    ) %
-    songs.length;
-
-
-  loadSong();
-
-
-  if (shouldKeepPlaying) {
-
-    audio.volume =
-      0.01;
-
-
-    audio.play()
-
-      .then(() => {
-
-        playButton.textContent =
-          "Ⅱ";
-
-
-        startFade();
-
-      })
-
-
-      .catch(
-        console.log
-      );
-
-  }
-
-}
-
-
-
-function previousSong() {
-
-  const shouldKeepPlaying =
-    !audio.paused;
-
-
-  clearInterval(
-    fadeTimer
-  );
-
-
-  currentSong =
-    (
-      currentSong -
-      1 +
-      songs.length
-    ) %
-    songs.length;
-
-
-  loadSong();
-
-
-  if (shouldKeepPlaying) {
-
-    audio.volume =
-      0.01;
-
-
-    audio.play()
-
-      .then(() => {
-
-        playButton.textContent =
-          "Ⅱ";
-
-
-        startFade();
-
-      })
-
-
-      .catch(
-        console.log
-      );
-
-  }
-
-}
-
-
-
-function changeVolume(value) {
-
-  targetVolume =
-    Number(value) /
-    100;
-
-
-  volumeText.textContent =
-    value + "%";
-
-
-  if (!audio.paused) {
-
-    audio.volume =
-      targetVolume;
-
-  }
-
-}
-
-
-
-previousButton.onclick =
-  previousSong;
-
-
-nextButton.onclick =
-  nextSong;
-
-
-volumeSlider.oninput =
+playButton.addEventListener(
+  "click",
   function () {
 
-    changeVolume(
-      this.value
-    );
+    if (audio.paused) {
 
-  };
+      audio.volume = 0;
+
+      const attempt =
+        audio.play();
 
 
+      if (
+        attempt !== undefined
+      ) {
+
+        attempt
+          .then(function () {
+
+            playButton.textContent =
+              "Ⅱ";
+
+            fadeIn();
+
+          })
+
+          .catch(function (error) {
+
+            console.error(
+              "audio error:",
+              error
+            );
+
+            playButton.textContent =
+              "▶";
+
+            alert(
+              "the audio file could not play :( try opening the mp3 directly to make sure github pages can access it."
+            );
+
+          });
+
+      }
+
+    }
+
+    else {
+
+      clearInterval(
+        fadeTimer
+      );
+
+      audio.pause();
+
+      playButton.textContent =
+        "▶";
+
+    }
+
+  }
+);
+
+
+/* NEXT */
+
+nextButton.addEventListener(
+  "click",
+  function () {
+
+    const wasPlaying =
+      !audio.paused;
+
+
+    currentSong =
+      (
+        currentSong +
+        1
+      ) %
+      songs.length;
+
+
+    loadSong();
+
+
+    if (wasPlaying) {
+
+      audio.volume = 0;
+
+      audio.play()
+
+        .then(function () {
+          fadeIn();
+        })
+
+        .catch(function (error) {
+          console.error(error);
+        });
+
+    }
+
+  }
+);
+
+
+/* PREVIOUS */
+
+previousButton.addEventListener(
+  "click",
+  function () {
+
+    const wasPlaying =
+      !audio.paused;
+
+
+    currentSong =
+      (
+        currentSong -
+        1 +
+        songs.length
+      ) %
+      songs.length;
+
+
+    loadSong();
+
+
+    if (wasPlaying) {
+
+      audio.volume = 0;
+
+      audio.play()
+
+        .then(function () {
+          fadeIn();
+        })
+
+        .catch(function (error) {
+          console.error(error);
+        });
+
+    }
+
+  }
+);
+
+
+/* VOLUME */
+
+volumeSlider.addEventListener(
+  "input",
+  function () {
+
+    targetVolume =
+      Number(
+        this.value
+      ) / 100;
+
+
+    volumeText.textContent =
+      this.value + "%";
+
+
+    if (!audio.paused) {
+
+      audio.volume =
+        targetVolume;
+
+    }
+
+  }
+);
+
+
+/* AUTO NEXT */
 
 audio.addEventListener(
   "ended",
@@ -1761,55 +1702,21 @@ audio.addEventListener(
 
     loadSong();
 
-
-    audio.volume =
-      0.01;
+    audio.volume = 0;
 
 
     audio.play()
 
-      .then(() => {
-
-        playButton.textContent =
-          "Ⅱ";
-
-
-        startFade();
-
+      .then(function () {
+        fadeIn();
       })
 
-
-      .catch(
-        console.log
-      );
-
-  }
-);
-
-
-
-audio.addEventListener(
-  "pause",
-  function () {
-
-    playButton.textContent =
-      "▶";
+      .catch(function (error) {
+        console.error(error);
+      });
 
   }
 );
-
-
-
-audio.addEventListener(
-  "play",
-  function () {
-
-    playButton.textContent =
-      "Ⅱ";
-
-  }
-);
-
 
 
 /* INITIAL SETUP */
@@ -1817,14 +1724,8 @@ audio.addEventListener(
 volumeSlider.value =
   22;
 
-
 volumeText.textContent =
   "22%";
-
-
-audio.volume =
-  0.01;
-
 
 loadSong();
 
