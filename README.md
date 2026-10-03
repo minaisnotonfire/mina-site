@@ -1,3 +1,1 @@
-find new stamps
-fix the header page
-make separate pages/web for each section under navigation 
+im deadass crying this shit is so hard steam is coming outta my ass
