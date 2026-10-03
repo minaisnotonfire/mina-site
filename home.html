@@ -11,6 +11,77 @@
     h1 {
       color: hotpink;
     }
+
+    .mini-fact-box {
+      width: 300px;
+      margin: 70px auto 0;
+      padding: 14px;
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          rgba(255,255,255,.82),
+          rgba(255,255,255,.82)
+        ),
+        url("https://fries-and-ice-cream.neocities.org/newcutestuff/bluepolkarose.gif");
+
+      border: 3px double #ffb6cf;
+      border-radius: 12px;
+
+      box-shadow:
+        3px 3px 0 rgba(174,238,238,.3);
+    }
+
+    .mini-fact-title {
+      margin-bottom: 10px;
+
+      font-size: 18px;
+      font-weight: bold;
+
+      color: #ff69a9;
+    }
+
+    #randomFact {
+      min-height: 45px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 8px;
+
+      background: #fffdf6;
+
+      border: 2px dashed #f4aec6;
+      border-radius: 7px;
+
+      color: #665566;
+
+      font-size: 13px;
+    }
+
+    .mini-fact-box button {
+      margin-top: 10px;
+
+      padding: 5px 10px;
+
+      background: #fff3f8;
+
+      border: 2px double #8edddd;
+      border-radius: 7px;
+
+      color: #a55d7c;
+
+      cursor: pointer;
+
+      transition: transform .2s, background .2s;
+    }
+
+    .mini-fact-box button:hover {
+      background: #eaffff;
+      transform: scale(1.04);
+    }
   </style>
 </head>
 
@@ -25,6 +96,71 @@
     games, pictures, diary entries, friends,
     random interests and whatever else i feel like putting here.
   </p>
+
+
+  <!-- random fact generator -->
+
+  <div class="mini-fact-box">
+
+    <div class="mini-fact-title">
+      ☆ random fact abt me ☆
+    </div>
+
+    <div id="randomFact">
+      click the button :3
+    </div>
+
+    <button onclick="generateFact()">
+      click to generate ♡
+    </button>
+
+  </div>
+
+
+  <script>
+    const facts = [
+      "i get a fortnite victory royale basically every time",
+      "i volunteer a lot",
+      "i love analyzing birth charts",
+      "i am a sagittarius!",
+      "i love roblox",
+      "foo fighters and incubus are my favorite bands",
+      "i love cats an unreasonable amount",
+      "i'm obsessed with horror and weird lore",
+      "i'm more of a pc gamer than a console gamer",
+      "i love story-heavy games",
+      "i can hyperfixate on something for hours",
+      "i love bugs, especially beetles and ants",
+      "i'm a huge fnaf fan",
+      "i love sci-fi and star wars",
+      "i'm really into psychology",
+      "i love cute things and creepy things equally",
+      "i take way too many pictures of my cat",
+      "i will absolutely judge a fictional character by their birth chart",
+      "i play fortnite like rent is due",
+      "i love horror games but would probably die instantly in one",
+      "i will defend my favorite game like i worked on it",
+      "i take personality tests like they are legally binding",
+      "i love horror until i actually hear a noise in my house",
+      "i love lore more than i love understanding the actual plot",
+      "i will open roblox for five minutes and disappear for three hours"
+    ];
+
+    let lastFact = -1;
+
+    function generateFact() {
+      let randomIndex;
+
+      do {
+        randomIndex = Math.floor(Math.random() * facts.length);
+      } while (randomIndex === lastFact && facts.length > 1);
+
+      lastFact = randomIndex;
+
+      document.getElementById("randomFact").textContent =
+        facts[randomIndex];
+    }
+  </script>
 
 </body>
 </html>
