@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Bonbon&family=Sour+Gummy:wght@400;600;700&family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bonbon&family=Sour+Gummy:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
 
@@ -36,20 +36,20 @@
     }
 
 
-    /* RANDOM FACT GENERATOR */
+    /* RANDOM FACT CARD */
 
     .fact-widget {
       width: 330px;
 
       margin: 70px auto 0;
-
-      padding: 15px 17px 16px;
-
-      position: relative;
+      padding: 14px 17px 15px;
 
       text-align: center;
+      position: relative;
 
-      background:
+      background-color: #eef9ff;
+
+      background-image:
         radial-gradient(
           circle,
           rgba(255,255,255,.9) 2px,
@@ -58,81 +58,86 @@
 
       background-size: 18px 18px;
 
-      background-color: #eef9ff;
-
       border: 3px double #ffa9c9;
       border-radius: 18px;
 
       box-shadow:
         4px 4px 0 rgba(181,239,233,.38),
-        inset 0 0 12px rgba(255,192,203,.15);
+        inset 0 0 0 2px #c9efeb;
     }
 
 
-    /* ☆ ♡ ☆ */
+    /* EXACT LITTLE SYMBOLS ABOVE */
 
     .fact-top {
-      font-family: "Sour Gummy", cursive;
-
-      color: #ff82b4;
-
-      font-size: 16px;
-
-      letter-spacing: 6px;
-
       margin-bottom: 3px;
+
+      font-family: "Sour Gummy", cursive;
+      font-size: 15px;
+
+      color: #ff7fb3;
+
+      letter-spacing: 7px;
     }
 
 
-    /* tilted cream/yellow bubble */
+    /* CREAM / YELLOW TILTED BUBBLE */
 
     .fact-title {
       display: inline-block;
 
-      padding: 5px 15px 6px;
+      padding: 5px 16px 7px;
 
-      margin-bottom: 5px;
+      margin-bottom: 4px;
 
       background:
         linear-gradient(
-          #fffdf0,
-          #fff3d9
+          to bottom,
+          #fffdf1,
+          #fff0d2
         );
 
-      border: 3px double #e8b0a8;
+      border: 2px solid #e9b7ae;
+
+      outline: 2px solid rgba(255,190,205,.45);
+      outline-offset: 2px;
 
       border-radius: 18px;
 
-      font-family: "Bonbon", cursive;
+      font-family: "Bonbon", cursive !important;
 
-      font-size: 24px;
+      font-size: 25px !important;
+
+      font-weight: normal !important;
 
       line-height: 1;
 
-      color: #9a6252;
+      color: #965b4b !important;
 
       text-shadow:
-        1px 1px 0 white;
+        1px 1px 0 #ffffff;
 
       box-shadow:
-        2px 3px 0 rgba(255,182,193,.28);
+        2px 3px 0 rgba(255,177,195,.25);
 
       transform: rotate(-2deg);
     }
 
 
+    /* TEXT UNDER TITLE */
+
     .fact-subtitle {
-      margin: 5px 0 11px;
+      margin: 7px 0 11px;
 
       font-family: "Sour Gummy", cursive;
 
-      font-size: 11px;
+      color: #c67197;
 
-      color: #c27598;
+      font-size: 11px;
     }
 
 
-    /* fact display */
+    /* FACT AREA */
 
     #fact-box {
       min-height: 48px;
@@ -148,11 +153,10 @@
           0deg,
           #fffdf7,
           #fffdf7 20px,
-          #e7f5f2 21px
+          #e9f5f2 21px
         );
 
       border: 2px dashed #ff9fbe;
-
       border-radius: 9px;
 
       font-family: "Sour Gummy", cursive;
@@ -160,13 +164,10 @@
       font-size: 14px;
 
       color: #755d69;
-
-      box-shadow:
-        inset 0 0 7px rgba(255,198,216,.18);
     }
 
 
-    /* button */
+    /* BUTTON */
 
     .fact-button {
       margin-top: 11px;
@@ -186,7 +187,6 @@
       font-family: "Sour Gummy", cursive;
 
       font-size: 15px;
-
       font-weight: 700;
 
       color: #ad6484;
@@ -195,46 +195,32 @@
         2px 3px 0 rgba(255,185,207,.3);
 
       cursor: pointer;
-
-      transition:
-        transform .18s ease,
-        background .18s ease;
     }
-
 
     .fact-button:hover {
-      background:
-        linear-gradient(
-          #fff3f8,
-          #ebffff
-        );
-
-      transform:
-        translateY(-1px)
-        rotate(-1deg)
-        scale(1.04);
+      transform: scale(1.04);
+      background: #fff3f8;
     }
 
 
-    /* ♡ ☆ ♡ ☆ ♡ */
+    /* SYMBOLS UNDER BUTTON */
 
     .fact-bottom {
       margin-top: 8px;
 
       font-family: "Sour Gummy", cursive;
 
+      color: #97dad6;
+
       font-size: 11px;
 
       letter-spacing: 5px;
-
-      color: #98dcd8;
     }
 
 
     .fact-pop {
       animation: factPop .3s ease;
     }
-
 
     @keyframes factPop {
 
@@ -255,20 +241,16 @@
     }
 
   </style>
-
 </head>
 
 
 <body>
 
-
   <h1>haiiii ★</h1>
-
 
   <p>
     welcome to my website!
   </p>
-
 
   <p>
     this is my little corner of the internet for
@@ -277,31 +259,25 @@
   </p>
 
 
-
   <!-- RANDOM FACT GENERATOR -->
 
   <div class="fact-widget">
-
 
     <div class="fact-top">
       ☆ ♡ ☆
     </div>
 
-
     <div class="fact-title">
       random fact abt me!
     </div>
-
 
     <div class="fact-subtitle">
       click to learn something random about mina ♡
     </div>
 
-
     <div id="fact-box">
       press the button!!
     </div>
-
 
     <button
       class="fact-button"
@@ -310,14 +286,11 @@
       ✧ click to generate ✧
     </button>
 
-
     <div class="fact-bottom">
       ♡ ☆ ♡ ☆ ♡
     </div>
 
-
   </div>
-
 
 
   <script>
@@ -384,13 +357,10 @@
 
       let randomIndex;
 
-
       do {
 
         randomIndex =
-          Math.floor(
-            Math.random() * facts.length
-          );
+          Math.floor(Math.random() * facts.length);
 
       }
 
@@ -421,7 +391,6 @@
     }
 
   </script>
-
 
 </body>
 
