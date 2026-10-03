@@ -320,6 +320,28 @@
       z-index: 3;
     }
 
+    /* NEW CUDDLEBUG ON LOWER LEFT OF IFRAME */
+
+    .iframe-cuddlebug {
+      position: absolute;
+
+      width: 105px;
+
+      left: -28px;
+      top: 520px;
+
+      z-index: 15;
+
+      pointer-events: none;
+
+      animation: upp 1.4s ease-in-out infinite;
+
+      filter:
+        drop-shadow(
+          3px 4px 3px rgba(0,0,0,0.12)
+        );
+    }
+
     .profile-box {
       text-align: center;
 
@@ -699,6 +721,8 @@
 
 <div class="site">
 
+  <!-- HEADER -->
+
   <div class="header">
 
     <div class="header-stripe"></div>
@@ -716,6 +740,8 @@
     </div>
 
   </div>
+
+  <!-- STAMP CAROUSEL -->
 
   <div class="marquee-box">
 
@@ -747,6 +773,8 @@
   </div>
 
   <div class="columns">
+
+    <!-- LEFT -->
 
     <div class="left">
 
@@ -804,6 +832,8 @@
 
     </div>
 
+    <!-- CENTER -->
+
     <div class="middle">
 
       <img
@@ -816,6 +846,14 @@
         src="home.html"
         name="content"
       ></iframe>
+
+      <!-- NEW CUDDLEBUG AT CIRCLED SPOT -->
+
+      <img
+        class="iframe-cuddlebug"
+        src="https://fries-and-ice-cream.neocities.org/assests/cuddlebug.png"
+        alt=""
+      >
 
       <div class="sticker-wrap">
 
@@ -850,6 +888,8 @@
       </div>
 
     </div>
+
+    <!-- RIGHT -->
 
     <div class="right">
 
@@ -947,6 +987,8 @@
   </div>
 
 </div>
+
+<!-- ORIGINAL FLOATING CUDDLEBUG -->
 
 <img
   class="cuddlebug"
