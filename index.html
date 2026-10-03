@@ -709,10 +709,193 @@
       pointer-events: none;
     }
 
+    /* FALLING SPRITES */
+
+    @-webkit-keyframes snowflakes-fall {
+      0% {
+        top: -10%;
+      }
+
+      100% {
+        top: 100%;
+      }
+    }
+
+    @-webkit-keyframes snowflakes-shake {
+      0%,
+      100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+
+      50% {
+        -webkit-transform: translateX(80px);
+        transform: translateX(80px);
+      }
+    }
+
+    @keyframes snowflakes-fall {
+      0% {
+        top: -10%;
+      }
+
+      100% {
+        top: 100%;
+      }
+    }
+
+    @keyframes snowflakes-shake {
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+
+      50% {
+        transform: translateX(80px);
+      }
+    }
+
+    .snowflake {
+      position: fixed;
+
+      top: -10%;
+
+      z-index: 9999;
+
+      user-select: none;
+      pointer-events: none;
+
+      -webkit-animation-name:
+        snowflakes-fall,
+        snowflakes-shake;
+
+      -webkit-animation-duration:
+        10s,
+        3s;
+
+      -webkit-animation-timing-function:
+        linear,
+        ease-in-out;
+
+      -webkit-animation-iteration-count:
+        infinite,
+        infinite;
+
+      animation-name:
+        snowflakes-fall,
+        snowflakes-shake;
+
+      animation-duration:
+        10s,
+        3s;
+
+      animation-timing-function:
+        linear,
+        ease-in-out;
+
+      animation-iteration-count:
+        infinite,
+        infinite;
+    }
+
+    .snowflake img {
+      width: 45px;
+      height: auto;
+
+      pointer-events: none;
+    }
+
+    .snowflake:nth-of-type(1) {
+      left: 10%;
+      animation-delay: 1s, 1s;
+    }
+
+    .snowflake:nth-of-type(2) {
+      left: 20%;
+      animation-delay: 6s, .5s;
+    }
+
+    .snowflake:nth-of-type(3) {
+      left: 30%;
+      animation-delay: 4s, 2s;
+    }
+
+    .snowflake:nth-of-type(4) {
+      left: 40%;
+      animation-delay: 2s, 2s;
+    }
+
+    .snowflake:nth-of-type(5) {
+      left: 50%;
+      animation-delay: 8s, 3s;
+    }
+
+    .snowflake:nth-of-type(6) {
+      left: 60%;
+      animation-delay: 6s, 2s;
+    }
+
+    .snowflake:nth-of-type(7) {
+      left: 70%;
+      animation-delay: 2.5s, 1s;
+    }
+
+    .snowflake:nth-of-type(8) {
+      left: 80%;
+      animation-delay: 1s, 0s;
+    }
+
+    .snowflake:nth-of-type(9) {
+      left: 90%;
+      animation-delay: 3s, 1.5s;
+    }
+
   </style>
 </head>
 
 <body>
+
+<!-- FALLING SPRITES -->
+
+<div class="snowflakes">
+
+  <div class="snowflake">
+    <img src="https://i.ibb.co/hcNQT4Y/Picsart-23-06-07-19-53-51-306.png">
+  </div>
+
+  <div class="snowflake">
+    <img src="https://i.ibb.co/89X8w2Y/Picsart-23-06-07-19-57-13-388.png">
+  </div>
+
+  <div class="snowflake">
+    <img src="https://i.ibb.co/hcNQT4Y/Picsart-23-06-07-19-53-51-306.png">
+  </div>
+
+  <div class="snowflake">
+    <img src="https://i.ibb.co/89X8w2Y/Picsart-23-06-07-19-57-13-388.png">
+  </div>
+
+  <div class="snowflake">
+    <img src="https://i.ibb.co/hcNQT4Y/Picsart-23-06-07-19-53-51-306.png">
+  </div>
+
+  <div class="snowflake">
+    <img src="https://i.ibb.co/89X8w2Y/Picsart-23-06-07-19-57-13-388.png">
+  </div>
+
+  <div class="snowflake">
+    <img src="https://i.ibb.co/hcNQT4Y/Picsart-23-06-07-19-53-51-306.png">
+  </div>
+
+  <div class="snowflake">
+    <img src="https://i.ibb.co/89X8w2Y/Picsart-23-06-07-19-57-13-388.png">
+  </div>
+
+  <div class="snowflake">
+    <img src="https://i.ibb.co/hcNQT4Y/Picsart-23-06-07-19-53-51-306.png">
+  </div>
+
+</div>
 
 <div class="site">
 
@@ -733,6 +916,8 @@
     </div>
 
   </div>
+
+  <!-- TOP STAMP CAROUSEL -->
 
   <div class="marquee-box">
 
@@ -764,6 +949,8 @@
   </div>
 
   <div class="columns">
+
+    <!-- LEFT -->
 
     <div class="left">
 
@@ -821,6 +1008,8 @@
 
     </div>
 
+    <!-- CENTER -->
+
     <div class="middle">
 
       <img
@@ -874,6 +1063,8 @@
 
     </div>
 
+    <!-- RIGHT -->
+
     <div class="right">
 
       <div class="box profile-box">
@@ -898,19 +1089,30 @@
 
         <h3>find me</h3>
 
-        <a href="https://www.instagram.com/miinaisnotonfire/" target="_blank">
+        <a
+          href="https://www.instagram.com/miinaisnotonfire/"
+          target="_blank"
+        >
           instagram ♡
         </a>
 
-        <a href="https://letterboxd.com/ilovemycatss/" target="_blank">
+        <a
+          href="https://letterboxd.com/ilovemycatss/"
+          target="_blank"
+        >
           letterboxd ★
         </a>
 
-        <a href="https://backloggd.com/u/minaisnotonfire/" target="_blank">
+        <a
+          href="https://backloggd.com/u/minaisnotonfire/"
+          target="_blank"
+        >
           backloggd 🖰
         </a>
 
       </div>
+
+      <!-- STAMP SECTION -->
 
       <div class="box">
 
@@ -955,6 +1157,8 @@
         </div>
 
       </div>
+
+      <!-- CAMERA -->
 
       <div class="box decor-panel">
 
