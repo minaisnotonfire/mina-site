@@ -23,15 +23,12 @@
         auto !important;
     }
 
-
     html {
       min-height: 100%;
     }
 
-
     body {
       margin: 0;
-
       position: relative;
 
       background:
@@ -44,14 +41,12 @@
       background-repeat: repeat;
 
       font-family: "Sour Gummy", Arial, sans-serif;
-
       color: #665566;
 
       min-height: 100vh;
 
       isolation: isolate;
     }
-
 
     a,
     button {
@@ -60,7 +55,6 @@
         32 32,
         auto !important;
     }
-
 
 
     /* PASTEL STAR EFFECT */
@@ -89,7 +83,6 @@
         grain 20s steps(10) infinite;
     }
 
-
     @keyframes grain {
 
       0% {
@@ -107,18 +100,15 @@
     }
 
 
-
     a {
       color: #ff69b4;
       text-decoration: none;
     }
 
-
     a:hover {
       color: #87cefa;
       text-decoration: underline;
     }
-
 
 
     .site {
@@ -132,7 +122,6 @@
 
       z-index: 2;
     }
-
 
 
     /* HEADER */
@@ -240,7 +229,6 @@
       background-size: 16px 16px;
 
       -webkit-background-clip: text;
-
       background-clip: text;
 
       -webkit-text-fill-color: transparent;
@@ -271,7 +259,7 @@
 
 
 
-    /* STAMP CAROUSEL */
+    /* TOP STAMP CAROUSEL */
 
     .marquee-box {
       width: 800px;
@@ -280,7 +268,6 @@
       margin: 10px auto 10px;
 
       border: 3px solid #add8e6;
-
       border-radius: 10px;
 
       background:
@@ -304,7 +291,7 @@
 
 
 
-    /* ♫ MUSIC PLAYER ♫ */
+    /* MUSIC PLAYER */
 
     .music-player {
       width: 800px;
@@ -372,7 +359,6 @@
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       background:
@@ -444,6 +430,8 @@
       color: #795e6c;
 
       font-size: 13px;
+
+      text-transform: lowercase;
     }
 
 
@@ -489,7 +477,6 @@
 
       align-items: start;
     }
-
 
 
     .box {
@@ -613,22 +600,21 @@
 
 
 
-    /* CENTER BOW */
+    /* CENTER BOW - MOVED UP + CROPPED */
 
     .center-bow {
       position: absolute;
 
       width: 220px;
 
-      top: -70px;
-
+      top: -132px;
       left: 175px;
 
       pointer-events: none;
 
       z-index: 3;
 
-      clip-path: inset(0 0 78px 0);
+      clip-path: inset(0 0 105px 0);
     }
 
 
@@ -1168,43 +1154,24 @@
     <marquee direction="right" scrollamount="4">
 
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/gabykirakira.png">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/ostamp.gif">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/mikumaid.gif">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/gals.gif">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/bunny.gif">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/pompomstamp.png">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/lisafrankstmp.gif">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/flutterstmp.gif">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/rilastmp.gif">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/tokistmp.gif">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/lifestmp.png">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/rickystmp.png">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/greenstmp.webp">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/fism.gif">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/mopupu.png">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/mamestmp.png">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/ballet.png">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/pianostmp.png">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/girly.gif">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/pockstmp.png">
 
     </marquee>
@@ -1226,7 +1193,7 @@
 
       <button
         type="button"
-        onclick="previousSong()"
+        id="previousButton"
         title="previous"
       >
         ◀
@@ -1236,7 +1203,6 @@
       <button
         type="button"
         id="playButton"
-        onclick="toggleMusic()"
         title="play / pause"
       >
         ▶
@@ -1245,7 +1211,7 @@
 
       <button
         type="button"
-        onclick="nextSong()"
+        id="nextButton"
         title="next"
       >
         ▶|
@@ -1257,7 +1223,7 @@
     <div class="song-display">
 
       <span id="songName">
-        Bitch — Allie X
+        bitch — allie x
       </span>
 
     </div>
@@ -1273,7 +1239,6 @@
         min="0"
         max="35"
         value="22"
-        oninput="changeVolume(this.value)"
         aria-label="volume"
       >
 
@@ -1309,51 +1274,27 @@
           navigation ♡
         </h3>
 
-
-        <a
-          href="home.html"
-          target="content"
-        >
+        <a href="home.html" target="content">
           ★ home
         </a>
 
-
-        <a
-          href="diary.html"
-          target="content"
-        >
+        <a href="diary.html" target="content">
           ★ diary
         </a>
 
-
-        <a
-          href="photos.html"
-          target="content"
-        >
+        <a href="photos.html" target="content">
           ★ photo diary
         </a>
 
-
-        <a
-          href="games.html"
-          target="content"
-        >
+        <a href="games.html" target="content">
           ★ arcade
         </a>
 
-
-        <a
-          href="movies.html"
-          target="content"
-        >
+        <a href="movies.html" target="content">
           ★ original work
         </a>
 
-
-        <a
-          href="about.html"
-          target="content"
-        >
+        <a href="about.html" target="content">
           ★ about me
         </a>
 
@@ -1406,7 +1347,6 @@
             alt="beloved"
           >
 
-
           <img
             class="beloved-overlay"
             src="https://fries-and-ice-cream.neocities.org/listingsandrings/beloved_frame.png"
@@ -1444,7 +1384,6 @@
         src="https://fries-and-ice-cream.neocities.org/assests/cuddlebug.png"
         alt=""
       >
-
 
 
       <div class="sticker-wrap">
@@ -1494,7 +1433,6 @@
         </div>
 
 
-
         <img
           class="dotbun-sticker"
           src="https://fries-and-ice-cream.neocities.org/dotbun.png"
@@ -1528,11 +1466,9 @@
           alt="mina"
         >
 
-
         <div class="profile-name">
           mina ★
         </div>
-
 
         <p>
           welcome to my digital scrapbook :3
@@ -1548,7 +1484,6 @@
           find me
         </h3>
 
-
         <a
           href="https://www.instagram.com/miinaisnotonfire/"
           target="_blank"
@@ -1556,14 +1491,12 @@
           instagram ♡
         </a>
 
-
         <a
           href="https://letterboxd.com/ilovemycatss/"
           target="_blank"
         >
           letterboxd ★
         </a>
-
 
         <a
           href="https://backloggd.com/u/minaisnotonfire/"
@@ -1584,9 +1517,7 @@
           stamps ♡
         </h3>
 
-
         <div class="stamp-box">
-
 
           <div class="stamps">
 
@@ -1632,9 +1563,7 @@
 
       <div class="box decor-panel camera-box">
 
-
         <div class="camera-frame">
-
 
           <img
             class="camera-overlay"
@@ -1642,13 +1571,11 @@
             alt=""
           >
 
-
           <img
             class="camera-photo"
             src="photos/friend.jpeg"
             alt="me and my friend"
           >
-
 
         </div>
 
@@ -1658,20 +1585,17 @@
 
       <div class="box decor-panel">
 
-
         <img
           style="width:170px;"
           src="https://fries-and-ice-cream.neocities.org/listingsandrings/pinkcake.jpg"
           alt=""
         >
 
-
         <img
           style="width:170px;"
           src="https://fries-and-ice-cream.neocities.org/listingsandrings/sprinklelace.png"
           alt=""
         >
-
 
       </div>
 
@@ -1694,91 +1618,73 @@
 
 <script>
 
-  /* ---------------------------
-     MUSIC PLAYLIST
-     --------------------------- */
-
   const songs = [
 
     {
       file: "music/allie-x-bitch.mp3",
-      name: "Bitch — Allie X"
+      name: "bitch — allie x"
     },
 
     {
       file: "music/chick-habit.mp3",
-      name: "Chick Habit"
+      name: "chick habit — april march"
     },
 
     {
       file: "music/jane-remover-how-to-teleport.mp3",
-      name: "How to Teleport — Jane Remover"
+      name: "how to teleport — jane remover"
     },
 
     {
       file: "music/secret-lyrics-the-pierces.mp3",
-      name: "Secret — The Pierces"
+      name: "secret — the pierces"
     },
 
     {
       file: "music/vivica.mp3",
-      name: "Vivica"
+      name: "vivica — jack off jill"
     }
 
   ];
 
 
-
   const audio =
     document.getElementById("musicAudio");
-
-
-  const songName =
-    document.getElementById("songName");
-
 
   const playButton =
     document.getElementById("playButton");
 
+  const previousButton =
+    document.getElementById("previousButton");
+
+  const nextButton =
+    document.getElementById("nextButton");
+
+  const songName =
+    document.getElementById("songName");
 
   const volumeSlider =
     document.getElementById("volumeSlider");
-
 
   const volumeText =
     document.getElementById("volumeText");
 
 
-
   let currentSong = 0;
-
-
-  /*
-    sensory-friendly target volume:
-
-    0.22 = 22%
-  */
 
   let targetVolume = 0.22;
 
-
-  let fadeTimer = null;
-
+  let fadeAnimation = null;
 
 
-  /* ---------------------------
-     LOAD A SONG
-     --------------------------- */
 
   function loadSong() {
 
     audio.src =
       songs[currentSong].file;
 
-
     songName.textContent =
       songs[currentSong].name;
-
 
     audio.load();
 
@@ -1786,122 +1692,99 @@
 
 
 
-  /* ---------------------------
-     GENTLE FADE-IN
-     --------------------------- */
+  function fadeTo(
+    target,
+    duration = 2500
+  ) {
 
-  function fadeInAndPlay() {
+    if (fadeAnimation) {
 
-    clearInterval(fadeTimer);
-
-
-    /*
-      always begin at silence
-      so there is no sudden audio blast
-    */
-
-    audio.volume = 0;
-
-
-    const playPromise =
-      audio.play();
-
-
-    if (playPromise !== undefined) {
-
-      playPromise
-
-        .then(() => {
-
-
-          playButton.textContent =
-            "Ⅱ";
-
-
-          /*
-            fade to target volume
-            over about 2.5 seconds
-          */
-
-          const steps = 40;
-
-
-          const interval =
-            2500 / steps;
-
-
-          const increase =
-            targetVolume / steps;
-
-
-          fadeTimer =
-            setInterval(() => {
-
-
-              const newVolume =
-                Math.min(
-                  audio.volume + increase,
-                  targetVolume
-                );
-
-
-              audio.volume =
-                newVolume;
-
-
-              if (
-                newVolume >= targetVolume
-              ) {
-
-                clearInterval(
-                  fadeTimer
-                );
-
-              }
-
-
-            }, interval);
-
-
-        })
-
-
-        .catch(() => {
-
-
-          playButton.textContent =
-            "▶";
-
-
-        });
+      cancelAnimationFrame(
+        fadeAnimation
+      );
 
     }
+
+
+    const startVolume =
+      audio.volume;
+
+    const difference =
+      target - startVolume;
+
+    const startTime =
+      performance.now();
+
+
+    function fade(currentTime) {
+
+      const elapsed =
+        currentTime - startTime;
+
+
+      const progress =
+        Math.min(
+          elapsed / duration,
+          1
+        );
+
+
+      audio.volume =
+        Math.max(
+          0,
+          Math.min(
+            1,
+            startVolume +
+            difference * progress
+          )
+        );
+
+
+      if (progress < 1) {
+
+        fadeAnimation =
+          requestAnimationFrame(
+            fade
+          );
+
+      }
+
+    }
+
+
+    fadeAnimation =
+      requestAnimationFrame(
+        fade
+      );
 
   }
 
 
 
-  /* ---------------------------
-     PLAY / PAUSE
-     --------------------------- */
+  async function playMusic() {
 
-  function toggleMusic() {
+    try {
 
-    if (audio.paused) {
+      audio.volume = 0;
 
-      fadeInAndPlay();
+      await audio.play();
+
+      playButton.textContent =
+        "Ⅱ";
+
+      fadeTo(
+        targetVolume,
+        2500
+      );
 
     }
 
-    else {
+    catch (error) {
 
-      clearInterval(
-        fadeTimer
+      console.log(
+        "audio could not start:",
+        error
       );
-
-
-      audio.pause();
-
 
       playButton.textContent =
         "▶";
@@ -1912,74 +1795,96 @@
 
 
 
-  /* ---------------------------
-     NEXT SONG
-     --------------------------- */
+  function pauseMusic() {
+
+    if (fadeAnimation) {
+
+      cancelAnimationFrame(
+        fadeAnimation
+      );
+
+    }
+
+
+    audio.pause();
+
+
+    playButton.textContent =
+      "▶";
+
+  }
+
+
+
+  function toggleMusic() {
+
+    if (audio.paused) {
+
+      playMusic();
+
+    }
+
+    else {
+
+      pauseMusic();
+
+    }
+
+  }
+
+
 
   function nextSong() {
 
-    clearInterval(
-      fadeTimer
-    );
+    const wasPlaying =
+      !audio.paused;
 
 
-    currentSong++;
-
-
-    if (
-      currentSong >= songs.length
-    ) {
-
-      currentSong = 0;
-
-    }
+    currentSong =
+      (
+        currentSong + 1
+      ) % songs.length;
 
 
     loadSong();
 
 
-    fadeInAndPlay();
+    if (wasPlaying) {
+
+      playMusic();
+
+    }
 
   }
 
 
-
-  /* ---------------------------
-     PREVIOUS SONG
-     --------------------------- */
 
   function previousSong() {
 
-    clearInterval(
-      fadeTimer
-    );
+    const wasPlaying =
+      !audio.paused;
 
 
-    currentSong--;
-
-
-    if (
-      currentSong < 0
-    ) {
-
-      currentSong =
-        songs.length - 1;
-
-    }
+    currentSong =
+      (
+        currentSong -
+        1 +
+        songs.length
+      ) % songs.length;
 
 
     loadSong();
 
 
-    fadeInAndPlay();
+    if (wasPlaying) {
+
+      playMusic();
+
+    }
 
   }
 
 
-
-  /* ---------------------------
-     VOLUME
-     --------------------------- */
 
   function changeVolume(value) {
 
@@ -1991,14 +1896,12 @@
       value + "%";
 
 
-    /*
-      update playing volume too
-    */
-
     if (!audio.paused) {
 
-      audio.volume =
-        targetVolume;
+      fadeTo(
+        targetVolume,
+        300
+      );
 
     }
 
@@ -2006,25 +1909,60 @@
 
 
 
-  /* ---------------------------
-     AUTOMATIC NEXT SONG
-     --------------------------- */
+  playButton.addEventListener(
+    "click",
+    toggleMusic
+  );
 
-  audio.addEventListener(
-    "ended",
+
+  previousButton.addEventListener(
+    "click",
+    previousSong
+  );
+
+
+  nextButton.addEventListener(
+    "click",
     nextSong
   );
 
 
+  volumeSlider.addEventListener(
+    "input",
+    function () {
 
-  /* ---------------------------
-     KEEP PLAY BUTTON ACCURATE
-     --------------------------- */
+      changeVolume(
+        this.value
+      );
+
+    }
+  );
+
+
+
+  audio.addEventListener(
+    "ended",
+    function () {
+
+      currentSong =
+        (
+          currentSong + 1
+        ) % songs.length;
+
+
+      loadSong();
+
+
+      playMusic();
+
+    }
+  );
+
+
 
   audio.addEventListener(
     "pause",
-
-    () => {
+    function () {
 
       playButton.textContent =
         "▶";
@@ -2035,8 +1973,7 @@
 
   audio.addEventListener(
     "play",
-
-    () => {
+    function () {
 
       playButton.textContent =
         "Ⅱ";
@@ -2046,15 +1983,13 @@
 
 
 
-  /* ---------------------------
-     INITIAL SETUP
-     --------------------------- */
-
   audio.volume = 0;
 
+  volumeSlider.value = 22;
+
+  volumeText.textContent = "22%";
 
   loadSong();
-
 
 </script>
 
