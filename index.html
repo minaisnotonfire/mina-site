@@ -679,18 +679,18 @@
     .camera-photo {
       position: absolute;
 
-      left: 24px;
+      left: 25px;
       top: 48px;
 
-      width: 60px;
+      width: 59px;
       height: 42px;
 
       object-fit: cover;
       object-position: center;
 
-      border-radius: 1px;
+      z-index: 3;
 
-      z-index: 1;
+      border-radius: 1px;
 
       pointer-events: none;
     }
@@ -943,15 +943,15 @@
         <div class="camera-frame">
 
           <img
-            class="camera-photo"
-            src="photos/friend.jpeg"
-            alt="me and my friend"
-          >
-
-          <img
             class="camera-overlay"
             src="https://fries-and-ice-cream.neocities.org/listingsandrings/dotcam.png"
             alt=""
+          >
+
+          <img
+            class="camera-photo"
+            src="photos/friend.jpeg"
+            alt="me and my friend"
           >
 
         </div>
