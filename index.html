@@ -420,18 +420,7 @@
 
     .glitcake {
       width: 120px;
-
       animation: spin 10s linear infinite;
-    }
-
-    .camera {
-      width: 170px;
-
-      transition: transform .4s;
-    }
-
-    .camera:hover {
-      transform: scale(1.12);
     }
 
     .pin-strip {
@@ -530,9 +519,7 @@
 
     ::-webkit-scrollbar-thumb {
       background: #fdfd96;
-
       border: 1px solid pink;
-
       border-radius: 10px;
     }
 
@@ -635,7 +622,6 @@
       top: 32px;
 
       object-fit: cover;
-
       object-position: 50% 38%;
 
       clip-path: ellipse(
@@ -656,6 +642,56 @@
       height: auto;
 
       z-index: 2;
+
+      pointer-events: none;
+    }
+
+    /* CAMERA + FRIEND PHOTO
+       BOTH SCALE TOGETHER */
+
+    .camera-frame {
+      position: relative;
+
+      width: 170px;
+
+      margin: 0 auto;
+
+      transition: transform 0.4s ease;
+
+      transform-origin: center center;
+    }
+
+    .camera-frame:hover {
+      transform: scale(1.08);
+    }
+
+    .camera-overlay {
+      position: relative;
+
+      display: block;
+
+      width: 170px;
+
+      z-index: 2;
+
+      pointer-events: none;
+    }
+
+    .camera-photo {
+      position: absolute;
+
+      left: 16px;
+      top: 31px;
+
+      width: 62px;
+      height: 48px;
+
+      object-fit: cover;
+      object-position: center;
+
+      border-radius: 2px;
+
+      z-index: 1;
 
       pointer-events: none;
     }
@@ -697,43 +733,24 @@
     >
 
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/gabykirakira.png">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/ostamp.gif">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/mikumaid.gif">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/gals.gif">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/bunny.gif">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/pompomstamp.png">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/lisafrankstmp.gif">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/flutterstmp.gif">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/rilastmp.gif">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/tokistmp.gif">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/lifestmp.png">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/rickystmp.png">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/greenstmp.webp">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/fism.gif">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/mopupu.png">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/mamestmp.png">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/ballet.png">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/pianostmp.png">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/girly.gif">
-
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/pockstmp.png">
 
     </marquee>
@@ -752,29 +769,12 @@
           navigation ♡
         </h3>
 
-        <a href="home.html" target="content">
-          ★ home
-        </a>
-
-        <a href="diary.html" target="content">
-          ★ diary
-        </a>
-
-        <a href="photos.html" target="content">
-          ★ photo diary
-        </a>
-
-        <a href="games.html" target="content">
-          ★ games
-        </a>
-
-        <a href="movies.html" target="content">
-          ★ movies
-        </a>
-
-        <a href="about.html" target="content">
-          ★ about me
-        </a>
+        <a href="home.html" target="content">★ home</a>
+        <a href="diary.html" target="content">★ diary</a>
+        <a href="photos.html" target="content">★ photo diary</a>
+        <a href="games.html" target="content">★ games</a>
+        <a href="movies.html" target="content">★ movies</a>
+        <a href="about.html" target="content">★ about me</a>
 
       </div>
 
@@ -842,40 +842,13 @@
 
           <marquee direction="right">
 
-            <img
-              class="spinning-pin"
-              src="https://fries-and-ice-cream.neocities.org/rakko.png"
-            >
-
-            <img
-              class="spinning-pin"
-              src="https://fries-and-ice-cream.neocities.org/pinkwings.png"
-            >
-
-            <img
-              class="spinning-pin"
-              src="https://fries-and-ice-cream.neocities.org/dolphin.png"
-            >
-
-            <img
-              class="spinning-pin"
-              src="https://fries-and-ice-cream.neocities.org/cookie.png"
-            >
-
-            <img
-              class="spinning-pin"
-              src="https://fries-and-ice-cream.neocities.org/biscuit2.png"
-            >
-
-            <img
-              class="spinning-pin"
-              src="https://fries-and-ice-cream.neocities.org/KIIIKIII%20pin.png"
-            >
-
-            <img
-              class="spinning-pin"
-              src="https://fries-and-ice-cream.neocities.org/nct%20wish%20pin.png"
-            >
+            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/rakko.png">
+            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/pinkwings.png">
+            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/dolphin.png">
+            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/cookie.png">
+            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/biscuit2.png">
+            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/KIIIKIII%20pin.png">
+            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/nct%20wish%20pin.png">
 
           </marquee>
 
@@ -952,15 +925,10 @@
           <div class="stamps">
 
             <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/ostamp.gif">
-
             <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/rilastmp.gif">
-
             <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/flutterstmp.gif">
-
             <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/tokistmp.gif">
-
             <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/lifestmp.png">
-
             <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/gals.gif">
 
           </div>
@@ -969,12 +937,25 @@
 
       </div>
 
+      <!-- CAMERA WITH FRIEND PHOTO -->
+
       <div class="box decor-panel">
 
-        <img
-          class="camera"
-          src="https://fries-and-ice-cream.neocities.org/listingsandrings/dotcam.png"
-        >
+        <div class="camera-frame">
+
+          <img
+            class="camera-photo"
+            src="photos/friend.jpeg"
+            alt="me and my friend"
+          >
+
+          <img
+            class="camera-overlay"
+            src="https://fries-and-ice-cream.neocities.org/listingsandrings/dotcam.png"
+            alt=""
+          >
+
+        </div>
 
       </div>
 
