@@ -1,95 +1,150 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>home</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
+
     body {
       background: #fffdf4;
       font-family: Arial, sans-serif;
       padding: 20px;
+      margin: 0;
+      color: #222;
     }
 
     h1 {
       color: hotpink;
+      font-family: "Sour Gummy", cursive;
+      font-size: 32px;
+      margin-bottom: 12px;
     }
 
-    .mini-fact-box {
-      width: 300px;
+    p {
+      font-size: 16px;
+      line-height: 1.25;
+      margin: 10px 0;
+    }
+
+
+    /* RANDOM FACT GENERATOR */
+
+    .fact-widget {
+      width: 330px;
+
       margin: 70px auto 0;
-      padding: 14px;
+
+      padding: 18px 18px 20px;
 
       text-align: center;
 
       background:
-        linear-gradient(
-          rgba(255,255,255,.82),
-          rgba(255,255,255,.82)
-        ),
-        url("https://fries-and-ice-cream.neocities.org/newcutestuff/bluepolkarose.gif");
+        radial-gradient(
+          circle,
+          rgba(255,255,255,0.8) 2px,
+          transparent 2px
+        );
 
-      border: 3px double #ffb6cf;
-      border-radius: 12px;
+      background-size: 20px 20px;
+      background-color: #eef8ff;
+
+      border: 3px double #ffb6cc;
+      border-radius: 18px;
 
       box-shadow:
-        3px 3px 0 rgba(174,238,238,.3);
+        3px 3px 0 rgba(174,238,238,.3),
+        inset 0 0 0 2px #c8f3f0;
     }
 
-    .mini-fact-title {
-      margin-bottom: 10px;
 
-      font-size: 18px;
-      font-weight: bold;
+    .fact-title {
+      font-family: "Sour Gummy", cursive;
 
-      color: #ff69a9;
+      color: #ff66a8;
+
+      font-size: 22px;
+      font-weight: 700;
+
+      margin-bottom: 14px;
+
+      line-height: 1.1;
     }
 
-    #randomFact {
-      min-height: 45px;
+
+    #fact-box {
+      background: #fffdf7;
+
+      border: 2px dashed #ff9fc0;
+      border-radius: 12px;
+
+      padding: 14px;
+
+      min-height: 55px;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
-      padding: 8px;
+      font-family: "Sour Gummy", cursive;
 
-      background: #fffdf6;
+      font-size: 15px;
 
-      border: 2px dashed #f4aec6;
-      border-radius: 7px;
+      color: #5c4b64;
 
-      color: #665566;
+      margin-bottom: 14px;
 
-      font-size: 13px;
+      text-align: center;
     }
 
-    .mini-fact-box button {
-      margin-top: 10px;
 
-      padding: 5px 10px;
+    .fact-button {
+      font-family: "Sour Gummy", cursive;
 
-      background: #fff3f8;
+      font-size: 16px;
+      font-weight: 700;
 
-      border: 2px double #8edddd;
-      border-radius: 7px;
+      color: #c25f93;
 
-      color: #a55d7c;
+      background: #fff7fb;
+
+      border: 2px solid #7fe2ea;
+      border-radius: 10px;
+
+      padding: 7px 15px;
 
       cursor: pointer;
 
-      transition: transform .2s, background .2s;
+      transition:
+        transform .15s ease,
+        background .15s ease;
     }
 
-    .mini-fact-box button:hover {
-      background: #eaffff;
+
+    .fact-button:hover {
+      background: #fef0f8;
+
       transform: scale(1.04);
     }
+
   </style>
 </head>
+
 
 <body>
 
   <h1>haiiii ★</h1>
 
-  <p>welcome to my website!</p>
+  <p>
+    welcome to my website!
+  </p>
 
   <p>
     this is my little corner of the internet for
@@ -98,19 +153,20 @@
   </p>
 
 
-  <!-- random fact generator -->
+  <div class="fact-widget">
 
-  <div class="mini-fact-box">
-
-    <div class="mini-fact-title">
-      ☆ random fact abt me ☆
+    <div class="fact-title">
+      ★ random fact abt me ★
     </div>
 
-    <div id="randomFact">
+    <div id="fact-box">
       click the button :3
     </div>
 
-    <button onclick="generateFact()">
+    <button
+      class="fact-button"
+      onclick="generateFact()"
+    >
       click to generate ♡
     </button>
 
@@ -118,48 +174,91 @@
 
 
   <script>
+
     const facts = [
+
       "i get a fortnite victory royale basically every time",
+
       "i volunteer a lot",
+
       "i love analyzing birth charts",
+
       "i am a sagittarius!",
+
       "i love roblox",
+
       "foo fighters and incubus are my favorite bands",
+
       "i love cats an unreasonable amount",
+
       "i'm obsessed with horror and weird lore",
+
       "i'm more of a pc gamer than a console gamer",
+
       "i love story-heavy games",
+
       "i can hyperfixate on something for hours",
+
       "i love bugs, especially beetles and ants",
+
       "i'm a huge fnaf fan",
+
       "i love sci-fi and star wars",
+
       "i'm really into psychology",
+
       "i love cute things and creepy things equally",
+
       "i take way too many pictures of my cat",
+
       "i will absolutely judge a fictional character by their birth chart",
+
       "i play fortnite like rent is due",
+
       "i love horror games but would probably die instantly in one",
+
       "i will defend my favorite game like i worked on it",
+
       "i take personality tests like they are legally binding",
+
       "i love horror until i actually hear a noise in my house",
+
       "i love lore more than i love understanding the actual plot",
+
       "i will open roblox for five minutes and disappear for three hours"
+
     ];
+
 
     let lastFact = -1;
 
+
     function generateFact() {
+
       let randomIndex;
 
+
       do {
-        randomIndex = Math.floor(Math.random() * facts.length);
-      } while (randomIndex === lastFact && facts.length > 1);
+
+        randomIndex =
+          Math.floor(
+            Math.random() * facts.length
+          );
+
+      } while (
+        randomIndex === lastFact &&
+        facts.length > 1
+      );
+
 
       lastFact = randomIndex;
 
-      document.getElementById("randomFact").textContent =
+
+      document.getElementById("fact-box").textContent =
         facts[randomIndex];
+
     }
+
   </script>
 
 </body>
