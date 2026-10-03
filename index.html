@@ -32,45 +32,11 @@
 
       font-family: "Sour Gummy", Arial, sans-serif;
       color: #665566;
-
-      cursor: url('https://cdn.cursors-4u.net/previews/puppy-13-a9c1ade9-32.webp') 32 32, auto !important;
     }
 
     a,
     button {
       cursor: url('https://cdn.cursors-4u.net/previews/puppy-13-a9c1ade9-32.webp') 32 32, auto !important;
-    }
-
-    /* GRAIN OVERLAY */
-
-    html:after {
-      animation: grain 8s steps(10) infinite;
-
-      background-image:
-        url("https://64.media.tumblr.com/849c4259435e5ff9789dd42e23fbf003/tumblr_p422nhq6vi1qzm8dwo1_640.gifv");
-
-      content: "";
-
-      height: 300%;
-      left: -50%;
-
-      opacity: .4;
-
-      position: fixed;
-
-      top: -110%;
-
-      width: 300%;
-
-      pointer-events: none;
-
-      z-index: 9999;
-    }
-
-    @keyframes grain {
-      70% {
-        transform: translate(0%, 15%);
-      }
     }
 
     a {
@@ -88,6 +54,137 @@
       margin: 25px auto;
       position: relative;
       min-height: 1200px;
+    }
+
+    /* SLOW FLOATING STARS */
+
+    .floating-star {
+      position: fixed;
+      top: -10%;
+
+      z-index: 9999;
+
+      pointer-events: none;
+      user-select: none;
+
+      font-size: 22px;
+
+      opacity: 0.68;
+
+      animation-name:
+        stars-fall,
+        stars-sway;
+
+      animation-timing-function:
+        linear,
+        ease-in-out;
+
+      animation-iteration-count:
+        infinite,
+        infinite;
+    }
+
+    @keyframes stars-fall {
+
+      0% {
+        top: -10%;
+      }
+
+      100% {
+        top: 105%;
+      }
+
+    }
+
+    @keyframes stars-sway {
+
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+
+      50% {
+        transform: translateX(35px);
+      }
+
+    }
+
+    .floating-star:nth-of-type(1) {
+      left: 8%;
+      color: #ffb3c7;
+
+      animation-duration:
+        20s,
+        7s;
+
+      animation-delay:
+        0s,
+        0s;
+    }
+
+    .floating-star:nth-of-type(2) {
+      left: 25%;
+      color: #b9f5ca;
+
+      animation-duration:
+        24s,
+        8s;
+
+      animation-delay:
+        5s,
+        1s;
+    }
+
+    .floating-star:nth-of-type(3) {
+      left: 43%;
+      color: #cbb7ff;
+
+      animation-duration:
+        22s,
+        6s;
+
+      animation-delay:
+        10s,
+        2s;
+    }
+
+    .floating-star:nth-of-type(4) {
+      left: 61%;
+      color: #fff3a8;
+
+      animation-duration:
+        26s,
+        9s;
+
+      animation-delay:
+        3s,
+        1.5s;
+    }
+
+    .floating-star:nth-of-type(5) {
+      left: 78%;
+      color: #b8f3f5;
+
+      animation-duration:
+        21s,
+        7.5s;
+
+      animation-delay:
+        12s,
+        .5s;
+    }
+
+    .floating-star:nth-of-type(6) {
+      left: 91%;
+      color: #f0b8ff;
+
+      animation-duration:
+        25s,
+        8.5s;
+
+      animation-delay:
+        7s,
+        2.5s;
     }
 
     .header {
@@ -115,6 +212,7 @@
 
     .header-stripe {
       position: absolute;
+
       right: 0;
       top: 0;
 
@@ -136,12 +234,6 @@
       transform: translateX(-50%);
 
       width: max-content;
-
-      padding: 0;
-
-      background: transparent;
-      border: none;
-      box-shadow: none;
 
       text-align: center;
 
@@ -188,7 +280,6 @@
         );
 
       background-size: 16px 16px;
-      background-position: 0 0;
 
       -webkit-background-clip: text;
       background-clip: text;
@@ -416,6 +507,7 @@
     }
 
     @keyframes floaty {
+
       0%,
       100% {
         transform: translateY(0);
@@ -424,6 +516,7 @@
       50% {
         transform: translateY(-4px);
       }
+
     }
 
     .socials a {
@@ -523,6 +616,7 @@
     }
 
     @keyframes pinSpin {
+
       from {
         transform: rotate(0deg);
       }
@@ -530,9 +624,11 @@
       to {
         transform: rotate(360deg);
       }
+
     }
 
     @keyframes spin {
+
       from {
         transform: rotate(0deg);
       }
@@ -540,6 +636,7 @@
       to {
         transform: rotate(360deg);
       }
+
     }
 
     .nyangham {
@@ -554,6 +651,7 @@
     }
 
     @keyframes upp {
+
       0%,
       100% {
         transform: translateY(0);
@@ -562,6 +660,7 @@
       50% {
         transform: translateY(-3px);
       }
+
     }
 
     ::-webkit-scrollbar {
@@ -617,11 +716,6 @@
       transform:
         rotate(-7deg)
         scale(1.07);
-
-      filter:
-        drop-shadow(
-          7px 9px 8px rgba(0,0,0,0.22)
-        );
     }
 
     .ny-puppy-sticker {
@@ -650,11 +744,6 @@
       transform:
         rotate(-8deg)
         scale(1.06);
-
-      filter:
-        drop-shadow(
-          8px 10px 9px rgba(0,0,0,0.24)
-        );
     }
 
     .beloved-photo-frame {
@@ -687,7 +776,6 @@
       top: 0;
 
       width: 160px;
-      height: auto;
 
       z-index: 2;
 
@@ -746,7 +834,22 @@
 
 <body>
 
+<!-- SLOW PASTEL FLOATING STARS -->
+
+<div class="floating-stars">
+
+  <span class="floating-star">★</span>
+  <span class="floating-star">★</span>
+  <span class="floating-star">★</span>
+  <span class="floating-star">★</span>
+  <span class="floating-star">★</span>
+  <span class="floating-star">★</span>
+
+</div>
+
 <div class="site">
+
+  <!-- HEADER -->
 
   <div class="header">
 
@@ -971,17 +1074,35 @@
 
           <div class="stamps">
 
-            <img src="https://blinkie-net.neocities.org/Stamps/2/devilish.png" alt="">
+            <img
+              src="https://blinkie-net.neocities.org/Stamps/2/devilish.png"
+              alt=""
+            >
 
-            <img src="https://blinkie-net.neocities.org/Stamps/4/bubbline.png" alt="">
+            <img
+              src="https://blinkie-net.neocities.org/Stamps/4/bubbline.png"
+              alt=""
+            >
 
-            <img src="https://blinkie-net.neocities.org/Stamps/4/cereal.gif" alt="">
+            <img
+              src="https://blinkie-net.neocities.org/Stamps/4/cereal.gif"
+              alt=""
+            >
 
-            <img src="https://blinkie-net.neocities.org/Stamps/4/fanf.gif" alt="">
+            <img
+              src="https://blinkie-net.neocities.org/Stamps/4/fanf.gif"
+              alt=""
+            >
 
-            <img src="https://blinkie-net.neocities.org/Stamps/5/24.png" alt="">
+            <img
+              src="https://blinkie-net.neocities.org/Stamps/5/24.png"
+              alt=""
+            >
 
-            <img src="https://blinkie-net.neocities.org/Stamps/7/nyancat.gif" alt="">
+            <img
+              src="https://blinkie-net.neocities.org/Stamps/7/nyancat.gif"
+              alt=""
+            >
 
           </div>
 
