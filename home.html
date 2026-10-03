@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bonbon&family=Sour+Gummy:wght@400;600;700&family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
 
@@ -21,12 +22,17 @@
       color: #222;
     }
 
+
     h1 {
       color: hotpink;
+
       font-family: "Sour Gummy", cursive;
+
       font-size: 32px;
+
       margin-bottom: 12px;
     }
+
 
     p {
       font-size: 16px;
@@ -35,116 +41,312 @@
     }
 
 
-    /* RANDOM FACT GENERATOR */
+
+    /* ✧ RANDOM FACT GENERATOR ✧ */
 
     .fact-widget {
       width: 330px;
 
       margin: 70px auto 0;
 
-      padding: 18px 18px 20px;
+      padding: 16px 16px 17px;
+
+      position: relative;
 
       text-align: center;
+
 
       background:
         radial-gradient(
           circle,
-          rgba(255,255,255,0.8) 2px,
-          transparent 2px
+          rgba(255,255,255,.9) 2px,
+          transparent 2.5px
         );
 
-      background-size: 20px 20px;
-      background-color: #eef8ff;
+      background-size: 18px 18px;
 
-      border: 3px double #ffb6cc;
+      background-color: #eef9ff;
+
+
+      border: 3px double #ffa9c9;
+
       border-radius: 18px;
 
+
+      outline: 2px dashed #aeeae6;
+
+      outline-offset: -7px;
+
+
       box-shadow:
-        3px 3px 0 rgba(174,238,238,.3),
-        inset 0 0 0 2px #c8f3f0;
+        4px 4px 0 rgba(181,239,233,.38),
+        inset 0 0 13px rgba(255,192,203,.18);
     }
 
 
-    .fact-title {
+
+    /* little corner decorations */
+
+    .fact-widget::before {
+      content: "♡";
+
+      position: absolute;
+
+      left: 12px;
+      top: 9px;
+
       font-family: "Sour Gummy", cursive;
 
-      color: #ff66a8;
+      color: #ff8fbb;
 
-      font-size: 22px;
-      font-weight: 700;
-
-      margin-bottom: 14px;
-
-      line-height: 1.1;
+      font-size: 15px;
     }
 
 
-    #fact-box {
-      background: #fffdf7;
+    .fact-widget::after {
+      content: "☆";
 
-      border: 2px dashed #ff9fc0;
-      border-radius: 12px;
+      position: absolute;
 
-      padding: 14px;
+      right: 12px;
+      top: 9px;
 
-      min-height: 55px;
+      color: #8edbd7;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      font-size: 16px;
+    }
+
+
+
+    .fact-top-stars {
+      margin-bottom: 4px;
 
       font-family: "Sour Gummy", cursive;
 
       font-size: 15px;
 
-      color: #5c4b64;
+      letter-spacing: 6px;
 
-      margin-bottom: 14px;
-
-      text-align: center;
+      color: #ff82b4;
     }
 
 
-    .fact-button {
+
+    /* BUBBLY TITLE */
+
+    .fact-title {
+      display: inline-block;
+
+      padding: 4px 13px 6px;
+
+      margin-bottom: 6px;
+
+
+      background:
+        linear-gradient(
+          #fffdf2,
+          #fff2e8
+        );
+
+
+      border: 3px double #efb5bb;
+
+      border-radius: 18px;
+
+
+      font-family: "Bonbon", cursive;
+
+      font-size: 24px;
+
+      line-height: 1;
+
+
+      color: #9c6557;
+
+
+      text-shadow:
+        1px 1px 0 #ffffff,
+        0 0 2px rgba(255,255,255,.7);
+
+
+      box-shadow:
+        2px 3px 0 rgba(255,174,195,.25);
+
+
+      transform: rotate(-1deg);
+    }
+
+
+
+    .fact-subtitle {
+      margin: 3px 0 11px;
+
       font-family: "Sour Gummy", cursive;
 
-      font-size: 16px;
-      font-weight: 700;
+      font-size: 11px;
 
-      color: #c25f93;
+      color: #c27598;
+    }
 
-      background: #fff7fb;
 
-      border: 2px solid #7fe2ea;
+
+    /* FACT DISPLAY */
+
+    #fact-box {
+      min-height: 48px;
+
+      padding: 9px 12px;
+
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+
+      background:
+        repeating-linear-gradient(
+          0deg,
+          #fffdf7,
+          #fffdf7 20px,
+          #e8f6f4 21px
+        );
+
+
+      border: 2px dashed #ff9fbe;
+
+      border-radius: 9px;
+
+
+      font-family: "Sour Gummy", cursive;
+
+      font-size: 14px;
+
+      color: #755d69;
+
+
+      box-shadow:
+        inset 0 0 7px rgba(255,198,216,.18);
+    }
+
+
+
+    /* BUTTON */
+
+    .fact-button {
+      margin-top: 11px;
+
+      padding: 6px 13px;
+
+
+      background:
+        linear-gradient(
+          #fffdf8,
+          #ffeef5
+        );
+
+
+      border: 3px double #86dddf;
+
       border-radius: 10px;
 
-      padding: 7px 15px;
+
+      font-family: "Sour Gummy", cursive;
+
+      font-size: 15px;
+
+      font-weight: 700;
+
+
+      color: #ad6484;
+
+
+      box-shadow:
+        2px 3px 0 rgba(255,185,207,.3);
+
 
       cursor: pointer;
 
+
       transition:
-        transform .15s ease,
-        background .15s ease;
+        transform .18s ease,
+        background .18s ease;
     }
+
 
 
     .fact-button:hover {
-      background: #fef0f8;
+      background:
+        linear-gradient(
+          #fff3f8,
+          #ebffff
+        );
 
-      transform: scale(1.04);
+      transform:
+        translateY(-1px)
+        rotate(-1deg)
+        scale(1.04);
+    }
+
+
+
+    .fact-bottom {
+      margin-top: 9px;
+
+      font-family: "Sour Gummy", cursive;
+
+      font-size: 11px;
+
+      letter-spacing: 5px;
+
+      color: #98dcd8;
+    }
+
+
+
+    .fact-pop {
+      animation: factPop .3s ease;
+    }
+
+
+    @keyframes factPop {
+
+      0% {
+        opacity: 0;
+
+        transform: scale(.94);
+      }
+
+      70% {
+        transform: scale(1.03);
+      }
+
+      100% {
+        opacity: 1;
+
+        transform: scale(1);
+      }
+
     }
 
   </style>
+
 </head>
 
 
 <body>
 
-  <h1>haiiii ★</h1>
+
+  <h1>
+    haiiii ★
+  </h1>
+
 
   <p>
     welcome to my website!
   </p>
+
 
   <p>
     this is my little corner of the internet for
@@ -153,24 +355,47 @@
   </p>
 
 
+
+  <!-- RANDOM FACT -->
+
   <div class="fact-widget">
 
-    <div class="fact-title">
-      ★ random fact abt me ★
+
+    <div class="fact-top-stars">
+      ☆ ♡ ☆
     </div>
 
-    <div id="fact-box">
-      click the button :3
+
+    <div class="fact-title">
+      random fact abt me!
     </div>
+
+
+    <div class="fact-subtitle">
+      click to learn something random about mina ♡
+    </div>
+
+
+    <div id="fact-box">
+      press the button!!
+    </div>
+
 
     <button
       class="fact-button"
       onclick="generateFact()"
     >
-      click to generate ♡
+      ✧ click to generate ✧
     </button>
 
+
+    <div class="fact-bottom">
+      ♡ ☆ ♡ ☆ ♡
+    </div>
+
+
   </div>
+
 
 
   <script>
@@ -230,7 +455,9 @@
     ];
 
 
+
     let lastFact = -1;
+
 
 
     function generateFact() {
@@ -245,7 +472,9 @@
             Math.random() * facts.length
           );
 
-      } while (
+      }
+
+      while (
         randomIndex === lastFact &&
         facts.length > 1
       );
@@ -254,12 +483,29 @@
       lastFact = randomIndex;
 
 
-      document.getElementById("fact-box").textContent =
+      const factBox =
+        document.getElementById("fact-box");
+
+
+      factBox.classList.remove("fact-pop");
+
+
+      void factBox.offsetWidth;
+
+
+      factBox.textContent =
         facts[randomIndex];
+
+
+      factBox.classList.add("fact-pop");
 
     }
 
   </script>
+
+
+</body>
+</html>
 
 </body>
 </html>
