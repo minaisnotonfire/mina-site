@@ -1,2098 +1,557 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>mina's photobooth ♡</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Bonbon&family=Sour+Gummy:wght@400;700&family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
-
-<style>
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 60px 20px 100px;
-
-  min-height: 100vh;
-
-  background:
-    linear-gradient(
-      rgba(255,255,255,.15),
-      rgba(255,255,255,.15)
-    ),
-    repeating-linear-gradient(
-      0deg,
-      #f8cfd9 0px,
-      #f8cfd9 24px,
-      #ffdbe4 25px,
-      #ffdbe4 48px
-    );
-
-  font-family:
-    "Sour Gummy",
-    sans-serif;
-
-  color: #744f65;
-
-  text-align: center;
-}
-
-
-/* TITLE */
-
-h1 {
-  margin: 5px 0 8px;
-
-  font-family:
-    "Bonbon",
-    cursive;
-
-  font-size: 43px;
-
-  color: #ff70ad;
-
-  text-shadow:
-    2px 2px 0 #fff7c7,
-    3px 3px 0 #a9dbf7;
-}
-
-.intro {
-  margin-bottom: 45px;
-
-  color: #9b6683;
-
-  font-family:
-    "Unkempt",
-    cursive;
-
-  font-size: 17px;
-}
-
-
-/* WHOLE PHOTOBOOTH */
-
-.photobooth {
-  position: relative;
-
-  width: 470px;
-
-  margin: 0 auto;
-
-  padding:
-    20px
-    20px
-    30px;
-
-  background:
-    linear-gradient(
-      #fff7d8,
-      #f9eac1
-    );
-
-  border:
-    5px solid #795748;
-
-  border-radius:
-    12px
-    12px
-    25px
-    25px;
-
-  box-shadow:
-    8px 9px 0
-    rgba(115,77,91,.18);
-}
-
-
-/* PHOTOBOOTH SIGN */
-
-.booth-sign {
-  width: 340px;
-
-  margin:
-    -62px
-    auto
-    12px;
-
-  padding:
-    10px
-    12px;
-
-  background:
-    linear-gradient(
-      #fff8d8,
-      #f7e8ba
-    );
-
-  border:
-    4px solid #745344;
-
-  border-radius: 8px;
-
-  font-family:
-    "Unkempt",
-    cursive;
-
-  font-size: 38px;
-  font-weight: bold;
-
-  color: #704936;
-
-  transform:
-    rotate(-1deg);
-
-  box-shadow:
-    3px 3px 0
-    #ffa5c8;
-}
-
-
-/* PHOTOBOOTH OPENING */
-
-.booth-window {
-  position: relative;
-
-  width: 350px;
-  height: 390px;
-
-  margin:
-    10px
-    auto
-    18px;
-
-  overflow: hidden;
-
-  background-color:
-    #def49a;
-
-  background-image:
-    radial-gradient(
-      circle,
-      #ff82b5 5px,
-      transparent 6px
-    );
-
-  background-size:
-    62px 62px;
-
-  border:
-    5px solid #754e42;
-
-  border-radius: 8px;
-
-  box-shadow:
-    inset 0 0 0
-    5px #a8dbf7;
-}
-
-
-/* DECORATIVE STARS */
-
-.star {
-  position: absolute;
-
-  z-index: 1;
-
-  font-size: 31px;
-
-  color: #ff7db1;
-
-  opacity: .75;
-
-  pointer-events: none;
-}
-
-.s1 {
-  left: 20px;
-  top: 55px;
-}
-
-.s2 {
-  right: 28px;
-  top: 90px;
-}
-
-.s3 {
-  left: 45px;
-  bottom: 65px;
-}
-
-.s4 {
-  right: 44px;
-  bottom: 28px;
-}
-
-.s5 {
-  left: 145px;
-  top: 48px;
-}
-
-
-/* CAMERA */
-
-#camera {
-  position: absolute;
-
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  transform:
-    scaleX(-1);
-
-  display: none;
-
-  z-index: 2;
-}
-
-
-/* PLACEHOLDER */
-
-.camera-placeholder {
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 3;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-  justify-content: center;
-
-  gap: 8px;
-
-  padding: 25px;
-
-  color: #986380;
-
-  font-size: 17px;
-}
-
-.camera-placeholder .heart {
-  font-size: 54px;
-
-  animation:
-    heartBounce
-    1.5s
-    ease-in-out
-    infinite;
-}
-
-@keyframes heartBounce {
-
-  0%,
-  100% {
-    transform:
-      translateY(0)
-      rotate(-5deg);
-  }
-
-  50% {
-    transform:
-      translateY(-8px)
-      rotate(5deg);
-  }
-
-}
-
-
-/* CURTAINS */
-
-.curtain {
-  position: absolute;
-
-  top: 0;
-
-  width: 52%;
-  height: 100%;
-
-  z-index: 10;
-
-  background-color:
-    #f58ab5;
-
-  background-image:
-    radial-gradient(
-      circle,
-      #dff38e 4px,
-      transparent 5px
-    );
-
-  background-size:
-    35px 35px;
-
-  border-bottom:
-    7px solid #ce5c8d;
-
-  transition:
-    transform
-    1.15s
-    cubic-bezier(.7,0,.3,1);
-
-  box-shadow:
-    inset 0 0 20px
-    rgba(120,35,75,.25);
-}
-
-
-/* CURTAIN FOLDS */
-
-.curtain::after {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background:
-    repeating-linear-gradient(
-      90deg,
-      transparent 0,
-      transparent 22px,
-      rgba(126,33,76,.16) 26px,
-      transparent 40px
-    );
-}
-
-.curtain-left {
-  left: 0;
-
-  border-right:
-    3px solid #bd507c;
-}
-
-.curtain-right {
-  right: 0;
-
-  border-left:
-    3px solid #bd507c;
-}
-
-
-/* OPEN */
-
-.booth-window.open
-.curtain-left {
-  transform:
-    translateX(-92%);
-}
-
-.booth-window.open
-.curtain-right {
-  transform:
-    translateX(92%);
-}
-
-
-/* TOP VALANCE */
-
-.valance {
-  position: absolute;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 42px;
-
-  z-index: 20;
-
-  background:
-    repeating-linear-gradient(
-      90deg,
-      #fff5a8 0,
-      #fff5a8 38px,
-      #a9dff7 39px,
-      #a9dff7 43px
-    );
-
-  border-bottom:
-    4px solid #8ccbea;
-
-  clip-path:
-    polygon(
-      0 0,
-      100% 0,
-      100% 65%,
-      94% 100%,
-      88% 65%,
-      82% 100%,
-      76% 65%,
-      70% 100%,
-      64% 65%,
-      58% 100%,
-      52% 65%,
-      46% 100%,
-      40% 65%,
-      34% 100%,
-      28% 65%,
-      22% 100%,
-      16% 65%,
-      10% 100%,
-      4% 65%,
-      0 100%
-    );
-}
-
-
-/* FLASH */
-
-.flash {
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 40;
-
-  background:
-    white;
-
-  opacity: 0;
-
-  pointer-events: none;
-}
-
-.flash.go {
-  animation:
-    cameraFlash
-    .35s ease;
-}
-
-@keyframes cameraFlash {
-
-  0% {
-    opacity: 0;
-  }
-
-  20% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-
-}
-
-
-/* CONTROL PANEL */
-
-.control-panel {
-  padding: 11px;
-
-  background:
-    #ffacd0;
-
-  border:
-    4px double #90ddeb;
-
-  border-radius: 13px;
-
-  box-shadow:
-    inset 0 0 0
-    3px #fff5ba;
-}
-
-
-button {
-  margin: 4px;
-
-  padding:
-    8px
-    15px;
-
-  background:
-    linear-gradient(
-      #fffdf7,
-      #ffe9f3
-    );
-
-  border:
-    3px double #80d7e2;
-
-  border-radius: 10px;
-
-  font-family:
-    "Sour Gummy",
-    sans-serif;
-
-  font-size: 15px;
-
-  font-weight: bold;
-
-  color:
-    #a65e83;
-
-  box-shadow:
-    2px 3px 0
-    rgba(255,255,255,.5);
-
-  cursor: pointer;
-
-  transition:
-    transform .15s ease,
-    background .15s ease;
-}
-
-button:hover {
-  transform:
-    scale(1.06);
-
-  background:
-    #fff9bd;
-}
-
-button:disabled {
-  opacity: .45;
-
-  cursor:
-    default;
-
-  transform:
-    none;
-}
-
-.counter {
-  margin-top: 7px;
-
-  font-size: 13px;
-
-  color:
-    #905f79;
-}
-
-
-/* PRINTER AREA */
-
-.photo-printer {
-  position: relative;
-
-  width: 230px;
-
-  height: 130px;
-
-  margin:
-    18px
-    auto
-    -10px;
-
-  overflow: visible;
-}
-
-.printer-label {
-  margin-bottom: 4px;
-
-  font-family:
-    "Unkempt",
-    cursive;
-
-  font-size: 14px;
-
-  color:
-    #9b607e;
-}
-
-
-/* PRINTER SLIT */
-
-.printer-slit {
-  position: relative;
-
-  width: 180px;
-  height: 20px;
-
-  margin:
-    0 auto;
-
-  background:
-    #5e404b;
-
-  border:
-    4px solid #fff3b8;
-
-  border-radius: 20px;
-
-  box-shadow:
-    inset 0 3px 5px
-    rgba(0,0,0,.45),
-    0 2px 0
-    #da83a8;
-
-  z-index: 10;
-}
-
-
-/* MINI STRIP */
-
-.mini-strip {
-  position: absolute;
-
-  width: 65px;
-
-  left: 50%;
-  top: 13px;
-
-  transform:
-    translateX(-50%)
-    translateY(-64px);
-
-  padding:
-    5px
-    5px
-    9px;
-
-  background:
-    #fffdf5;
-
-  border:
-    2px solid
-    #c9a89d;
-
-  box-shadow:
-    3px 4px 4px
-    rgba(70,40,50,.2);
-
-  transition:
-    transform
-    2.3s
-    cubic-bezier(.18,.75,.25,1);
-
-  z-index: 5;
-}
-
-
-/* LITTLE BIT PEEKING OUT */
-
-.mini-strip.waiting {
-  transform:
-    translateX(-50%)
-    translateY(-49px);
-}
-
-
-/* STRIP COMES OUT */
-
-.mini-strip.printing {
-  transform:
-    translateX(-50%)
-    translateY(18px);
-}
-
-
-.mini-photo {
-  width: 51px;
-  height: 34px;
-
-  margin-bottom: 4px;
-
-  overflow: hidden;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ffd4e4,
-      #dff49d,
-      #b9e8ff
-    );
-
-  border:
-    1px solid
-    #ead5d9;
-}
-
-.mini-photo img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-}
-
-.mini-strip-footer {
-  font-size: 6px;
-
-  color:
-    #d3709b;
-
-  line-height: 1;
-}
-
-
-/* FINISHED STRIP AREA */
-
-.result-area {
-  display: none;
-
-  width: 260px;
-
-  margin:
-    90px
-    auto
-    25px;
-
-  padding:
-    15px
-    14px
-    22px;
-
-  background:
-    #fff9e5;
-
-  border:
-    3px solid
-    #795748;
-
-  box-shadow:
-    6px 7px 0
-    rgba(255,132,180,.25);
-
-  transform:
-    rotate(1deg);
-}
-
-.result-area h2 {
-  margin:
-    0
-    0
-    10px;
-
-  font-family:
-    "Bonbon",
-    cursive;
-
-  color:
-    #ff74ae;
-}
-
-
-/* LARGE STRIP */
-
-.large-strip {
-  padding:
-    10px
-    10px
-    14px;
-
-  background:
-    #fffdf6;
-}
-
-.strip-photo {
-  display: block;
-
-  width: 100%;
-
-  margin-bottom: 8px;
-
-  border:
-    4px solid white;
-
-  box-shadow:
-    0 1px 3px
-    rgba(0,0,0,.15);
-}
-
-.strip-footer {
-  margin-top: 8px;
-
-  font-family:
-    "Unkempt",
-    cursive;
-
-  color:
-    #9b6780;
-
-  font-size: 15px;
-}
-
-
-/* SAVE SECTION */
-
-.save-area {
-  display: none;
-
-  width: 390px;
-
-  margin:
-    25px auto;
-
-  padding: 16px;
-
-  background:
-    rgba(255,255,255,.87);
-
-  border:
-    4px double
-    #ffabc8;
-
-  border-radius: 15px;
-
-  box-shadow:
-    4px 4px 0
-    rgba(157,224,232,.3);
-}
-
-.save-area h3 {
-  margin:
-    0 0
-    8px;
-
-  font-family:
-    "Unkempt",
-    cursive;
-
-  color:
-    #ff70a8;
-}
-
-.consent-row {
-  display: flex;
-
-  align-items: flex-start;
-
-  gap: 8px;
-
-  margin:
-    12px
-    auto;
-
-  text-align: left;
-
-  font-size: 13px;
-
-  line-height: 1.35;
-}
-
-.consent-row input {
-  margin-top: 3px;
-}
-
-#saveStatus {
-  min-height: 20px;
-
-  margin-top: 8px;
-
-  font-size: 13px;
-
-  color:
-    #a26988;
-}
-
-
-/* CANVAS */
-
-canvas {
-  display: none;
-}
-
-
-/* MOBILE */
-
-@media
-(max-width: 560px) {
-
-  body {
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-
-  .photobooth {
-    width: 95%;
-  }
-
-  .booth-window {
-    width: 90%;
-  }
-
-  .booth-sign {
-    width: 78%;
-    font-size: 30px;
-  }
-
-  .save-area {
-    width: 90%;
-  }
-
-}
-
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mina's photobooth</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Fredoka", sans-serif;
+      background: transparent;
+      color: #8b5e78;
+    }
+
+    .photobooth-wrap {
+      width: 100%;
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 18px 18px 28px;
+      border: 3px solid #85ddff;
+      border-radius: 20px;
+      background:
+        repeating-linear-gradient(
+          0deg,
+          #efc9d6 0px,
+          #efc9d6 22px,
+          #f5d7e1 22px,
+          #f5d7e1 44px
+        );
+      box-shadow:
+        0 0 0 3px #ffc3db inset,
+        0 0 0 6px #fff6b4 inset;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photobooth-wrap::before,
+    .photobooth-wrap::after {
+      content: "☆";
+      position: absolute;
+      color: #ffd8ec;
+      font-size: 22px;
+      opacity: 0.9;
+    }
+
+    .photobooth-wrap::before {
+      left: 18px;
+      top: 18px;
+    }
+
+    .photobooth-wrap::after {
+      right: 18px;
+      top: 18px;
+      color: #b8f3ff;
+    }
+
+    .intro {
+      text-align: center;
+      margin: 8px 0 14px;
+      font-family: "Unkempt", cursive;
+      font-size: 20px;
+      color: #8f6280;
+    }
+
+    .booth {
+      width: 100%;
+      max-width: 470px;
+      margin: 0 auto;
+      background: #f8efcb;
+      border: 6px solid #785745;
+      border-radius: 18px 18px 30px 30px;
+      box-shadow: 10px 10px 0 rgba(169, 118, 146, 0.18);
+      padding: 20px 18px 24px;
+      position: relative;
+    }
+
+    .booth-sign {
+      width: 85%;
+      margin: -64px auto 10px;
+      background: #f4e8b8;
+      border: 5px solid #7f5a47;
+      border-radius: 10px;
+      text-align: center;
+      font-family: "Unkempt", cursive;
+      font-size: 34px;
+      font-weight: 700;
+      color: #7f523c;
+      padding: 10px 10px 6px;
+      box-shadow: 6px 6px 0 #e58cb0;
+    }
+
+    .screen-frame {
+      background: #f3a3c7;
+      border: 5px solid #754f3f;
+      border-radius: 10px;
+      padding: 12px;
+      width: 100%;
+      max-width: 380px;
+      margin: 14px auto 10px;
+      position: relative;
+    }
+
+    .screen-curtains {
+      width: 100%;
+      height: 310px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 4px solid #7e5d48;
+      background:
+        repeating-linear-gradient(
+          90deg,
+          #ef6bb1 0px,
+          #ef6bb1 22px,
+          #ffe999 22px,
+          #ffe999 24px,
+          #f58bc0 24px,
+          #f58bc0 46px
+        );
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .screen-curtains.open {
+      background: #fdf7ff;
+    }
+
+    .screen-curtains.open::before,
+    .screen-curtains.open::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 22%;
+      height: 100%;
+      background:
+        repeating-linear-gradient(
+          90deg,
+          #ef6bb1 0px,
+          #ef6bb1 22px,
+          #ffe999 22px,
+          #ffe999 24px,
+          #f58bc0 24px,
+          #f58bc0 46px
+        );
+      z-index: 2;
+      transition: all 0.5s ease;
+    }
+
+    .screen-curtains.open::before {
+      left: 0;
+      border-right: 3px solid rgba(255,255,255,0.45);
+    }
+
+    .screen-curtains.open::after {
+      right: 0;
+      border-left: 3px solid rgba(255,255,255,0.45);
+    }
+
+    .video-wrap {
+      width: 100%;
+      max-width: 230px;
+      height: 260px;
+      background: #fffafc;
+      border: 4px solid #89def9;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+      display: none;
+    }
+
+    .screen-curtains.open .video-wrap {
+      display: block;
+    }
+
+    video, canvas.preview-canvas {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transform: scaleX(-1);
+      background: #fff;
+    }
+
+    .placeholder-text {
+      font-family: "Unkempt", cursive;
+      color: #8b6481;
+      font-size: 28px;
+      text-align: center;
+      line-height: 1.2;
+      padding: 0 20px;
+    }
+
+    .controls {
+      margin: 16px auto 0;
+      width: 100%;
+      max-width: 360px;
+      background: #ec9fc2;
+      border: 4px solid #ffe483;
+      box-shadow: 0 0 0 3px #89ddff inset;
+      border-radius: 16px;
+      padding: 14px 12px 10px;
+      text-align: center;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    button {
+      border: 3px solid #8de4ff;
+      background: #fff4f8;
+      color: #985a7b;
+      font-family: "Fredoka", sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 12px;
+      padding: 8px 16px;
+      cursor: pointer;
+      box-shadow: 0 2px 0 #f1b7cc;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      background: #fffafb;
+    }
+
+    button:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .count {
+      font-size: 15px;
+      color: #8e5e7b;
+      margin-top: 6px;
+    }
+
+    .printer-label {
+      text-align: center;
+      margin-top: 12px;
+      margin-bottom: 6px;
+      font-family: "Unkempt", cursive;
+      font-size: 16px;
+      color: #9b607e;
+    }
+
+    .photo-printer {
+      position: relative;
+      width: 240px;
+      height: 195px;
+      margin: 0 auto 0;
+      overflow: visible;
+    }
+
+    .printer-slit {
+      position: relative;
+      width: 180px;
+      height: 20px;
+      margin: 0 auto;
+      background: #5e404b;
+      border: 4px solid #fff3b8;
+      border-radius: 20px;
+      box-shadow:
+        inset 0 3px 5px rgba(0,0,0,.45),
+        0 2px 0 #da83a8;
+      z-index: 20;
+      overflow: visible;
+    }
+
+    .mini-strip {
+      position: absolute;
+      width: 72px;
+      left: 50%;
+      top: 10px;
+      transform: translateX(-50%) translateY(-8px);
+      padding: 5px 5px 9px;
+      background: #fffdf5;
+      border: 2px solid #c9a89d;
+      box-shadow: 3px 4px 4px rgba(70,40,50,.2);
+      transition: transform 2.3s cubic-bezier(.18,.75,.25,1);
+      z-index: 10;
+    }
+
+    .mini-strip.waiting {
+      transform: translateX(-50%) translateY(-8px);
+    }
+
+    .mini-strip.printing {
+      transform: translateX(-50%) translateY(72px);
+    }
+
+    .mini-slot-photo {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      background: linear-gradient(135deg, #f6f0b3, #d7f4ff, #f8d1ee);
+      border: 1px solid #eadbcd;
+      margin-bottom: 4px;
+      overflow: hidden;
+    }
+
+    .mini-slot-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .mini-strip-footer {
+      text-align: center;
+      font-size: 8px;
+      color: #dd8db0;
+      font-family: "Fredoka", sans-serif;
+      margin-top: 2px;
+    }
+
+    .flash {
+      position: absolute;
+      inset: 0;
+      background: white;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    .flash.active {
+      animation: flashbang 0.35s ease;
+    }
+
+    @keyframes flashbang {
+      0% { opacity: 0; }
+      30% { opacity: 0.95; }
+      100% { opacity: 0; }
+    }
+
+    .hidden-canvas {
+      display: none;
+    }
+
+    .strip-output {
+      display: none;
+      width: 78px;
+      margin: 0 auto;
+      background: #fffdf8;
+      border: 2px solid #cbb1a4;
+      padding: 6px;
+      box-shadow: 4px 4px 0 rgba(160, 115, 142, 0.2);
+    }
+
+    .strip-output.show {
+      display: block;
+    }
+
+    .strip-photo {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      margin-bottom: 6px;
+      border: 1px solid #eadbcc;
+      background: #faf7ef;
+    }
+
+    .strip-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .strip-footer {
+      text-align: center;
+      font-size: 9px;
+      color: #e396b6;
+      font-family: "Fredoka", sans-serif;
+      margin-top: 3px;
+    }
+
+    @media (max-width: 600px) {
+      .booth-sign {
+        font-size: 28px;
+      }
+
+      .screen-curtains {
+        height: 260px;
+      }
+
+      .video-wrap {
+        max-width: 180px;
+        height: 210px;
+      }
+    }
+  </style>
 </head>
-
-
 <body>
 
+  <div class="photobooth-wrap">
+    <div class="intro">step inside... smile... don't blink!! (˶ᵔ ᵕ ᵔ˶)</div>
 
-<h1>
-  mina's photobooth ♡
-</h1>
+    <div class="booth">
+      <div class="booth-sign">PHOTOBOOTH</div>
 
+      <div class="screen-frame">
+        <div class="screen-curtains" id="curtains">
+          <div class="flash" id="flash"></div>
 
-<div class="intro">
-  step inside...
-  smile...
-  don't blink!!
-  (˶ᵔ ᵕ ᵔ˶)
-</div>
+          <div class="video-wrap" id="videoWrap">
+            <video id="video" autoplay playsinline muted></video>
+          </div>
 
-
-<div class="photobooth">
-
-
-  <div class="booth-sign">
-    PHOTOBOOTH
-  </div>
-
-
-  <div
-    class="booth-window"
-    id="boothWindow"
-  >
-
-
-    <div class="star s1">
-      ★
-    </div>
-
-    <div class="star s2">
-      ★
-    </div>
-
-    <div class="star s3">
-      ★
-    </div>
-
-    <div class="star s4">
-      ★
-    </div>
-
-    <div class="star s5">
-      ★
-    </div>
-
-
-    <video
-      id="camera"
-      autoplay
-      playsinline
-    ></video>
-
-
-    <div
-      class="camera-placeholder"
-      id="placeholder"
-    >
-
-      <div class="heart">
-        ♡
+          <div class="placeholder-text" id="placeholderText">
+            enter booth ♡
+          </div>
+        </div>
       </div>
 
-      <b>
-        the booth is closed...
-      </b>
-
-      <span>
-        click “enter booth”
-        to open the curtain!
-      </span>
-
-    </div>
-
-
-    <div
-      class="curtain curtain-left"
-    ></div>
-
-
-    <div
-      class="curtain curtain-right"
-    ></div>
-
-
-    <div
-      class="valance"
-    ></div>
-
-
-    <div
-      class="flash"
-      id="flash"
-    ></div>
-
-  </div>
-
-
-  <div class="control-panel">
-
-    <button
-      id="enterButton"
-      onclick="enterBooth()"
-    >
-      ♡ enter booth
-    </button>
-
-
-    <button
-      id="snapButton"
-      onclick="takePhoto()"
-      disabled
-    >
-      📷 take photo
-    </button>
-
-
-    <button
-      onclick="resetBooth()"
-    >
-      ↻ restart
-    </button>
-
-
-    <div
-      class="counter"
-      id="counter"
-    >
-      photos taken:
-      0 / 4
-    </div>
-
-  </div>
-
-
-  <!-- LITTLE PRINTER -->
-
-  <div class="photo-printer">
-
-    <div class="printer-label">
-      your photos ♡
-    </div>
-
-
-    <div class="printer-slit">
-
-
-      <div
-        id="miniStrip"
-        class="mini-strip waiting"
-      >
-
-        <div
-          class="mini-photo"
-          id="miniPhoto1"
-        ></div>
-
-        <div
-          class="mini-photo"
-          id="miniPhoto2"
-        ></div>
-
-        <div
-          class="mini-photo"
-          id="miniPhoto3"
-        ></div>
-
-        <div
-          class="mini-photo"
-          id="miniPhoto4"
-        ></div>
-
-
-        <div class="mini-strip-footer">
-          mina's booth ♡
+      <div class="controls">
+        <div class="button-row">
+          <button id="enterBtn">♡ enter booth</button>
+          <button id="snapBtn" disabled>📸 take photo</button>
+          <button id="resetBtn">↻ restart</button>
         </div>
 
+        <div class="count" id="countText">photos taken: 0 / 4</div>
       </div>
 
+      <div class="printer-label">your photo strip ♡</div>
+
+      <div class="photo-printer">
+        <div class="printer-slit">
+          <div class="mini-strip waiting" id="miniStrip">
+            <div class="mini-slot-photo" id="mini1"></div>
+            <div class="mini-slot-photo" id="mini2"></div>
+            <div class="mini-slot-photo" id="mini3"></div>
+            <div class="mini-slot-photo" id="mini4"></div>
+            <div class="mini-strip-footer">mina's booth ♡</div>
+          </div>
+        </div>
+      </div>
+
+      <canvas id="captureCanvas" class="hidden-canvas"></canvas>
     </div>
-
   </div>
 
-</div>
-
-
-<!-- FINISHED STRIP -->
-
-<div
-  class="result-area"
-  id="resultArea"
->
-
-  <h2>
-    your photos ♡
-  </h2>
-
-
-  <div
-    class="large-strip"
-    id="photoStrip"
-  ></div>
-
-
-  <div class="strip-footer">
-    mina's internet corner ★
-  </div>
-
-</div>
-
-
-<!-- SAVE OPTIONS -->
-
-<div
-  class="save-area"
-  id="saveArea"
->
-
-  <h3>
-    keep your strip ♡
-  </h3>
-
-
-  <button
-    onclick="downloadStrip()"
-  >
-    ↓ save strip to device
-  </button>
-
-
-  <div class="consent-row">
-
-    <input
-      type="checkbox"
-      id="sendConsent"
-    >
-
-    <label
-      for="sendConsent"
-    >
-      send a private copy
-      of this photo strip
-      to mina's photobooth
-      archive ♡
-    </label>
-
-  </div>
-
-
-  <button
-    id="sendButton"
-    onclick="sendToMina()"
-    disabled
-  >
-    ♡ send to mina
-  </button>
-
-
-  <div
-    id="saveStatus"
-  ></div>
-
-</div>
-
-
-<canvas
-  id="cameraCanvas"
-  width="600"
-  height="450"
-></canvas>
-
-
-<canvas
-  id="stripCanvas"
-  width="650"
-  height="2050"
-></canvas>
-
-
-<script>
-
-/*
-=========================================
-PRIVATE ARCHIVE SETTINGS
-=========================================
-
-DO NOT use a Supabase service-role key here.
-
-When we connect your archive later,
-put ONLY your public anon key here.
-
-*/
-
-const SUPABASE_URL =
-  "";
-
-const SUPABASE_ANON_KEY =
-  "";
-
-const STORAGE_BUCKET =
-  "photobooth-private";
-
-
-/*
-=========================================
-ELEMENTS
-=========================================
-*/
-
-const video =
-  document.getElementById(
-    "camera"
-  );
-
-const cameraCanvas =
-  document.getElementById(
-    "cameraCanvas"
-  );
-
-const cameraContext =
-  cameraCanvas.getContext(
-    "2d"
-  );
-
-const stripCanvas =
-  document.getElementById(
-    "stripCanvas"
-  );
-
-const stripContext =
-  stripCanvas.getContext(
-    "2d"
-  );
-
-const windowBox =
-  document.getElementById(
-    "boothWindow"
-  );
-
-const placeholder =
-  document.getElementById(
-    "placeholder"
-  );
-
-const snapButton =
-  document.getElementById(
-    "snapButton"
-  );
-
-const counter =
-  document.getElementById(
-    "counter"
-  );
-
-const photoStrip =
-  document.getElementById(
-    "photoStrip"
-  );
-
-const resultArea =
-  document.getElementById(
-    "resultArea"
-  );
-
-const saveArea =
-  document.getElementById(
-    "saveArea"
-  );
-
-const flash =
-  document.getElementById(
-    "flash"
-  );
-
-const miniStrip =
-  document.getElementById(
-    "miniStrip"
-  );
-
-const sendConsent =
-  document.getElementById(
-    "sendConsent"
-  );
-
-const sendButton =
-  document.getElementById(
-    "sendButton"
-  );
-
-const saveStatus =
-  document.getElementById(
-    "saveStatus"
-  );
-
-
-let stream;
-
-let photosTaken =
-  0;
-
-const maximumPhotos =
-  4;
-
-let photos =
-  [];
-
-
-/*
-=========================================
-ENTER BOOTH
-=========================================
-*/
-
-async function enterBooth() {
-
-  windowBox.classList.add(
-    "open"
-  );
-
-
-  try {
-
-    stream =
-      await navigator
-        .mediaDevices
-        .getUserMedia({
-
-          video: {
-            facingMode:
-              "user"
-          },
-
-          audio:
-            false
-
+  <script>
+    const video = document.getElementById("video");
+    const captureCanvas = document.getElementById("captureCanvas");
+    const enterBtn = document.getElementById("enterBtn");
+    const snapBtn = document.getElementById("snapBtn");
+    const resetBtn = document.getElementById("resetBtn");
+    const countText = document.getElementById("countText");
+    const curtains = document.getElementById("curtains");
+    const placeholderText = document.getElementById("placeholderText");
+    const flash = document.getElementById("flash");
+    const miniStrip = document.getElementById("miniStrip");
+
+    const miniBoxes = [
+      document.getElementById("mini1"),
+      document.getElementById("mini2"),
+      document.getElementById("mini3"),
+      document.getElementById("mini4")
+    ];
+
+    let stream = null;
+    let captures = [];
+
+    async function startCamera() {
+      try {
+        stream = await navigator.mediaDevices.getUserMedia({
+          video: { facingMode: "user" },
+          audio: false
         });
 
-
-    video.srcObject =
-      stream;
-
-
-    video.style.display =
-      "block";
-
-
-    placeholder.style.display =
-      "none";
-
-
-    snapButton.disabled =
-      false;
-
-  }
-
-
-  catch(error) {
-
-    console.error(
-      error
-    );
-
-
-    placeholder.innerHTML =
-      `
-      <div class="heart">
-        :(
-      </div>
-
-      <b>
-        camera permission
-        was blocked!
-      </b>
-
-      <span>
-        allow camera access
-        and reload the page ♡
-      </span>
-      `;
-
-  }
-
-}
-
-
-/*
-=========================================
-TAKE PHOTO
-=========================================
-*/
-
-function takePhoto() {
-
-  if (
-    photosTaken >=
-    maximumPhotos
-  ) {
-
-    return;
-
-  }
-
-
-  flash.classList.remove(
-    "go"
-  );
-
-
-  void flash.offsetWidth;
-
-
-  flash.classList.add(
-    "go"
-  );
-
-
-  /*
-  mirror the webcam image
-  */
-
-  cameraContext.save();
-
-
-  cameraContext.translate(
-    cameraCanvas.width,
-    0
-  );
-
-
-  cameraContext.scale(
-    -1,
-    1
-  );
-
-
-  cameraContext.drawImage(
-    video,
-    0,
-    0,
-    cameraCanvas.width,
-    cameraCanvas.height
-  );
-
-
-  cameraContext.restore();
-
-
-  const photoData =
-    cameraCanvas.toDataURL(
-      "image/jpeg",
-      .92
-    );
-
-
-  photos.push(
-    photoData
-  );
-
-
-  photosTaken++;
-
-
-  /*
-  add photo to tiny
-  printer strip
-  */
-
-  const miniBox =
-    document.getElementById(
-      "miniPhoto" +
-      photosTaken
-    );
-
-
-  const miniImage =
-    document.createElement(
-      "img"
-    );
-
-
-  miniImage.src =
-    photoData;
-
-
-  miniBox.innerHTML =
-    "";
-
-
-  miniBox.appendChild(
-    miniImage
-  );
-
-
-  /*
-  add to large strip
-  */
-
-  const largeImage =
-    document.createElement(
-      "img"
-    );
-
-
-  largeImage.src =
-    photoData;
-
-
-  largeImage.className =
-    "strip-photo";
-
-
-  photoStrip.appendChild(
-    largeImage
-  );
-
-
-  counter.textContent =
-    "photos taken: " +
-    photosTaken +
-    " / " +
-    maximumPhotos;
-
-
-  /*
-  finished!
-  */
-
-  if (
-    photosTaken ===
-    maximumPhotos
-  ) {
-
-    finishStrip();
-
-  }
-
-}
-
-
-/*
-=========================================
-FINISH STRIP
-=========================================
-*/
-
-function finishStrip() {
-
-  snapButton.disabled =
-    true;
-
-
-  /*
-  strip slides out
-  */
-
-  miniStrip.classList.remove(
-    "waiting"
-  );
-
-
-  setTimeout(
-    function() {
-
-      miniStrip.classList.add(
-        "printing"
-      );
-
-    },
-
-    250
-  );
-
-
-  /*
-  build downloadable
-  combined strip
-  */
-
-  buildStripCanvas();
-
-
-  /*
-  reveal result
-  */
-
-  setTimeout(
-    function() {
-
-      resultArea.style.display =
-        "block";
-
-
-      saveArea.style.display =
-        "block";
-
-    },
-
-    1900
-  );
-
-}
-
-
-/*
-=========================================
-BUILD COMBINED STRIP
-=========================================
-*/
-
-function buildStripCanvas() {
-
-  stripContext.fillStyle =
-    "#fffdf6";
-
-
-  stripContext.fillRect(
-    0,
-    0,
-    stripCanvas.width,
-    stripCanvas.height
-  );
-
-
-  /*
-  title
-  */
-
-  stripContext.fillStyle =
-    "#e36f9f";
-
-
-  stripContext.textAlign =
-    "center";
-
-
-  stripContext.font =
-    "bold 42px Arial";
-
-
-  stripContext.fillText(
-    "mina's photobooth ♡",
-    stripCanvas.width / 2,
-    55
-  );
-
-
-  /*
-  draw each picture
-  */
-
-  photos.forEach(
-    function(photo, index) {
-
-      const image =
-        new Image();
-
-
-      image.onload =
-        function() {
-
-
-          const y =
-            90 +
-            index * 465;
-
-
-          stripContext.drawImage(
-            image,
-            40,
-            y,
-            570,
-            425
-          );
-
-
-          /*
-          footer after last
-          image loads
-          */
-
-          if (
-            index ===
-            photos.length - 1
-          ) {
-
-            stripContext.fillStyle =
-              "#b66f91";
-
-
-            stripContext.font =
-              "28px Arial";
-
-
-            stripContext.fillText(
-              "mina's internet corner ★",
-              stripCanvas.width / 2,
-              2000
-            );
-
-          }
-
-        };
-
-
-      image.src =
-        photo;
-
-    }
-  );
-
-}
-
-
-/*
-=========================================
-DOWNLOAD STRIP
-=========================================
-*/
-
-function downloadStrip() {
-
-  const link =
-    document.createElement(
-      "a"
-    );
-
-
-  link.download =
-    "mina-photobooth-strip.jpg";
-
-
-  link.href =
-    stripCanvas.toDataURL(
-      "image/jpeg",
-      .94
-    );
-
-
-  link.click();
-
-}
-
-
-/*
-=========================================
-CONSENT
-=========================================
-*/
-
-sendConsent.addEventListener(
-  "change",
-  function() {
-
-    sendButton.disabled =
-      !this.checked;
-
-  }
-);
-
-
-/*
-=========================================
-SEND PRIVATE COPY
-=========================================
-*/
-
-async function sendToMina() {
-
-  if (
-    !sendConsent.checked
-  ) {
-
-    return;
-
-  }
-
-
-  /*
-  backend not connected yet
-  */
-
-  if (
-    !SUPABASE_URL ||
-    !SUPABASE_ANON_KEY
-  ) {
-
-    saveStatus.textContent =
-      "private archive isn't connected yet ♡";
-
-    return;
-
-  }
-
-
-  sendButton.disabled =
-    true;
-
-
-  saveStatus.textContent =
-    "sending your strip... ♡";
-
-
-  try {
-
-
-    const blob =
-      await new Promise(
-        function(resolve) {
-
-          stripCanvas.toBlob(
-            resolve,
-            "image/jpeg",
-            .94
-          );
-
-        }
-      );
-
-
-    const randomPart =
-      Math.random()
-        .toString(36)
-        .slice(2,10);
-
-
-    const filename =
-      Date.now() +
-      "-" +
-      randomPart +
-      ".jpg";
-
-
-    const uploadURL =
-      SUPABASE_URL +
-      "/storage/v1/object/" +
-      STORAGE_BUCKET +
-      "/" +
-      filename;
-
-
-    const response =
-      await fetch(
-        uploadURL,
-        {
-
-          method:
-            "POST",
-
-          headers: {
-
-            "Authorization":
-              "Bearer " +
-              SUPABASE_ANON_KEY,
-
-            "apikey":
-              SUPABASE_ANON_KEY,
-
-            "Content-Type":
-              "image/jpeg",
-
-            "x-upsert":
-              "false"
-
-          },
-
-          body:
-            blob
-
-        }
-      );
-
-
-    if (
-      !response.ok
-    ) {
-
-      const errorText =
-        await response.text();
-
-
-      throw new Error(
-        errorText
-      );
-
+        video.srcObject = stream;
+        curtains.classList.add("open");
+        placeholderText.style.display = "none";
+        snapBtn.disabled = false;
+      } catch (err) {
+        placeholderText.innerHTML = "camera access denied :( <br> please allow camera";
+      }
     }
 
-
-    saveStatus.textContent =
-      "sent privately to mina ♡";
-
-
-    sendButton.textContent =
-      "sent ♡";
-
-
-    sendButton.disabled =
-      true;
-
-
-    sendConsent.disabled =
-      true;
-
-  }
-
-
-  catch(error) {
-
-    console.error(
-      error
-    );
-
-
-    saveStatus.textContent =
-      "couldn't send it :( try again";
-
-
-    sendButton.disabled =
-      false;
-
-  }
-
-}
-
-
-/*
-=========================================
-RESET
-=========================================
-*/
-
-function resetBooth() {
-
-  photosTaken =
-    0;
-
-
-  photos =
-    [];
-
-
-  counter.textContent =
-    "photos taken: 0 / 4";
-
-
-  photoStrip.innerHTML =
-    "";
-
-
-  resultArea.style.display =
-    "none";
-
-
-  saveArea.style.display =
-    "none";
-
-
-  snapButton.disabled =
-    true;
-
-
-  video.style.display =
-    "none";
-
-
-  placeholder.style.display =
-    "flex";
-
-
-  placeholder.innerHTML =
-    `
-    <div class="heart">
-      ♡
-    </div>
-
-    <b>
-      the booth is closed...
-    </b>
-
-    <span>
-      click “enter booth”
-      to open the curtain!
-    </span>
-    `;
-
-
-  windowBox.classList.remove(
-    "open"
-  );
-
-
-  miniStrip.classList.remove(
-    "printing"
-  );
-
-
-  miniStrip.classList.add(
-    "waiting"
-  );
-
-
-  for (
-    let i = 1;
-    i <= 4;
-    i++
-  ) {
-
-    document
-      .getElementById(
-        "miniPhoto" + i
-      )
-      .innerHTML =
-        "";
-
-  }
-
-
-  sendConsent.checked =
-    false;
-
-
-  sendConsent.disabled =
-    false;
-
-
-  sendButton.disabled =
-    true;
-
-
-  sendButton.textContent =
-    "♡ send to mina";
-
-
-  saveStatus.textContent =
-    "";
-
-
-  if (stream) {
-
-    stream
-      .getTracks()
-      .forEach(
-        function(track) {
-
-          track.stop();
-
+    function flashEffect() {
+      flash.classList.remove("active");
+      void flash.offsetWidth;
+      flash.classList.add("active");
+    }
+
+    function capturePhoto() {
+      if (!stream || captures.length >= 4) return;
+
+      const ctx = captureCanvas.getContext("2d");
+      captureCanvas.width = video.videoWidth || 480;
+      captureCanvas.height = video.videoHeight || 640;
+
+      ctx.save();
+      ctx.scale(-1, 1);
+      ctx.drawImage(video, -captureCanvas.width, 0, captureCanvas.width, captureCanvas.height);
+      ctx.restore();
+
+      const imageData = captureCanvas.toDataURL("image/png");
+      captures.push(imageData);
+      updateStrip();
+      flashEffect();
+
+      countText.textContent = `photos taken: ${captures.length} / 4`;
+
+      if (captures.length >= 4) {
+        snapBtn.disabled = true;
+        setTimeout(() => {
+          miniStrip.classList.remove("waiting");
+          miniStrip.classList.add("printing");
+        }, 350);
+      }
+    }
+
+    function updateStrip() {
+      miniBoxes.forEach((box, index) => {
+        box.innerHTML = "";
+        if (captures[index]) {
+          const img = document.createElement("img");
+          img.src = captures[index];
+          box.appendChild(img);
         }
-      );
+      });
+    }
 
-  }
+    function resetBooth() {
+      captures = [];
+      updateStrip();
+      countText.textContent = "photos taken: 0 / 4";
+      miniStrip.classList.remove("printing");
+      miniStrip.classList.add("waiting");
+      if (stream) {
+        snapBtn.disabled = false;
+      }
+    }
 
-
-  stream =
-    null;
-
-}
-
-</script>
-
+    enterBtn.addEventListener("click", startCamera);
+    snapBtn.addEventListener("click", capturePhoto);
+    resetBtn.addEventListener("click", resetBooth);
+  </script>
 </body>
 </html>
