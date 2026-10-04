@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>step into my photobooth ♡</title>
+<title>come take a picture! ♡</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -653,13 +653,7 @@ button:disabled {
 }
 
 
-/*
-FRONT EDGE OF SLOT
-
-this sits ABOVE the strip so the
-paper looks like it is actually
-coming from inside the slot
-*/
+/* FRONT EDGE OF SLOT */
 
 .printer-slit::after {
   content: "";
@@ -686,7 +680,7 @@ coming from inside the slot
     0 2px 0
     #da83a8;
 
-  z-index: 30;
+  z-index: 10;
 
   pointer-events: none;
 }
@@ -700,7 +694,7 @@ coming from inside the slot
   width: 65px;
 
   left: 50%;
-  top: 8px;
+  top: 1px;
 
   transform:
     translateX(-50%)
@@ -727,14 +721,11 @@ coming from inside the slot
     2.3s
     cubic-bezier(.18,.75,.25,1);
 
-  z-index: 20;
+  z-index: 25;
 }
 
 
-/*
-STRIP SITS DIRECTLY
-IN THE SLOT
-*/
+/* LITTLE BIT PEEKING OUT */
 
 .mini-strip.waiting {
   transform:
@@ -743,15 +734,12 @@ IN THE SLOT
 }
 
 
-/*
-STRIP PRINTS DOWNWARD
-OUT OF THE SLOT
-*/
+/* STRIP COMES OUT */
 
 .mini-strip.printing {
   transform:
     translateX(-50%)
-    translateY(72px);
+    translateY(58px);
 }
 
 
@@ -909,7 +897,8 @@ OUT OF THE SLOT
 
 .save-area h3 {
   margin:
-    0 0
+    0
+    0
     8px;
 
   font-family:
@@ -951,6 +940,45 @@ OUT OF THE SLOT
 
   color:
     #a26988;
+}
+
+
+/* CUTE SCROLLBAR */
+
+html,
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #8fdff0 #ffe6f2;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffe6f2;
+  border-left: 1px solid #ffd2e5;
+}
+
+::-webkit-scrollbar-thumb {
+  background:
+    linear-gradient(
+      #aee9f7,
+      #86d8ec
+    );
+
+  border-radius: 20px;
+
+  border:
+    2px solid #ffe6f2;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:
+    linear-gradient(
+      #9be3f5,
+      #74cfe6
+    );
 }
 
 
@@ -998,7 +1026,7 @@ canvas {
 
 
 <h1>
-  step into my photobooth ♡
+  come take a picture! ♡
 </h1>
 
 
