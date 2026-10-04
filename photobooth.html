@@ -71,7 +71,7 @@ h1 {
 
   text-shadow:
     2px 2px 0 #fff7c7,
-    3px 3px 0 #a9dbf7;
+    3px 3px 0 #d8b79f;
 }
 
 .intro {
@@ -200,7 +200,7 @@ h1 {
 
   box-shadow:
     inset 0 0 0
-    5px #a8dbf7;
+    5px #d9b59d;
 }
 
 
@@ -426,12 +426,12 @@ h1 {
       90deg,
       #fff5a8 0,
       #fff5a8 38px,
-      #a9dff7 39px,
-      #a9dff7 43px
+      #d9b59d 39px,
+      #d9b59d 43px
     );
 
   border-bottom:
-    4px solid #8ccbea;
+    4px solid #c9a48e;
 
   clip-path:
     polygon(
@@ -508,7 +508,7 @@ h1 {
     #ffacd0;
 
   border:
-    4px double #90ddeb;
+    4px double #d8b79f;
 
   border-radius: 13px;
 
@@ -532,7 +532,7 @@ button {
     );
 
   border:
-    3px double #80d7e2;
+    3px double #d6b39b;
 
   border-radius: 10px;
 
@@ -756,7 +756,7 @@ button:disabled {
       135deg,
       #ffd4e4,
       #dff49d,
-      #b9e8ff
+      #f1ddcf
     );
 
   border:
@@ -886,13 +886,13 @@ button:disabled {
 
   border:
     4px double
-    #ffabc8;
+    #d6b39b;
 
   border-radius: 15px;
 
   box-shadow:
     4px 4px 0
-    rgba(157,224,232,.3);
+    rgba(189,145,117,.22);
 }
 
 .save-area h3 {
@@ -943,12 +943,12 @@ button:disabled {
 }
 
 
-/* CUTE BROWN SCROLLBAR */
+/* CUTE PASTEL BROWN SCROLLBAR */
 
 html,
 body {
   scrollbar-width: thin;
-  scrollbar-color: #a9785f #f7eadf;
+  scrollbar-color: #b98b74 #f6e9df;
 }
 
 ::-webkit-scrollbar {
@@ -956,30 +956,31 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f7eadf;
+  background:
+    #f6e9df;
 
   border-left:
-    1px solid #e5c9b7;
+    1px solid #e4c9b8;
 }
 
 ::-webkit-scrollbar-thumb {
   background:
     linear-gradient(
-      #c79a7f,
-      #9f7059
+      #d6b39b,
+      #b98b74
     );
 
   border-radius: 20px;
 
   border:
-    2px solid #f7eadf;
+    2px solid #f6e9df;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background:
     linear-gradient(
-      #b9876d,
-      #8e604c
+      #caa388,
+      #a9785f
     );
 }
 
@@ -1679,10 +1680,6 @@ function finishStrip() {
     true;
 
 
-  /*
-  strip slides out
-  */
-
   miniStrip.classList.remove(
     "waiting"
   );
@@ -1701,17 +1698,8 @@ function finishStrip() {
   );
 
 
-  /*
-  build downloadable
-  combined strip
-  */
-
   buildStripCanvas();
 
-
-  /*
-  reveal result
-  */
 
   setTimeout(
     function() {
@@ -1751,10 +1739,6 @@ function buildStripCanvas() {
   );
 
 
-  /*
-  title
-  */
-
   stripContext.fillStyle =
     "#e36f9f";
 
@@ -1773,10 +1757,6 @@ function buildStripCanvas() {
     55
   );
 
-
-  /*
-  draw each picture
-  */
 
   photos.forEach(
     function(photo, index) {
@@ -1802,11 +1782,6 @@ function buildStripCanvas() {
             425
           );
 
-
-          /*
-          footer after last
-          image loads
-          */
 
           if (
             index ===
@@ -1904,10 +1879,6 @@ async function sendToMina() {
 
   }
 
-
-  /*
-  backend not connected yet
-  */
 
   if (
     !SUPABASE_URL ||
