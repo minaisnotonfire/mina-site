@@ -11,7 +11,6 @@
 
   <title>home ♡</title>
 
-
   <link
     rel="preconnect"
     href="https://fonts.googleapis.com"
@@ -31,10 +30,10 @@
 
   <style>
 
-
-    /* =====================================
+    /* =========================================
        PUPPY CURSOR
-       ===================================== */
+       ONLY NEW ADDITION
+       ========================================= */
 
     * {
       box-sizing: border-box;
@@ -45,9 +44,8 @@
         auto !important;
     }
 
-    a,
     button,
-    input {
+    a {
       cursor:
         url('https://cdn.cursors-4u.net/previews/puppy-13-a9c1ade9-32.webp')
         32 32,
@@ -56,196 +54,162 @@
 
 
 
-    /* =====================================
-       PAGE
-       ===================================== */
+    /* =========================================
+       ORIGINAL HOME PAGE
+       ========================================= */
 
     html,
     body {
       min-height: 100%;
     }
 
-
     body {
       margin: 0;
 
       padding:
-        28px
-        26px
-        45px;
+        16px
+        20px
+        40px;
 
       background:
-        linear-gradient(
-          rgba(255,255,255,.82),
-          rgba(255,252,242,.82)
-        ),
-        url("https://fries-and-ice-cream.neocities.org/newcutestuff/bluepolkarose.gif");
-
-      background-repeat: repeat;
+        #fffdf3;
 
       font-family:
         "Sour Gummy",
+        Arial,
         sans-serif;
 
       color:
-        #765f6d;
+        #111;
 
-      text-align:
-        center;
+      font-size:
+        16px;
+
+      line-height:
+        1.28;
     }
 
 
 
-    /* =====================================
-       WELCOME
-       ===================================== */
+    /* HAI TITLE */
 
-    .welcome-title {
+    .hai-title {
       margin:
-        6px
+        -12px
         0
-        5px;
+        12px;
 
       font-family:
         "Bonbon",
         cursive;
 
       font-size:
-        42px;
+        31px;
 
       line-height:
         1;
 
       color:
-        #ff70aa;
+        #ff68aa;
 
       text-shadow:
-        1px 1px 0 white,
-        2px 2px 0 #f8c4d4;
+        1px 1px 0 white;
     }
 
 
-    .welcome-stars {
-      margin-bottom:
-        8px;
 
-      font-size:
-        17px;
+    /* INTRO */
 
-      color:
-        #a7dfe8;
-    }
-
-
-    .welcome-text {
+    .intro {
       width:
-        88%;
+        100%;
 
       max-width:
-        460px;
+        510px;
 
       margin:
         0 auto;
 
-      font-family:
-        "Unkempt",
-        cursive;
-
-      font-size:
-        17px;
-
-      line-height:
-        1.4;
-
-      color:
-        #8b6675;
+      text-align:
+        left;
     }
 
-
-
-    /* =====================================
-       LITTLE DIVIDER
-       ===================================== */
-
-    .divider {
+    .intro p {
       margin:
-        24px
-        auto
-        10px;
-
-      font-size:
-        17px;
-
-      letter-spacing:
-        4px;
-
-      color:
-        #f4a9c5;
+        0
+        0
+        8px;
     }
 
 
 
-    /* =====================================
+    /* =========================================
        RANDOM FACT GENERATOR
-       ===================================== */
+       ========================================= */
 
     .fact-generator {
       position:
         relative;
 
       width:
-        335px;
+        370px;
 
       max-width:
-        92%;
+        90%;
 
       margin:
-        45px
+        72px
         auto
         0;
 
       padding:
-        21px
+        28px
         18px
-        18px;
+        16px;
+
+      text-align:
+        center;
 
       background:
         linear-gradient(
-          rgba(255,255,255,.86),
-          rgba(255,252,230,.90)
+          rgba(238,250,255,.88),
+          rgba(238,250,255,.88)
         ),
         radial-gradient(
           circle,
-          #bcecf2 3px,
-          transparent 4px
+          rgba(255,255,255,.95) 2px,
+          transparent 3px
         );
 
       background-size:
         auto,
-        19px 19px;
+        16px 16px;
 
       border:
         4px double
-        #ffb0c9;
+        #ff9fbd;
 
       border-radius:
-        22px;
+        17px;
 
       box-shadow:
-        5px 5px 0
-        rgba(155,222,231,.27);
+        4px 4px 0
+        rgba(184,229,232,.36);
     }
 
 
+
+    /* LITTLE TOP DECORATION */
+
     .fact-generator::before {
       content:
-        "☆ ♡ ☆";
+        "☆   ♡   ☆";
 
       position:
         absolute;
 
       top:
-        -17px;
+        11px;
 
       left:
         50%;
@@ -253,94 +217,100 @@
       transform:
         translateX(-50%);
 
-      padding:
-        1px
-        10px;
-
-      background:
-        #fffbed;
-
-      border:
-        2px solid
-        #ffbad0;
-
-      border-radius:
+      font-size:
         13px;
 
-      font-size:
-        14px;
-
       color:
-        #8edce7;
+        #ff82ad;
 
       white-space:
         nowrap;
     }
 
 
+
+    /* FACT TITLE */
+
     .fact-title {
       display:
         inline-block;
 
-      margin-bottom:
-        7px;
+      width:
+        300px;
+
+      max-width:
+        95%;
+
+      margin:
+        2px
+        auto
+        8px;
 
       padding:
-        4px
+        7px
         13px;
 
       background:
         linear-gradient(
-          #fffdf0,
-          #fff3b9
+          #fffdf1,
+          #fff0cf
         );
 
       border:
-        3px double
-        #ffb0c9;
+        4px double
+        #ffabc3;
 
       border-radius:
-        17px;
+        18px;
 
       font-family:
         "Bonbon",
         cursive;
 
       font-size:
-        28px;
+        29px;
 
       line-height:
         1;
 
       color:
-        #ff70aa;
+        #9f674f;
 
       text-shadow:
         1px 1px 0 white;
+
+      transform:
+        rotate(-1deg);
     }
 
+
+
+    /* SUBTITLE */
 
     .fact-subtitle {
       margin:
-        2px
         0
-        13px;
+        0
+        12px;
 
       font-family:
-        "Unkempt",
-        cursive;
+        "Sour Gummy",
+        sans-serif;
 
       font-size:
-        14px;
+        12px;
 
       color:
-        #866576;
+        #e46991;
     }
 
 
+
+    /* FACT DISPLAY */
+
     #factDisplay {
       min-height:
-        68px;
+        72px;
 
       display:
         flex;
@@ -352,55 +322,59 @@
         center;
 
       padding:
-        12px;
+        10px
+        14px;
 
       margin:
         0
         auto
-        13px;
+        12px;
 
       background:
-        rgba(255,255,255,.88);
+        #fffdf8;
 
       border:
         2px dashed
-        #a9dee8;
+        #ff9ebe;
 
       border-radius:
-        13px;
+        5px;
 
       font-family:
-        "Unkempt",
-        cursive;
+        "Sour Gummy",
+        sans-serif;
 
       font-size:
-        16px;
+        14px;
 
       line-height:
-        1.35;
+        1.3;
 
       color:
-        #765d6b;
+        #765b66;
     }
 
 
+
+    /* GENERATE BUTTON */
+
     #factButton {
       padding:
-        8px
-        15px;
+        7px
+        14px;
 
       background:
         linear-gradient(
-          #fffdf5,
-          #ffe7f0
+          #fffdf8,
+          #fff0ee
         );
 
       border:
         3px double
-        #a8dfe7;
+        #8bd4df;
 
       border-radius:
-        12px;
+        11px;
 
       font-family:
         "Sour Gummy",
@@ -413,46 +387,48 @@
         bold;
 
       color:
-        #a55f82;
+        #c65f89;
 
       box-shadow:
         2px 2px 0
-        rgba(255,183,207,.22);
+        rgba(255,184,202,.28);
 
       transition:
         transform .15s ease,
         background .15s ease;
     }
 
-
     #factButton:hover {
       transform:
-        scale(1.05);
+        scale(1.04);
 
       background:
-        #fff3bd;
+        #fff4d5;
     }
 
+
+
+    /* LITTLE BOTTOM SYMBOLS */
 
     .fact-bottom {
       margin-top:
-        10px;
+        9px;
 
       font-size:
-        14px;
+        11px;
 
       letter-spacing:
-        3px;
+        5px;
 
       color:
-        #f2a7c3;
+        #89d9df;
     }
 
 
 
-    /* =====================================
-       SCROLLBAR
-       ===================================== */
+    /* =========================================
+       ORIGINAL BLUE SCROLLBAR
+       ========================================= */
 
     html,
     body {
@@ -460,47 +436,36 @@
         thin;
 
       scrollbar-color:
-        #9edee8
-        #eefcff;
+        #8fcbd7
+        #edfaff;
     }
-
 
     ::-webkit-scrollbar {
       width:
         10px;
     }
 
-
     ::-webkit-scrollbar-track {
       background:
-        #eefcff;
+        #edfaff;
     }
-
 
     ::-webkit-scrollbar-thumb {
       background:
-        linear-gradient(
-          #bcebf1,
-          #8fd8e3
-        );
+        #8fcbd7;
 
       border:
         2px solid
-        #eefcff;
+        #edfaff;
 
       border-radius:
-        20px;
+        10px;
     }
-
 
     ::-webkit-scrollbar-thumb:hover {
       background:
-        linear-gradient(
-          #a9e3eb,
-          #79ccd8
-        );
+        #79bdca;
     }
-
 
 
   </style>
@@ -508,36 +473,33 @@
 </head>
 
 
-
 <body>
 
 
-  <div class="welcome-stars">
-    ☆ ♡ ☆
-  </div>
+  <div class="intro">
 
 
-  <div class="welcome-title">
-    haiii!! ♡
-  </div>
+    <div class="hai-title">
+      haiiii ★
+    </div>
 
 
-  <div class="welcome-text">
-
-    welcome to my little internet corner :3
-
-    <br><br>
-
-    this is basically my digital scrapbook for
-    pictures, random things i like, games,
-    memories, and whatever i'm obsessed with
-    at the moment ♡
-
-  </div>
+    <p>
+      welcome to my little corner of the internet..... (～ o ～) ♡
+    </p>
 
 
-  <div class="divider">
-    ♡ ☆ ♡
+    <p>
+      i made this because i miss when the internet felt personal and weird......
+      i grew up on early 2010s sites like girlsgogames.com, so i wanted a little
+      place that felt like mine..... basically this is my digital
+      bedroom/scrapbook........ pictures, diary entries, games, movies, and
+      whatever else gets stuck in my brain...... ☆ i'm building it by googling
+      stuff and hoping for the best while my midterms are in 10 days......
+      priorities...... (T---T) look around...... click on things...... ♡
+    </p>
+
+
   </div>
 
 
@@ -553,12 +515,12 @@
 
 
     <div class="fact-subtitle">
-      click to learn something random about mina ♡
+      - click to learn something random about mina ♡ -
     </div>
 
 
     <div id="factDisplay">
-      press the button!!
+      i'm obsessed with horror and weird lore
     </div>
 
 
@@ -586,31 +548,27 @@ const minaFacts = [
 
   "i get a fortnite victory royale each time",
 
-  "i volunteer a lot ♡",
+  "i volunteer a lot",
 
-  "i love analyzing people's birth charts for fun",
-
-  "i am a sagittarius! ☆",
+  "i love analyzing birthcharts",
 
   "i love roblox",
 
   "foo fighters and incubus r my fav bands",
 
-  "i can hyperfixate on something for like 6 hours straight",
+  "i am sagittarius!",
 
-  "i love horror games and weird lore",
+  "i can hyperfixate on something for 6 hours straight",
+
+  "i'm obsessed with horror and weird lore",
 
   "i take an unreasonable amount of pictures of my cat",
 
-  "i will absolutely assign a birth chart to a fictional character",
+  "i assign birth charts to fictional characters",
 
   "i'm more of a pc gamer than a console gamer",
 
-  "i love fnaf, resident evil, life is strange, silent hill and a million other games",
-
-  "i love bugs but moths scare me",
-
-  "i can spend forever making tiny things for my website"
+  "i love fnaf, resident evil, life is strange, silent hill and way too many other games"
 
 ];
 
