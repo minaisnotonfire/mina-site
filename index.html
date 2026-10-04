@@ -115,7 +115,7 @@
 
       position: relative;
 
-      min-height: 1200px;
+      min-height: 1800px;
 
       z-index: 2;
     }
@@ -745,6 +745,71 @@
     }
 
 
+    /* PHOTOBOOTH UNDER CENTER */
+
+    .photobooth-section {
+      width: 570px;
+
+      margin-top: 115px;
+
+      position: relative;
+
+      text-align: center;
+
+      z-index: 5;
+    }
+
+    .photobooth-section-title {
+      display: inline-block;
+
+      margin-bottom: 12px;
+
+      padding: 6px 17px;
+
+      background:
+        linear-gradient(
+          #fffdf0,
+          #fff1d4
+        );
+
+      border: 3px double #ffb0cb;
+
+      border-radius: 18px;
+
+      font-family: "Bonbon", cursive;
+
+      font-size: 27px;
+
+      color: #ff69a8;
+
+      transform: rotate(-1deg);
+
+      box-shadow:
+        3px 3px 0 rgba(174,238,238,.28);
+
+      text-shadow:
+        1px 1px 0 white;
+    }
+
+    .photobooth-embed {
+      display: block;
+
+      width: 570px;
+      height: 1100px;
+
+      border: 4px double #87ceeb;
+
+      border-radius: 14px;
+
+      background: #fff8fb;
+
+      box-shadow:
+        5px 5px 0 rgba(255,192,203,.3);
+
+      overflow: hidden;
+    }
+
+
     /* NYANGHAM */
 
     .nyangham {
@@ -1133,7 +1198,7 @@
         </a>
 
         <a href="photos.html" target="content">
-          ★ photos
+          ★ photo diary
         </a>
 
         <a href="games.html" target="content">
@@ -1266,6 +1331,25 @@
         >
 
       </div>
+
+
+      <!-- PHOTOBOOTH -->
+
+      <div class="photobooth-section">
+
+        <div class="photobooth-section-title">
+          ♡ mina's photobooth ♡
+        </div>
+
+        <iframe
+          class="photobooth-embed"
+          src="photobooth.html"
+          allow="camera"
+          title="mina's photobooth"
+        ></iframe>
+
+      </div>
+
 
     </div>
 
