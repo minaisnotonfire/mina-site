@@ -3,41 +3,18 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <title>home</title>
 
-  <title>home ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bonbon&family=Sour+Gummy:wght@400;700&family=Unkempt:wght@400;700&display=swap"
-    rel="stylesheet"
-  >
-
+  <link href="https://fonts.googleapis.com/css2?family=Bonbon&family=Sour+Gummy:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
 
-    /* =========================================
-       PUPPY CURSOR
-       ONLY NEW ADDITION
-       ========================================= */
-
     * {
-      box-sizing: border-box;
-
       cursor:
         url('https://cdn.cursors-4u.net/previews/puppy-13-a9c1ade9-32.webp')
         32 32,
@@ -52,583 +29,411 @@
         auto !important;
     }
 
-
-
-    /* =========================================
-       ORIGINAL HOME PAGE
-       ========================================= */
-
-    html,
     body {
-      min-height: 100%;
-    }
-
-    body {
+      background: #fffdf4;
+      font-family: Arial, sans-serif;
+      padding: 20px;
       margin: 0;
+      color: #222;
+    }
 
-      padding:
-        16px
-        20px
-        40px;
+    h1 {
+      color: hotpink;
+      font-family: "Sour Gummy", cursive;
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
 
-      background:
-        #fffdf3;
-
-      font-family:
-        "Sour Gummy",
-        Arial,
-        sans-serif;
-
-      color:
-        #111;
-
-      font-size:
-        16px;
-
-      line-height:
-        1.28;
+    p {
+      font-size: 16px;
+      line-height: 1.25;
+      margin: 10px 0;
     }
 
 
+    /* PASTEL BLUE SCROLLBAR */
 
-    /* HAI TITLE */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
 
-    .hai-title {
-      margin:
-        -12px
-        0
-        12px;
+    ::-webkit-scrollbar-track {
+      background: #f3fbff;
+    }
 
-      font-family:
-        "Bonbon",
-        cursive;
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(
+        #bcecf3,
+        #9edee8
+      );
 
-      font-size:
-        31px;
+      border: 2px solid #f3fbff;
+      border-radius: 10px;
+    }
 
-      line-height:
-        1;
-
-      color:
-        #ff68aa;
-
-      text-shadow:
-        1px 1px 0 white;
+    ::-webkit-scrollbar-thumb:hover {
+      background: #8fd9e5;
     }
 
 
+    /* RANDOM FACT CARD */
 
-    /* INTRO */
+    .fact-widget {
+      width: 330px;
 
-    .intro {
-      width:
-        100%;
+      margin: 45px auto 0;
+      padding: 14px 17px 15px;
 
-      max-width:
-        510px;
+      text-align: center;
+      position: relative;
 
-      margin:
-        0 auto;
+      background-color: #eef9ff;
 
-      text-align:
-        left;
-    }
-
-    .intro p {
-      margin:
-        0
-        0
-        8px;
-    }
-
-
-
-    /* =========================================
-       RANDOM FACT GENERATOR
-       ========================================= */
-
-    .fact-generator {
-      position:
-        relative;
-
-      width:
-        370px;
-
-      max-width:
-        90%;
-
-      margin:
-        72px
-        auto
-        0;
-
-      padding:
-        28px
-        18px
-        16px;
-
-      text-align:
-        center;
-
-      background:
-        linear-gradient(
-          rgba(238,250,255,.88),
-          rgba(238,250,255,.88)
-        ),
+      background-image:
         radial-gradient(
           circle,
-          rgba(255,255,255,.95) 2px,
-          transparent 3px
+          rgba(255,255,255,.9) 2px,
+          transparent 2.5px
         );
 
-      background-size:
-        auto,
-        16px 16px;
+      background-size: 18px 18px;
 
-      border:
-        4px double
-        #ff9fbd;
-
-      border-radius:
-        17px;
+      border: 3px double #ffa9c9;
+      border-radius: 18px;
 
       box-shadow:
-        4px 4px 0
-        rgba(184,229,232,.36);
+        4px 4px 0 rgba(181,239,233,.38),
+        inset 0 0 0 2px #c9efeb;
     }
 
 
+    /* EXACT LITTLE SYMBOLS ABOVE */
 
-    /* LITTLE TOP DECORATION */
+    .fact-top {
+      margin-bottom: 3px;
 
-    .fact-generator::before {
-      content:
-        "☆   ♡   ☆";
+      font-family: "Sour Gummy", cursive;
+      font-size: 15px;
 
-      position:
-        absolute;
+      color: #ff7fb3;
 
-      top:
-        11px;
-
-      left:
-        50%;
-
-      transform:
-        translateX(-50%);
-
-      font-size:
-        13px;
-
-      color:
-        #ff82ad;
-
-      white-space:
-        nowrap;
+      letter-spacing: 7px;
     }
 
 
-
-    /* FACT TITLE */
+    /* CREAM / YELLOW TILTED BUBBLE */
 
     .fact-title {
-      display:
-        inline-block;
+      display: inline-block;
 
-      width:
-        300px;
+      padding: 5px 16px 7px;
 
-      max-width:
-        95%;
-
-      margin:
-        2px
-        auto
-        8px;
-
-      padding:
-        7px
-        13px;
+      margin-bottom: 4px;
 
       background:
         linear-gradient(
+          to bottom,
           #fffdf1,
-          #fff0cf
+          #fff0d2
         );
 
-      border:
-        4px double
-        #ffabc3;
+      border: 2px solid #e9b7ae;
 
-      border-radius:
-        18px;
+      outline: 2px solid rgba(255,190,205,.45);
+      outline-offset: 2px;
 
-      font-family:
-        "Bonbon",
-        cursive;
+      border-radius: 18px;
 
-      font-size:
-        29px;
+      font-family: "Bonbon", cursive !important;
 
-      line-height:
-        1;
+      font-size: 25px !important;
 
-      color:
-        #9f674f;
+      font-weight: normal !important;
+
+      line-height: 1;
+
+      color: #965b4b !important;
 
       text-shadow:
-        1px 1px 0 white;
+        1px 1px 0 #ffffff;
 
-      transform:
-        rotate(-1deg);
+      box-shadow:
+        2px 3px 0 rgba(255,177,195,.25);
+
+      transform: rotate(-2deg);
     }
 
 
-
-    /* SUBTITLE */
+    /* TEXT UNDER TITLE */
 
     .fact-subtitle {
-      margin:
-        0
-        0
-        12px;
+      margin: 7px 0 11px;
 
-      font-family:
-        "Sour Gummy",
-        sans-serif;
+      font-family: "Sour Gummy", cursive;
 
-      font-size:
-        12px;
+      color: #c67197;
 
-      color:
-        #e46991;
+      font-size: 11px;
     }
 
 
+    /* FACT AREA */
 
-    /* FACT DISPLAY */
+    #fact-box {
+      min-height: 48px;
 
-    #factDisplay {
-      min-height:
-        72px;
+      padding: 10px 12px;
 
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      justify-content:
-        center;
-
-      padding:
-        10px
-        14px;
-
-      margin:
-        0
-        auto
-        12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       background:
-        #fffdf8;
+        repeating-linear-gradient(
+          0deg,
+          #fffdf7,
+          #fffdf7 20px,
+          #e9f5f2 21px
+        );
 
-      border:
-        2px dashed
-        #ff9ebe;
+      border: 2px dashed #ff9fbe;
+      border-radius: 9px;
 
-      border-radius:
-        5px;
+      font-family: "Sour Gummy", cursive;
 
-      font-family:
-        "Sour Gummy",
-        sans-serif;
+      font-size: 14px;
 
-      font-size:
-        14px;
-
-      line-height:
-        1.3;
-
-      color:
-        #765b66;
+      color: #755d69;
     }
 
 
+    /* BUTTON */
 
-    /* GENERATE BUTTON */
+    .fact-button {
+      margin-top: 11px;
 
-    #factButton {
-      padding:
-        7px
-        14px;
+      padding: 6px 13px;
 
       background:
         linear-gradient(
           #fffdf8,
-          #fff0ee
+          #ffeef5
         );
 
-      border:
-        3px double
-        #8bd4df;
+      border: 3px double #86dddf;
 
-      border-radius:
-        11px;
+      border-radius: 10px;
 
-      font-family:
-        "Sour Gummy",
-        sans-serif;
+      font-family: "Sour Gummy", cursive;
 
-      font-size:
-        14px;
+      font-size: 15px;
+      font-weight: 700;
 
-      font-weight:
-        bold;
-
-      color:
-        #c65f89;
+      color: #ad6484;
 
       box-shadow:
-        2px 2px 0
-        rgba(255,184,202,.28);
+        2px 3px 0 rgba(255,185,207,.3);
 
-      transition:
-        transform .15s ease,
-        background .15s ease;
+      cursor: pointer;
     }
 
-    #factButton:hover {
-      transform:
-        scale(1.04);
-
-      background:
-        #fff4d5;
+    .fact-button:hover {
+      transform: scale(1.04);
+      background: #fff3f8;
     }
 
 
-
-    /* LITTLE BOTTOM SYMBOLS */
+    /* SYMBOLS UNDER BUTTON */
 
     .fact-bottom {
-      margin-top:
-        9px;
+      margin-top: 8px;
 
-      font-size:
-        11px;
+      font-family: "Sour Gummy", cursive;
 
-      letter-spacing:
-        5px;
+      color: #97dad6;
 
-      color:
-        #89d9df;
+      font-size: 11px;
+
+      letter-spacing: 5px;
     }
 
 
-
-    /* =========================================
-       ORIGINAL BLUE SCROLLBAR
-       ========================================= */
-
-    html,
-    body {
-      scrollbar-width:
-        thin;
-
-      scrollbar-color:
-        #8fcbd7
-        #edfaff;
+    .fact-pop {
+      animation: factPop .3s ease;
     }
 
-    ::-webkit-scrollbar {
-      width:
-        10px;
+    @keyframes factPop {
+
+      0% {
+        opacity: 0;
+        transform: scale(.94);
+      }
+
+      70% {
+        transform: scale(1.03);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
     }
-
-    ::-webkit-scrollbar-track {
-      background:
-        #edfaff;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background:
-        #8fcbd7;
-
-      border:
-        2px solid
-        #edfaff;
-
-      border-radius:
-        10px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background:
-        #79bdca;
-    }
-
 
   </style>
-
 </head>
 
 
 <body>
 
+  <h1>haiiii ★</h1>
 
-  <div class="intro">
+  <p>
+    welcome to my little corner of the internet...... (´～｀ヾ) ♡
+  </p>
 
-
-    <div class="hai-title">
-      haiiii ★
-    </div>
-
-
-    <p>
-      welcome to my little corner of the internet..... (～ o ～) ♡
-    </p>
-
-
-    <p>
-      i made this because i miss when the internet felt personal and weird......
-      i grew up on early 2010s sites like girlsgogames.com, so i wanted a little
-      place that felt like mine..... basically this is my digital
-      bedroom/scrapbook........ pictures, diary entries, games, movies, and
-      whatever else gets stuck in my brain...... ☆ i'm building it by googling
-      stuff and hoping for the best while my midterms are in 10 days......
-      priorities...... (T---T) look around...... click on things...... ♡
-    </p>
-
-
-  </div>
-
+  <p>
+    i made this because i miss when the internet felt personal and weird......
+    i grew up on early 2010s sites like girlsgogames.com, so i wanted a little place
+    that felt like mine...... basically this is my digital bedroom/scrapbook......
+    pictures, diary entries, games, movies, and whatever else gets stuck in my brain......
+    ☆ i'm building it by googling stuff and hoping for the best while my midterms are in 10 days.......
+    priorities....... (┬┬﹏┬┬) look around...... click on things....... ♡
+  </p>
 
 
   <!-- RANDOM FACT GENERATOR -->
 
-  <div class="fact-generator">
+  <div class="fact-widget">
 
+    <div class="fact-top">
+      ☆ ♡ ☆
+    </div>
 
     <div class="fact-title">
       random fact abt me!
     </div>
 
-
     <div class="fact-subtitle">
-      - click to learn something random about mina ♡ -
+      click to learn something random about mina ♡
     </div>
 
-
-    <div id="factDisplay">
-      i'm obsessed with horror and weird lore
+    <div id="fact-box">
+      press the button!!
     </div>
-
 
     <button
-      id="factButton"
-      type="button"
+      class="fact-button"
+      onclick="generateFact()"
     >
       ✧ click to generate ✧
     </button>
-
 
     <div class="fact-bottom">
       ♡ ☆ ♡ ☆ ♡
     </div>
 
-
   </div>
 
 
+  <script>
 
-<script>
+    const facts = [
+
+      "i get a fortnite victory royale basically every time",
+
+      "i volunteer a lot",
+
+      "i love analyzing birth charts",
+
+      "i am a sagittarius!",
+
+      "i love roblox",
+
+      "foo fighters and incubus are my favorite bands",
+
+      "i love cats an unreasonable amount",
+
+      "i'm obsessed with horror and weird lore",
+
+      "i'm more of a pc gamer than a console gamer",
+
+      "i love story-heavy games",
+
+      "i can hyperfixate on something for hours",
+
+      "i love bugs, especially beetles and ants",
+
+      "i'm a huge fnaf fan",
+
+      "i love sci-fi and star wars",
+
+      "i'm really into psychology",
+
+      "i love cute things and creepy things equally",
+
+      "i take way too many pictures of my cat",
+
+      "i will absolutely judge a fictional character by their birth chart",
+
+      "i play fortnite like rent is due",
+
+      "i love horror games but would probably die instantly in one",
+
+      "i will defend my favorite game like i worked on it",
+
+      "i take personality tests like they are legally binding",
+
+      "i love horror until i actually hear a noise in my house",
+
+      "i love lore more than i love understanding the actual plot",
+
+      "i will open roblox for five minutes and disappear for three hours"
+
+    ];
 
 
-const minaFacts = [
-
-  "i get a fortnite victory royale each time",
-
-  "i volunteer a lot",
-
-  "i love analyzing birthcharts",
-
-  "i love roblox",
-
-  "foo fighters and incubus r my fav bands",
-
-  "i am sagittarius!",
-
-  "i can hyperfixate on something for 6 hours straight",
-
-  "i'm obsessed with horror and weird lore",
-
-  "i take an unreasonable amount of pictures of my cat",
-
-  "i assign birth charts to fictional characters",
-
-  "i'm more of a pc gamer than a console gamer",
-
-  "i love fnaf, resident evil, life is strange, silent hill and way too many other games"
-
-];
+    let lastFact = -1;
 
 
-const factDisplay =
-  document.getElementById(
-    "factDisplay"
-  );
+    function generateFact() {
 
+      let randomIndex;
 
-const factButton =
-  document.getElementById(
-    "factButton"
-  );
+      do {
 
+        randomIndex =
+          Math.floor(Math.random() * facts.length);
 
-let lastFact =
-  -1;
+      }
 
-
-factButton.addEventListener(
-  "click",
-  function() {
-
-
-    let randomFact =
-      Math.floor(
-        Math.random() *
-        minaFacts.length
+      while (
+        randomIndex === lastFact &&
+        facts.length > 1
       );
 
 
-    while (
-      randomFact === lastFact &&
-      minaFacts.length > 1
-    ) {
+      lastFact = randomIndex;
 
-      randomFact =
-        Math.floor(
-          Math.random() *
-          minaFacts.length
-        );
+
+      const factBox =
+        document.getElementById("fact-box");
+
+
+      factBox.classList.remove("fact-pop");
+
+      void factBox.offsetWidth;
+
+
+      factBox.textContent =
+        facts[randomIndex];
+
+
+      factBox.classList.add("fact-pop");
 
     }
 
-
-    lastFact =
-      randomFact;
-
-
-    factDisplay.textContent =
-      minaFacts[randomFact];
-
-
-  }
-);
-
-
-</script>
-
+  </script>
 
 </body>
 
