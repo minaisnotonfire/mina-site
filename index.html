@@ -1052,7 +1052,6 @@
       justify-content: center;
 
       padding: 35px 15px;
-
       overflow: auto;
 
       background-image:
@@ -1080,13 +1079,25 @@
       pointer-events: none;
     }
 
+    .password-gate-layout {
+      position: relative;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 24px;
+
+      z-index: 2;
+    }
+
     .password-ds {
       position: relative;
 
       width: 560px;
       max-width: 95vw;
 
-      z-index: 2;
+      flex-shrink: 0;
 
       filter:
         drop-shadow(
@@ -1095,11 +1106,15 @@
         );
     }
 
-    .password-ds-top,
-    .password-ds-bottom {
+    .password-ds-top {
       position: relative;
 
       width: 100%;
+
+      padding:
+        22px
+        31px
+        27px;
 
       background:
         linear-gradient(
@@ -1111,44 +1126,16 @@
         5px solid
         #b97996;
 
-      box-shadow:
-        inset 0 0 0
-        4px
-        rgba(255,255,255,.23);
-    }
-
-    .password-ds-top {
-      padding:
-        22px
-        31px
-        27px;
-
       border-radius:
         34px
         34px
         12px
         12px;
-    }
 
-    .password-ds-bottom {
-      min-height: 375px;
-
-      padding:
-        28px
-        31px
-        35px;
-
-      border-radius:
-        12px
-        12px
-        38px
-        38px;
-
-      background:
-        linear-gradient(
-          #efabc8,
-          #ffd7e8
-        );
+      box-shadow:
+        inset 0 0 0
+        4px
+        rgba(255,255,255,.23);
     }
 
     .password-camera-row {
@@ -1189,21 +1176,6 @@
         #fff6c6;
     }
 
-    .password-top-bezel,
-    .password-bottom-bezel {
-      background: #735766;
-
-      border:
-        4px solid
-        #5a414d;
-
-      border-radius: 13px;
-
-      box-shadow:
-        inset 0 0 0
-        3px #9b7788;
-    }
-
     .password-top-bezel {
       position: relative;
 
@@ -1212,16 +1184,20 @@
       padding:
         14px
         30px;
-    }
 
-    .password-bottom-bezel {
-      width: 330px;
-      max-width: 85%;
+      background:
+        #735766;
 
-      margin:
-        0 auto;
+      border:
+        4px solid
+        #5a414d;
 
-      padding: 12px;
+      border-radius:
+        13px;
+
+      box-shadow:
+        inset 0 0 0
+        3px #9b7788;
     }
 
     .password-top-screen {
@@ -1230,7 +1206,8 @@
 
       overflow: hidden;
 
-      background: #fff;
+      background:
+        #fff;
 
       border:
         3px solid
@@ -1319,11 +1296,71 @@
         4px solid
         #8b5f73;
 
-      border-radius: 13px;
+      border-radius:
+        13px;
 
       box-shadow:
         inset 0 3px 3px
         rgba(255,255,255,.23);
+    }
+
+    .password-ds-bottom {
+      position: relative;
+
+      width: 100%;
+
+      min-height: 375px;
+
+      padding:
+        28px
+        31px
+        35px;
+
+      background:
+        linear-gradient(
+          #efabc8,
+          #ffd7e8
+        );
+
+      border:
+        5px solid
+        #b97996;
+
+      border-radius:
+        12px
+        12px
+        38px
+        38px;
+
+      box-shadow:
+        inset 0 0 0
+        4px
+        rgba(255,255,255,.23);
+    }
+
+    .password-bottom-bezel {
+      width: 330px;
+      max-width: 85%;
+
+      margin:
+        0 auto;
+
+      padding:
+        12px;
+
+      background:
+        #735766;
+
+      border:
+        4px solid
+        #5a414d;
+
+      border-radius:
+        13px;
+
+      box-shadow:
+        inset 0 0 0
+        3px #9b7788;
     }
 
     .password-bottom-screen {
@@ -1349,7 +1386,8 @@
         3px solid
         #332c30;
 
-      border-radius: 5px;
+      border-radius:
+        5px;
 
       text-align: center;
     }
@@ -1364,9 +1402,11 @@
         "Bonbon",
         cursive;
 
-      font-size: 35px;
+      font-size:
+        35px;
 
-      line-height: 1;
+      line-height:
+        1;
 
       color:
         #ff69a7;
@@ -1386,57 +1426,74 @@
         "Unkempt",
         cursive;
 
-      font-size: 15px;
+      font-size:
+        15px;
 
       color:
         #8d6757;
     }
 
     #sitePassword {
-      width: 230px;
-      max-width: 100%;
+      width:
+        230px;
+
+      max-width:
+        100%;
 
       padding:
         9px
         11px;
 
-      margin-bottom: 8px;
+      margin-bottom:
+        8px;
 
-      background: #fffdf7;
+      background:
+        #fffdf7;
 
       border:
         3px double
         #d6b39b;
 
-      border-radius: 10px;
+      border-radius:
+        10px;
 
-      outline: none;
+      outline:
+        none;
 
       font-family:
         "Sour Gummy",
         sans-serif;
 
-      font-size: 14px;
+      font-size:
+        14px;
 
       color:
         #755969;
 
-      text-align: center;
+      text-align:
+        center;
     }
 
     #sitePassword:focus {
-      border-color: #aa8069;
-      background: #fffaf3;
+      border-color:
+        #aa8069;
+
+      background:
+        #fffaf3;
     }
 
     .password-buttons {
-      display: flex;
+      display:
+        flex;
 
-      justify-content: center;
+      justify-content:
+        center;
 
-      flex-wrap: wrap;
+      flex-wrap:
+        wrap;
 
-      gap: 4px;
+      gap:
+        4px;
     }
 
     #passwordButton,
@@ -1455,16 +1512,21 @@
         3px double
         #d6b39b;
 
-      border-radius: 9px;
+      border-radius:
+        9px;
 
       font-family:
         "Sour Gummy",
         sans-serif;
 
-      font-size: 13px;
-      font-weight: bold;
+      font-size:
+        13px;
 
-      color: #a45e80;
+      font-weight:
+        bold;
+
+      color:
+        #a45e80;
 
       transition:
         transform .15s ease,
@@ -1473,60 +1535,235 @@
 
     #passwordButton:hover,
     #hintButton:hover {
-      transform: scale(1.05);
-      background: #fff3bd;
-    }
-
-    #passwordHint {
-      display: none;
-
-      margin-top: 10px;
-
-      padding:
-        8px
-        9px;
-
-      max-width: 250px;
+      transform:
+        scale(1.05);
 
       background:
-        rgba(255,239,246,.95);
+        #fff3bd;
+    }
+
+    #passwordError {
+      min-height:
+        17px;
+
+      margin-top:
+        7px;
+
+      font-size:
+        13px;
+
+      color:
+        #d55882;
+    }
+
+
+    /* FLOATING HINT */
+
+    #passwordHintCard {
+      position: absolute;
+
+      left:
+        calc(100% + 24px);
+
+      top:
+        54%;
+
+      transform:
+        translateY(-50%)
+        translateX(10px);
+
+      width:
+        235px;
+
+      padding:
+        14px
+        15px;
+
+      display:
+        none;
+
+      background:
+        linear-gradient(
+          #fff8f1,
+          #ffe9f1
+        );
 
       border:
-        2px dashed
-        #d7b097;
+        3px double
+        #d6b39b;
 
-      border-radius: 9px;
+      border-radius:
+        16px;
+
+      box-shadow:
+        5px 6px 0
+        rgba(177,116,142,.18);
+
+      color:
+        #855f52;
+
+      text-align:
+        center;
 
       font-family:
         "Unkempt",
         cursive;
 
-      font-size: 13px;
-      line-height: 1.25;
+      font-size:
+        14px;
 
-      color: #876051;
+      line-height:
+        1.35;
+
+      z-index:
+        20;
     }
 
-    #passwordError {
-      min-height: 17px;
+    #passwordHintCard.show {
+      display:
+        block;
 
-      margin-top: 7px;
-
-      font-size: 13px;
-
-      color: #d55882;
+      animation:
+        passwordHintSlideIn
+        .25s ease;
     }
+
+    @keyframes passwordHintSlideIn {
+
+      from {
+        opacity:
+          0;
+
+        transform:
+          translateY(-50%)
+          translateX(20px);
+      }
+
+      to {
+        opacity:
+          1;
+
+        transform:
+          translateY(-50%)
+          translateX(0);
+      }
+
+    }
+
+    .password-hint-card-top {
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        space-between;
+
+      margin-bottom:
+        7px;
+
+      font-family:
+        "Bonbon",
+        cursive;
+
+      font-size:
+        24px;
+
+      color:
+        #ff6fa8;
+    }
+
+    #passwordCloseHint {
+      width:
+        25px;
+
+      height:
+        25px;
+
+      padding:
+        0;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      background:
+        #fffaf3;
+
+      border:
+        2px solid
+        #d7af99;
+
+      border-radius:
+        50%;
+
+      color:
+        #9a6c5f;
+
+      font-family:
+        Arial,
+        sans-serif;
+
+      font-size:
+        13px;
+
+      font-weight:
+        bold;
+    }
+
+    #passwordCloseHint:hover {
+      transform:
+        scale(1.08);
+
+      background:
+        #fff0f4;
+    }
+
+    .password-hint-card-text {
+      margin:
+        0;
+
+      color:
+        #835f52;
+    }
+
+    .password-hint-card-text b {
+      display:
+        inline-block;
+
+      margin-top:
+        8px;
+
+      color:
+        #a65d79;
+    }
+
+
+    /* CONTROLS */
 
     .password-circle-pad {
       position: absolute;
 
-      left: 24px;
-      top: 88px;
+      left:
+        24px;
 
-      width: 55px;
-      height: 55px;
+      top:
+        88px;
 
-      border-radius: 50%;
+      width:
+        55px;
+
+      height:
+        55px;
+
+      border-radius:
+        50%;
 
       background:
         radial-gradient(
@@ -1544,26 +1781,37 @@
         inset 0 3px 3px rgba(255,255,255,.35),
         0 2px 2px rgba(90,50,70,.18);
 
-      z-index: 3;
+      z-index:
+        3;
     }
 
     .password-dpad {
-      position: absolute;
+      position:
+        absolute;
 
-      left: 24px;
-      bottom: 56px;
+      left:
+        24px;
 
-      width: 52px;
-      height: 52px;
+      bottom:
+        56px;
 
-      z-index: 3;
+      width:
+        52px;
+
+      height:
+        52px;
+
+      z-index:
+        3;
     }
 
     .password-dpad::before,
     .password-dpad::after {
-      content: "";
+      content:
+        "";
 
-      position: absolute;
+      position:
+        absolute;
 
       background:
         #8d6377;
@@ -1572,48 +1820,79 @@
         2px solid
         #6e4e5e;
 
-      border-radius: 5px;
+      border-radius:
+        5px;
     }
 
     .password-dpad::before {
-      width: 18px;
-      height: 52px;
+      width:
+        18px;
 
-      left: 17px;
-      top: 0;
+      height:
+        52px;
+
+      left:
+        17px;
+
+      top:
+        0;
     }
 
     .password-dpad::after {
-      width: 52px;
-      height: 18px;
+      width:
+        52px;
 
-      left: 0;
-      top: 17px;
+      height:
+        18px;
+
+      left:
+        0;
+
+      top:
+        17px;
     }
 
     .password-abxy {
-      position: absolute;
+      position:
+        absolute;
 
-      right: 24px;
-      bottom: 50px;
+      right:
+        24px;
 
-      width: 82px;
-      height: 82px;
+      bottom:
+        50px;
 
-      z-index: 3;
+      width:
+        82px;
+
+      height:
+        82px;
+
+      z-index:
+        3;
     }
 
     .password-abxy span {
-      position: absolute;
+      position:
+        absolute;
 
-      width: 30px;
-      height: 30px;
+      width:
+        30px;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      height:
+        30px;
 
-      border-radius: 50%;
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      border-radius:
+        50%;
 
       background:
         linear-gradient(
@@ -1636,9 +1915,11 @@
         Arial,
         sans-serif;
 
-      font-size: 11px;
+      font-size:
+        11px;
 
-      font-weight: bold;
+      font-weight:
+        bold;
     }
 
     .password-abxy .password-a {
@@ -1664,16 +1945,23 @@
     .password-power-light {
       position: absolute;
 
-      right: 23px;
-      bottom: 18px;
+      right:
+        23px;
 
-      width: 7px;
-      height: 7px;
+      bottom:
+        18px;
+
+      width:
+        7px;
+
+      height:
+        7px;
 
       background:
         #9cefa1;
 
-      border-radius: 50%;
+      border-radius:
+        50%;
 
       box-shadow:
         0 0 7px
@@ -1687,22 +1975,28 @@
     }
 
     @keyframes passwordWrongShake {
+
       0%,
       100% {
-        transform: translateX(0);
+        transform:
+          translateX(0);
       }
 
       25% {
-        transform: translateX(-8px);
+        transform:
+          translateX(-8px);
       }
 
       50% {
-        transform: translateX(8px);
+        transform:
+          translateX(8px);
       }
 
       75% {
-        transform: translateX(-5px);
+        transform:
+          translateX(-5px);
       }
+
     }
 
     .password-success-message {
@@ -1710,62 +2004,142 @@
         "Bonbon",
         cursive;
 
-      font-size: 27px;
+      font-size:
+        27px;
 
       color:
         #ff6ba8;
     }
 
 
-    @media (max-width: 620px) {
+    @media
+    (max-width: 900px) {
 
       #passwordGate {
-        align-items: flex-start;
-        padding-top: 25px;
+        align-items:
+          flex-start;
+
+        padding-top:
+          25px;
+      }
+
+      .password-gate-layout {
+        flex-direction:
+          column;
       }
 
       .password-ds {
-        width: 95vw;
+        width:
+          95vw;
       }
+
+      #passwordHintCard {
+        position:
+          relative;
+
+        left:
+          auto;
+
+        top:
+          auto;
+
+        transform:
+          none;
+
+        width:
+          min(90vw, 340px);
+
+        margin:
+          16px auto 0;
+      }
+
+      #passwordHintCard.show {
+        display:
+          block;
+
+        animation:
+          passwordHintSlideDown
+          .25s ease;
+      }
+
+      @keyframes passwordHintSlideDown {
+
+        from {
+          opacity:
+            0;
+
+          transform:
+            translateY(-8px);
+        }
+
+        to {
+          opacity:
+            1;
+
+          transform:
+            translateY(0);
+        }
+
+      }
+
+    }
+
+
+    @media
+    (max-width: 620px) {
 
       .password-ds-top,
       .password-ds-bottom {
-        padding-left: 18px;
-        padding-right: 18px;
+        padding-left:
+          18px;
+
+        padding-right:
+          18px;
       }
 
       .password-top-screen {
-        height: 185px;
+        height:
+          185px;
       }
 
       .password-bottom-bezel {
-        width: 300px;
-        max-width: 68%;
+        width:
+          300px;
+
+        max-width:
+          68%;
       }
 
       .password-circle-pad {
-        left: 9px;
+        left:
+          9px;
 
-        width: 44px;
-        height: 44px;
+        width:
+          44px;
+
+        height:
+          44px;
       }
 
       .password-dpad {
-        left: 7px;
+        left:
+          7px;
 
         transform:
           scale(.76);
       }
 
       .password-abxy {
-        right: 7px;
+        right:
+          7px;
 
         transform:
           scale(.76);
       }
 
       .password-friends-title {
-        font-size: 29px;
+        font-size:
+          29px;
       }
 
     }
@@ -1779,169 +2153,206 @@
 
 <div id="passwordGate">
 
-  <div class="password-ds">
+  <div class="password-gate-layout">
 
 
-    <!-- TOP 3DS -->
-
-    <div class="password-ds-top">
-
-      <div class="password-camera-row">
-
-        <div class="password-camera-light"></div>
-
-        <div class="password-camera-dot"></div>
-
-        <div class="password-camera-light"></div>
-
-      </div>
+    <div class="password-ds">
 
 
-      <div class="password-top-bezel">
+      <!-- TOP 3DS -->
 
-        <div class="password-speaker-left"></div>
+      <div class="password-ds-top">
 
 
-        <div class="password-top-screen">
+        <div class="password-camera-row">
 
-          <iframe
-            src="https://giphy.com/embed/TlxFVhOcW80JW"
-            class="password-tomodachi"
-            frameborder="0"
-            allowfullscreen
-            title="tomodachi life"
-          ></iframe>
+          <div class="password-camera-light"></div>
+
+          <div class="password-camera-dot"></div>
+
+          <div class="password-camera-light"></div>
 
         </div>
 
 
-        <div class="password-speaker-right"></div>
-
-      </div>
-
-    </div>
+        <div class="password-top-bezel">
 
 
-    <!-- HINGE -->
-
-    <div class="password-hinge-area">
-
-      <div class="password-hinge"></div>
-
-    </div>
+          <div class="password-speaker-left"></div>
 
 
-    <!-- BOTTOM 3DS -->
+          <div class="password-top-screen">
 
-    <div class="password-ds-bottom">
+            <iframe
+              src="https://giphy.com/embed/TlxFVhOcW80JW"
+              class="password-tomodachi"
+              frameborder="0"
+              allowfullscreen
+              title="tomodachi life"
+            ></iframe>
+
+          </div>
 
 
-      <div class="password-circle-pad"></div>
+          <div class="password-speaker-right"></div>
 
 
-      <div class="password-dpad"></div>
+        </div>
 
-
-      <div class="password-abxy">
-
-        <span class="password-a">
-          A
-        </span>
-
-        <span class="password-b">
-          B
-        </span>
-
-        <span class="password-x">
-          X
-        </span>
-
-        <span class="password-y">
-          Y
-        </span>
 
       </div>
 
 
-      <div class="password-bottom-bezel">
+      <!-- HINGE -->
+
+      <div class="password-hinge-area">
+
+        <div class="password-hinge"></div>
+
+      </div>
 
 
-        <div
-          class="password-bottom-screen"
-          id="passwordBottomScreen"
-        >
+      <!-- BOTTOM 3DS -->
+
+      <div class="password-ds-bottom">
 
 
-          <div class="password-friends-title">
-            friends only! ♡
-          </div>
+        <div class="password-circle-pad"></div>
 
 
-          <div class="password-subtitle">
-            enter the password to visit mina's internet corner
-          </div>
+        <div class="password-dpad"></div>
 
 
-          <input
-            type="password"
-            id="sitePassword"
-            placeholder="password..."
-            autocomplete="off"
+        <div class="password-abxy">
+
+          <span class="password-a">
+            A
+          </span>
+
+          <span class="password-b">
+            B
+          </span>
+
+          <span class="password-x">
+            X
+          </span>
+
+          <span class="password-y">
+            Y
+          </span>
+
+        </div>
+
+
+        <div class="password-bottom-bezel">
+
+
+          <div
+            class="password-bottom-screen"
+            id="passwordBottomScreen"
           >
 
 
-          <div class="password-buttons">
+            <div class="password-friends-title">
+              friends only! ♡
+            </div>
 
 
-            <button
-              id="passwordButton"
-              type="button"
+            <div class="password-subtitle">
+              enter the password to visit mina's internet corner
+            </div>
+
+
+            <input
+              type="password"
+              id="sitePassword"
+              placeholder="password..."
+              autocomplete="off"
             >
-              ♡ let me in ♡
-            </button>
 
 
-            <button
-              id="hintButton"
-              type="button"
-            >
-              hint? ★
-            </button>
+            <div class="password-buttons">
+
+
+              <button
+                id="passwordButton"
+                type="button"
+              >
+                ♡ let me in ♡
+              </button>
+
+
+              <button
+                id="hintButton"
+                type="button"
+              >
+                hint? ★
+              </button>
+
+
+            </div>
+
+
+            <div id="passwordError"></div>
 
 
           </div>
-
-
-          <div id="passwordHint">
-
-            the fictional character i always post on my cf story and read ao3 fanfics abt.
-
-            <br><br>
-
-            <b>
-              if you're my friend YOU'LL KNOW
-            </b>
-
-          </div>
-
-
-          <div id="passwordError"></div>
 
 
         </div>
 
 
+        <div class="password-power-light"></div>
+
+
       </div>
 
 
-      <div class="password-power-light"></div>
+    </div>
+
+
+
+    <!-- FLOATING HINT -->
+
+    <div id="passwordHintCard">
+
+
+      <div class="password-hint-card-top">
+
+        <span>
+          hint! ♡
+        </span>
+
+
+        <button
+          id="passwordCloseHint"
+          type="button"
+          aria-label="close hint"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <p class="password-hint-card-text">
+
+        the fictional character i always post on my cf story
+        and read ao3 fanfics abt.
+
+        <br>
+
+        <b>
+          if you're my friend YOU'LL KNOW
+        </b>
+
+      </p>
 
 
     </div>
 
 
   </div>
-
 
 </div>
 
@@ -2762,7 +3173,8 @@ async function checkSitePassword() {
         "sitePassword"
       )
       .value
-      .trim();
+      .trim()
+      .toLowerCase();
 
 
   const screen =
@@ -2801,6 +3213,16 @@ async function checkSitePassword() {
       "";
 
 
+    document
+      .getElementById(
+        "passwordHintCard"
+      )
+      .classList
+      .remove(
+        "show"
+      );
+
+
     screen.innerHTML =
       `
       <div class="password-success-message">
@@ -2823,6 +3245,7 @@ async function checkSitePassword() {
             "none";
 
       },
+
       900
     );
 
@@ -2886,6 +3309,12 @@ document
   );
 
 
+const passwordHintCard =
+  document.getElementById(
+    "passwordHintCard"
+  );
+
+
 document
   .getElementById(
     "hintButton"
@@ -2894,30 +3323,29 @@ document
     "click",
     function() {
 
-      const hint =
-        document
-          .getElementById(
-            "passwordHint"
-          );
+      passwordHintCard
+        .classList
+        .toggle(
+          "show"
+        );
+
+    }
+  );
 
 
-      if (
-        hint.style.display ===
-        "block"
-      ) {
+document
+  .getElementById(
+    "passwordCloseHint"
+  )
+  .addEventListener(
+    "click",
+    function() {
 
-        hint.style.display =
-          "none";
-
-      }
-
-
-      else {
-
-        hint.style.display =
-          "block";
-
-      }
+      passwordHintCard
+        .classList
+        .remove(
+          "show"
+        );
 
     }
   );
