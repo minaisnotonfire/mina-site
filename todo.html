@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mina's to-do ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bonbon&family=Sour+Gummy:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      cursor:
+        url('https://cdn.cursors-4u.net/previews/puppy-13-a9c1ade9-32.webp')
+        32 32,
+        auto !important;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
+      background: transparent;
+      font-family: "Sour Gummy", cursive;
+      color: #725c66;
+    }
+
+    body {
+      padding: 6px;
+    }
+
+    .todo-wrap {
+      width: 100%;
+      min-height: 340px;
+      position: relative;
+
+      background:
+        radial-gradient(
+          circle,
+          #9e766b 3px,
+          transparent 3.5px
+        ),
+        #d8eee9;
+
+      background-size: 34px 34px;
+
+      border: 3px solid #f0b3c8;
+      border-radius: 16px;
+
+      box-shadow:
+        inset 0 0 0 2px rgba(255,255,255,.65),
+        3px 4px 0 rgba(255,185,205,.22);
+
+      overflow: hidden;
+    }
+
+    .scallop {
+      height: 28px;
+      width: 100%;
+
+      background:
+        radial-gradient(
+          circle at 12px -1px,
+          #fff9f3 13px,
+          transparent 14px
+        );
+
+      background-size: 24px 28px;
+      background-repeat: repeat-x;
+
+      border-bottom: 2px solid #efb1c5;
+    }
+
+    .todo-inner {
+      padding: 8px 10px 10px;
+    }
+
+    .todo-title {
+      text-align: center;
+      font-family: "Bonbon", cursive;
+      font-size: 27px;
+      line-height: 1;
+      color: #ff73a9;
+      margin: 2px 0 4px;
+
+      text-shadow:
+        1px 1px 0 white;
+    }
+
+    .todo-subtitle {
+      text-align: center;
+      font-size: 10px;
+      color: #9a7482;
+      margin-bottom: 8px;
+    }
+
+    .todo-form {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 8px;
+    }
+
+    #todoInput {
+      flex: 1;
+      min-width: 0;
+
+      padding: 6px 7px;
+
+      background: #fffdf7;
+
+      border: 2px solid #edaec4;
+      border-radius: 9px;
+
+      outline: none;
+
+      font-family: "Sour Gummy", cursive;
+      font-size: 11px;
+
+      color: #755d68;
+    }
+
+    #todoInput::placeholder {
+      color: #c58ca4;
+    }
+
+    #todoInput:focus {
+      border-color: #8dd6db;
+    }
+
+    .add-btn {
+      padding: 5px 7px;
+
+      background:
+        linear-gradient(
+          #fffdf7,
+          #ffe7f0
+        );
+
+      border: 2px double #8edbe0;
+      border-radius: 9px;
+
+      color: #b26084;
+
+      font-family: "Sour Gummy", cursive;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .add-btn:hover {
+      transform: scale(1.04);
+    }
+
+    .todo-list {
+      list-style: none;
+      margin: 0;
+      padding: 0 2px 0 0;
+
+      max-height: 205px;
+      overflow-y: auto;
+    }
+
+    .todo-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      margin-bottom: 7px;
+      padding: 6px 7px;
+
+      background:
+        rgba(255,253,248,.88);
+
+      border:
+        1.5px dashed #dca0b6;
+
+      border-radius: 10px;
+
+      font-size: 11px;
+
+      color: #745c66;
+    }
+
+    .todo-item input[type="checkbox"] {
+      margin: 0;
+      accent-color: #f18fb7;
+      flex-shrink: 0;
+    }
+
+    .todo-text {
+      flex: 1;
+      min-width: 0;
+      word-break: break-word;
+      line-height: 1.15;
+    }
+
+    .todo-item.done .todo-text {
+      text-decoration: line-through;
+      opacity: .55;
+    }
+
+    .delete-btn {
+      border: 0;
+      background: transparent;
+      padding: 0;
+
+      color: #cf789c;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      line-height: 1;
+    }
+
+    .delete-btn:hover {
+      transform: scale(1.15);
+    }
+
+    .empty {
+      text-align: center;
+
+      padding: 14px 6px;
+
+      background:
+        rgba(255,255,255,.55);
+
+      border:
+        1.5px dashed #e8aec2;
+
+      border-radius: 10px;
+
+      font-size: 11px;
+
+      color: #9b7885;
+    }
+
+    .todo-footer {
+      text-align: center;
+      margin-top: 6px;
+
+      font-size: 9px;
+
+      color: #a67f8c;
+    }
+
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f7eee8;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background:
+        linear-gradient(
+          #d6b39b,
+          #bd8d78
+        );
+
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="todo-wrap">
+
+    <div class="scallop"></div>
+
+    <div class="todo-inner">
+
+      <div class="todo-title">
+        to do list ♡
+      </div>
+
+      <div class="todo-subtitle">
+        little things i need to do ☆
+      </div>
+
+      <form
+        class="todo-form"
+        id="todoForm"
+      >
+        <input
+          id="todoInput"
+          type="text"
+          placeholder="add task..."
+          maxlength="70"
+          autocomplete="off"
+        >
+
+        <button
+          class="add-btn"
+          type="submit"
+        >
+          +
+        </button>
+      </form>
+
+      <ul
+        class="todo-list"
+        id="todoList"
+      ></ul>
+
+      <div class="todo-footer">
+        saved in this browser ♡
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script>
+    const STORAGE_KEY =
+      "minaTodoList";
+
+    const todoForm =
+      document.getElementById("todoForm");
+
+    const todoInput =
+      document.getElementById("todoInput");
+
+    const todoList =
+      document.getElementById("todoList");
+
+
+    let todos =
+      JSON.parse(
+        localStorage.getItem(STORAGE_KEY)
+      ) || [];
+
+
+    function saveTodos() {
+      localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(todos)
+      );
+    }
+
+
+    function renderTodos() {
+
+      todoList.innerHTML = "";
+
+      if (todos.length === 0) {
+
+        const empty =
+          document.createElement("li");
+
+        empty.className =
+          "empty";
+
+        empty.textContent =
+          "nothing here yet ♡";
+
+        todoList.appendChild(
+          empty
+        );
+
+        return;
+      }
+
+
+      todos.forEach(
+        function(todo, index) {
+
+          const item =
+            document.createElement("li");
+
+          item.className =
+            "todo-item" +
+            (todo.done ? " done" : "");
+
+
+          const checkbox =
+            document.createElement("input");
+
+          checkbox.type =
+            "checkbox";
+
+          checkbox.checked =
+            todo.done;
+
+
+          checkbox.addEventListener(
+            "change",
+            function() {
+
+              todos[index].done =
+                checkbox.checked;
+
+              saveTodos();
+
+              renderTodos();
+
+            }
+          );
+
+
+          const text =
+            document.createElement("span");
+
+          text.className =
+            "todo-text";
+
+          text.textContent =
+            todo.text;
+
+
+          const deleteButton =
+            document.createElement("button");
+
+          deleteButton.type =
+            "button";
+
+          deleteButton.className =
+            "delete-btn";
+
+          deleteButton.textContent =
+            "×";
+
+
+          deleteButton.addEventListener(
+            "click",
+            function() {
+
+              todos.splice(
+                index,
+                1
+              );
+
+              saveTodos();
+
+              renderTodos();
+
+            }
+          );
+
+
+          item.appendChild(
+            checkbox
+          );
+
+          item.appendChild(
+            text
+          );
+
+          item.appendChild(
+            deleteButton
+          );
+
+          todoList.appendChild(
+            item
+          );
+
+        }
+      );
+
+    }
+
+
+    todoForm.addEventListener(
+      "submit",
+      function(event) {
+
+        event.preventDefault();
+
+        const text =
+          todoInput.value.trim();
+
+        if (!text) {
+          return;
+        }
+
+
+        todos.push({
+          text: text,
+          done: false
+        });
+
+
+        saveTodos();
+
+        renderTodos();
+
+        todoInput.value =
+          "";
+
+        todoInput.focus();
+
+      }
+    );
+
+
+    renderTodos();
+  </script>
+
+</body>
+</html>
