@@ -84,6 +84,7 @@
     }
 
     @keyframes grain {
+
       0% {
         transform: translate(0%, 0%);
       }
@@ -95,6 +96,7 @@
       100% {
         transform: translate(0%, 0%);
       }
+
     }
 
 
@@ -111,6 +113,7 @@
 
     .site {
       width: 1050px;
+
       margin: 25px auto;
 
       position: relative;
@@ -119,6 +122,7 @@
 
       z-index: 2;
     }
+
 
 
     /* HEADER */
@@ -245,6 +249,7 @@
     }
 
 
+
     /* TOP STAMP CAROUSEL */
 
     .marquee-box {
@@ -270,8 +275,10 @@
 
     .marquee-box img {
       height: 45px;
+
       margin: 3px 5px;
     }
+
 
 
     /* MUSIC PLAYER */
@@ -281,10 +288,12 @@
       min-height: 46px;
 
       margin: 0 auto 18px;
+
       padding: 7px 12px;
 
       display: flex;
       align-items: center;
+
       gap: 8px;
 
       background:
@@ -307,9 +316,11 @@
 
     .music-label {
       flex-shrink: 0;
+
       white-space: nowrap;
 
       font-family: "Unkempt", cursive;
+
       font-weight: bold;
       font-size: 15px;
 
@@ -318,6 +329,7 @@
 
     .music-controls {
       display: flex;
+
       gap: 4px;
     }
 
@@ -355,11 +367,13 @@
 
     .music-player button:hover {
       background: #efffff;
+
       transform: scale(1.06);
     }
 
     .song-display {
       min-width: 0;
+
       flex: 1;
 
       height: 29px;
@@ -374,18 +388,23 @@
       background: #fffdf7;
 
       border: 2px dashed #f5acc4;
+
       border-radius: 7px;
     }
 
     #songName {
       display: block;
+
       width: 100%;
 
       overflow: hidden;
+
       white-space: nowrap;
+
       text-overflow: ellipsis;
 
       color: #795e6c;
+
       font-size: 13px;
 
       text-transform: lowercase;
@@ -400,17 +419,20 @@
       flex-shrink: 0;
 
       color: #b26a8b;
+
       font-size: 12px;
     }
 
     #volumeSlider {
       width: 72px;
+
       accent-color: #9edee8;
     }
 
     #musicAudio {
       display: none;
     }
+
 
 
     /* COLUMNS */
@@ -429,26 +451,42 @@
     }
 
     .box {
-      background: rgba(255,255,255,0.88);
+      background:
+        rgba(255,255,255,0.88);
 
-      border: 4px double #ffc0cb;
-      border-radius: 12px;
+      border:
+        4px double #ffc0cb;
 
-      padding: 12px;
-      margin-bottom: 15px;
+      border-radius:
+        12px;
+
+      padding:
+        12px;
+
+      margin-bottom:
+        15px;
 
       box-shadow:
-        4px 4px 0 rgba(170,240,209,0.25);
+        4px 4px 0
+        rgba(170,240,209,0.25);
     }
 
     .box h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
+      margin-top:
+        0;
 
-      font-family: "Unkempt", cursive;
-      color: #ff69b4;
+      margin-bottom:
+        10px;
 
-      border-bottom: 4px solid transparent;
+      font-family:
+        "Unkempt",
+        cursive;
+
+      color:
+        #ff69b4;
+
+      border-bottom:
+        4px solid transparent;
 
       border-image:
         linear-gradient(
@@ -458,6 +496,7 @@
           #afeeee
         ) 1;
     }
+
 
 
     /* NAVIGATION */
@@ -474,11 +513,17 @@
     .nav a {
       display: block;
 
-      padding: 5px 4px;
-      margin: 4px 0;
+      padding:
+        5px 4px;
 
-      font-weight: bold;
-      border-radius: 7px;
+      margin:
+        4px 0;
+
+      font-weight:
+        bold;
+
+      border-radius:
+        7px;
 
       transition:
         transform .2s,
@@ -486,9 +531,13 @@
     }
 
     .nav a:hover {
-      transform: translateX(5px);
-      background: #fff0f7;
+      transform:
+        translateX(5px);
+
+      background:
+        #fff0f7;
     }
+
 
 
     /* CURRENTLY */
@@ -503,76 +552,110 @@
     }
 
     .currently p {
-      margin: 8px 0;
-      font-size: 14px;
+      margin:
+        8px 0;
+
+      font-size:
+        14px;
     }
+
 
 
     /* CENTER */
 
     .middle {
-      position: relative;
-      min-width: 0;
+      position:
+        relative;
+
+      min-width:
+        0;
     }
 
     iframe {
-      width: 100%;
-      height: 585px;
+      width:
+        100%;
 
-      border: 5px double #87ceeb;
-      border-radius: 12px;
+      height:
+        585px;
 
-      background: #fffdf8;
+      border:
+        5px double #87ceeb;
+
+      border-radius:
+        12px;
+
+      background:
+        #fffdf8;
 
       box-shadow:
-        5px 5px 0 rgba(255,192,203,.3);
+        5px 5px 0
+        rgba(255,192,203,.3);
     }
+
 
 
     /* CENTER BOW */
 
     .center-bow {
-      position: absolute;
+      position:
+        absolute;
 
-      width: 220px;
+      width:
+        220px;
 
-      top: -132px;
-      left: 285px;
+      top:
+        -132px;
 
-      pointer-events: none;
+      left:
+        285px;
 
-      z-index: 3;
+      pointer-events:
+        none;
 
-      clip-path: inset(0 0 105px 0);
+      z-index:
+        3;
+
+      clip-path:
+        inset(0 0 105px 0);
     }
 
 
     .iframe-cuddlebug {
-      position: absolute;
+      position:
+        absolute;
 
-      width: 105px;
+      width:
+        105px;
 
-      left: -28px;
-      top: 520px;
+      left:
+        -28px;
 
-      z-index: 15;
+      top:
+        520px;
 
-      pointer-events: none;
+      z-index:
+        15;
+
+      pointer-events:
+        none;
 
       animation:
         upp 1.4s ease-in-out infinite;
 
       filter:
         drop-shadow(
-          3px 4px 3px rgba(0,0,0,0.12)
+          3px 4px 3px
+          rgba(0,0,0,0.12)
         );
     }
+
 
 
     /* PROFILE */
 
     .profile-box {
-      text-align: center;
+      text-align:
+        center;
 
       background:
         linear-gradient(
@@ -583,64 +666,95 @@
     }
 
     .profile-pic {
-      width: 145px;
-      height: 145px;
+      width:
+        145px;
 
-      object-fit: cover;
+      height:
+        145px;
 
-      border-radius: 50%;
+      object-fit:
+        cover;
 
-      border: 5px double #ffb6c1;
+      border-radius:
+        50%;
 
-      display: block;
+      border:
+        5px double #ffb6c1;
 
-      margin: 0 auto 8px;
+      display:
+        block;
+
+      margin:
+        0 auto 8px;
 
       animation:
         floaty 2s ease-in-out infinite;
     }
 
     .profile-name {
-      font-family: "Bonbon", cursive;
-      font-size: 30px;
-      color: #ff69b4;
+      font-family:
+        "Bonbon",
+        cursive;
+
+      font-size:
+        30px;
+
+      color:
+        #ff69b4;
     }
 
     @keyframes floaty {
+
       0%,
       100% {
-        transform: translateY(0);
+        transform:
+          translateY(0);
       }
 
       50% {
-        transform: translateY(-4px);
+        transform:
+          translateY(-4px);
       }
+
     }
+
 
 
     /* SOCIALS */
 
     .socials a {
-      display: block;
+      display:
+        block;
 
-      background: #fff6fa;
+      background:
+        #fff6fa;
 
-      border: 2px dashed pink;
-      border-radius: 8px;
+      border:
+        2px dashed pink;
 
-      padding: 6px;
-      margin: 6px 0;
+      border-radius:
+        8px;
 
-      text-align: center;
+      padding:
+        6px;
+
+      margin:
+        6px 0;
+
+      text-align:
+        center;
     }
+
 
 
     /* STAMPS */
 
     .stamp-box {
-      height: 180px;
+      height:
+        180px;
 
-      overflow-y: auto;
+      overflow-y:
+        auto;
 
       background:
         linear-gradient(
@@ -649,122 +763,172 @@
         ),
         url("https://fries-and-ice-cream.neocities.org/stamps%20and%20more/rainbowdia.gif");
 
-      padding: 5px;
+      padding:
+        5px;
     }
 
     .stamps {
-      display: flex;
-      flex-wrap: wrap;
+      display:
+        flex;
 
-      justify-content: center;
+      flex-wrap:
+        wrap;
 
-      gap: 3px;
+      justify-content:
+        center;
+
+      gap:
+        3px;
     }
 
     .stamps img {
-      width: auto;
-      height: 60px;
+      width:
+        auto;
 
-      max-width: 100%;
+      height:
+        60px;
 
-      object-fit: contain;
+      max-width:
+        100%;
 
-      transition: transform .2s;
+      object-fit:
+        contain;
+
+      transition:
+        transform .2s;
     }
 
     .stamps img:hover {
-      transform: scale(1.08);
+      transform:
+        scale(1.08);
     }
 
 
     .decor-panel {
-      text-align: center;
+      text-align:
+        center;
     }
 
     .glitcake {
-      width: 120px;
+      width:
+        120px;
 
       animation:
         spin 10s linear infinite;
     }
 
 
+
     /* PIN STRIP */
 
     .pin-strip {
-      width: 100%;
-      height: 115px;
+      width:
+        100%;
 
-      margin-top: 18px;
+      height:
+        115px;
 
-      overflow: hidden;
+      margin-top:
+        18px;
 
-      border: 4px solid #aaf0d1;
-      border-radius: 10px;
+      overflow:
+        hidden;
+
+      border:
+        4px solid #aaf0d1;
+
+      border-radius:
+        10px;
 
       background-image:
         url("https://fries-and-ice-cream.neocities.org/piano.jpg");
 
-      background-size: cover;
-      background-position: center;
+      background-size:
+        cover;
+
+      background-position:
+        center;
 
       box-shadow:
-        4px 4px 0 rgba(255,192,203,.3);
+        4px 4px 0
+        rgba(255,192,203,.3);
     }
 
     .spinning-pin {
-      width: 90px;
-      height: 90px;
+      width:
+        90px;
 
-      object-fit: contain;
+      height:
+        90px;
 
-      margin: 8px;
+      object-fit:
+        contain;
+
+      margin:
+        8px;
 
       animation:
         pinSpin 3s linear infinite;
     }
 
     @keyframes pinSpin {
+
       from {
-        transform: rotate(0deg);
+        transform:
+          rotate(0deg);
       }
 
       to {
-        transform: rotate(360deg);
+        transform:
+          rotate(360deg);
       }
+
     }
 
     @keyframes spin {
+
       from {
-        transform: rotate(0deg);
+        transform:
+          rotate(0deg);
       }
 
       to {
-        transform: rotate(360deg);
+        transform:
+          rotate(360deg);
       }
+
     }
+
 
 
     /* PHOTOBOOTH */
 
     .photobooth-section {
-      width: 570px;
+      width:
+        570px;
 
-      margin-top: 115px;
+      margin-top:
+        115px;
 
-      position: relative;
+      position:
+        relative;
 
-      text-align: center;
+      text-align:
+        center;
 
-      z-index: 5;
+      z-index:
+        5;
     }
 
     .photobooth-section-title {
-      display: inline-block;
+      display:
+        inline-block;
 
-      margin-bottom: 12px;
+      margin-bottom:
+        12px;
 
-      padding: 6px 17px;
+      padding:
+        6px 17px;
 
       background:
         linear-gradient(
@@ -772,74 +936,103 @@
           #fff1d4
         );
 
-      border: 3px double #ffb0cb;
+      border:
+        3px double #ffb0cb;
 
-      border-radius: 18px;
+      border-radius:
+        18px;
 
-      font-family: "Bonbon", cursive;
+      font-family:
+        "Bonbon",
+        cursive;
 
-      font-size: 27px;
+      font-size:
+        27px;
 
-      color: #ff69a8;
+      color:
+        #ff69a8;
 
-      transform: rotate(2deg);
+      transform:
+        rotate(2deg);
 
       box-shadow:
-        3px 3px 0 rgba(174,238,238,.28);
+        3px 3px 0
+        rgba(174,238,238,.28);
 
       text-shadow:
         1px 1px 0 white;
     }
 
     .photobooth-embed {
-      display: block;
+      display:
+        block;
 
-      width: 570px;
-      height: 1100px;
+      width:
+        570px;
 
-      border: 4px double #d6b39b;
+      height:
+        1100px;
 
-      border-radius: 14px;
+      border:
+        4px double #d6b39b;
 
-      background: #fff8fb;
+      border-radius:
+        14px;
+
+      background:
+        #fff8fb;
 
       box-shadow:
-        5px 5px 0 rgba(255,192,203,.3);
+        5px 5px 0
+        rgba(255,192,203,.3);
 
-      overflow: hidden;
+      overflow:
+        hidden;
     }
+
 
 
     /* NYANGHAM */
 
     .nyangham {
-      position: fixed;
+      position:
+        fixed;
 
-      width: 110px;
+      width:
+        110px;
 
-      right: 25px;
-      bottom: 20px;
+      right:
+        25px;
+
+      bottom:
+        20px;
 
       animation:
         upp 1s linear infinite;
     }
 
     @keyframes upp {
+
       0%,
       100% {
-        transform: translateY(0);
+        transform:
+          translateY(0);
       }
 
       50% {
-        transform: translateY(-3px);
+        transform:
+          translateY(-3px);
       }
+
     }
+
 
 
     /* SCROLLBAR */
 
     ::-webkit-scrollbar {
-      width: 10px;
+      width:
+        10px;
     }
 
     ::-webkit-scrollbar-track {
@@ -848,47 +1041,64 @@
     }
 
     ::-webkit-scrollbar-thumb {
-      background: #fdfd96;
+      background:
+        #fdfd96;
 
-      border: 1px solid pink;
+      border:
+        1px solid pink;
 
-      border-radius: 10px;
+      border-radius:
+        10px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background: #ffc0cb;
+      background:
+        #ffc0cb;
     }
+
 
 
     /* STICKERS */
 
     .sticker-wrap {
-      position: relative;
-      overflow: visible;
+      position:
+        relative;
 
-      z-index: 20;
+      overflow:
+        visible;
+
+      z-index:
+        20;
     }
 
     .dotbun-sticker {
-      position: absolute;
+      position:
+        absolute;
 
-      width: 175px;
+      width:
+        175px;
 
-      right: -65px;
-      bottom: -55px;
+      right:
+        -65px;
 
-      z-index: 50;
+      bottom:
+        -55px;
 
-      transform: rotate(-7deg);
+      z-index:
+        50;
+
+      transform:
+        rotate(-7deg);
 
       filter:
         drop-shadow(
-          5px 7px 6px rgba(0,0,0,0.18)
+          5px 7px 6px
+          rgba(0,0,0,0.18)
         );
 
       transition:
-        transform 0.25s ease,
-        filter 0.25s ease;
+        transform .25s ease,
+        filter .25s ease;
     }
 
     .dotbun-sticker:hover {
@@ -898,30 +1108,39 @@
 
       filter:
         drop-shadow(
-          7px 9px 8px rgba(0,0,0,0.22)
+          7px 9px 8px
+          rgba(0,0,0,0.22)
         );
     }
 
     .ny-puppy-sticker {
-      position: absolute;
+      position:
+        absolute;
 
-      width: 205px;
+      width:
+        205px;
 
-      left: 95px;
-      bottom: -120px;
+      left:
+        95px;
 
-      z-index: 70;
+      bottom:
+        -120px;
 
-      transform: rotate(-8deg);
+      z-index:
+        70;
+
+      transform:
+        rotate(-8deg);
 
       filter:
         drop-shadow(
-          6px 8px 7px rgba(0,0,0,0.20)
+          6px 8px 7px
+          rgba(0,0,0,0.20)
         );
 
       transition:
-        transform 0.25s ease,
-        filter 0.25s ease;
+        transform .25s ease,
+        filter .25s ease;
     }
 
     .ny-puppy-sticker:hover {
@@ -931,49 +1150,75 @@
 
       filter:
         drop-shadow(
-          8px 10px 9px rgba(0,0,0,0.24)
+          8px 10px 9px
+          rgba(0,0,0,0.24)
         );
     }
+
 
 
     /* BELOVED */
 
     .beloved-photo-frame {
-      position: relative;
+      position:
+        relative;
 
-      width: 160px;
-      height: 160px;
+      width:
+        160px;
 
-      margin: -20px auto 0;
+      height:
+        160px;
+
+      margin:
+        -20px auto 0;
     }
 
     .beloved-photo {
-      position: absolute;
+      position:
+        absolute;
 
-      width: 84px;
-      height: auto;
+      width:
+        84px;
 
-      left: 38px;
-      top: 41px;
+      height:
+        auto;
 
-      z-index: 1;
+      left:
+        38px;
 
-      object-fit: contain;
+      top:
+        41px;
+
+      z-index:
+        1;
+
+      object-fit:
+        contain;
     }
 
     .beloved-overlay {
-      position: absolute;
+      position:
+        absolute;
 
-      left: 0;
-      top: 0;
+      left:
+        0;
 
-      width: 160px;
-      height: auto;
+      top:
+        0;
 
-      z-index: 2;
+      width:
+        160px;
 
-      pointer-events: none;
+      height:
+        auto;
+
+      z-index:
+        2;
+
+      pointer-events:
+        none;
     }
+
 
 
     /* CAMERA */
@@ -986,118 +1231,184 @@
         ),
         url("https://fries-and-ice-cream.neocities.org/woahpolka.jpg");
 
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      background-size:
+        cover;
+
+      background-position:
+        center;
+
+      background-repeat:
+        no-repeat;
     }
 
     .camera-frame {
-      position: relative;
+      position:
+        relative;
 
-      width: 170px;
+      width:
+        170px;
 
-      margin: 0 auto;
+      margin:
+        0 auto;
 
       transition:
-        transform 0.4s ease;
+        transform .4s ease;
 
-      transform-origin: center center;
+      transform-origin:
+        center center;
     }
 
     .camera-frame:hover {
-      transform: scale(1.08);
+      transform:
+        scale(1.08);
     }
 
     .camera-overlay {
-      position: relative;
+      position:
+        relative;
 
-      display: block;
+      display:
+        block;
 
-      width: 170px;
+      width:
+        170px;
 
-      z-index: 2;
+      z-index:
+        2;
 
-      pointer-events: none;
+      pointer-events:
+        none;
     }
 
     .camera-photo {
-      position: absolute;
+      position:
+        absolute;
 
-      left: 27px;
-      top: 69px;
+      left:
+        27px;
 
-      width: 64px;
-      height: 50px;
+      top:
+        69px;
 
-      object-fit: cover;
-      object-position: center;
+      width:
+        64px;
 
-      z-index: 3;
+      height:
+        50px;
 
-      border-radius: 1px;
+      object-fit:
+        cover;
 
-      pointer-events: none;
+      object-position:
+        center;
+
+      z-index:
+        3;
+
+      border-radius:
+        1px;
+
+      pointer-events:
+        none;
     }
+
 
 
     /* PASSWORD WALL / 3DS */
 
     #passwordGate {
-      position: fixed;
-      inset: 0;
-      z-index: 999999;
+      position:
+        fixed;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      inset:
+        0;
 
-      padding: 35px 15px;
-      overflow: auto;
+      z-index:
+        999999;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      padding:
+        35px 15px;
+
+      overflow:
+        auto;
 
       background-image:
         url("https://valentines.neocities.org/index/pink.png");
 
-      background-repeat: repeat;
-      background-position: center;
+      background-repeat:
+        repeat;
+
+      background-position:
+        center;
 
       font-family:
         "Sour Gummy",
         sans-serif;
 
-      color: #76596a;
+      color:
+        #76596a;
     }
 
     #passwordGate::before {
-      content: "";
+      content:
+        "";
 
-      position: fixed;
-      inset: 0;
+      position:
+        fixed;
+
+      inset:
+        0;
 
       background:
         rgba(255,245,249,.14);
 
-      pointer-events: none;
+      pointer-events:
+        none;
     }
+
 
     .password-gate-layout {
-      position: relative;
+      position:
+        relative;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display:
+        flex;
 
-      gap: 24px;
+      align-items:
+        center;
 
-      z-index: 2;
+      justify-content:
+        center;
+
+      gap:
+        24px;
+
+      z-index:
+        2;
     }
 
+
     .password-ds {
-      position: relative;
+      position:
+        relative;
 
-      width: 560px;
-      max-width: 95vw;
+      width:
+        560px;
 
-      flex-shrink: 0;
+      max-width:
+        95vw;
+
+      flex-shrink:
+        0;
 
       filter:
         drop-shadow(
@@ -1106,10 +1417,16 @@
         );
     }
 
-    .password-ds-top {
-      position: relative;
 
-      width: 100%;
+
+    /* TOP DS */
+
+    .password-ds-top {
+      position:
+        relative;
+
+      width:
+        100%;
 
       padding:
         22px
@@ -1138,21 +1455,33 @@
         rgba(255,255,255,.23);
     }
 
+
     .password-camera-row {
-      height: 23px;
+      height:
+        23px;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display:
+        flex;
 
-      gap: 8px;
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      gap:
+        8px;
     }
 
     .password-camera-dot {
-      width: 14px;
-      height: 14px;
+      width:
+        14px;
 
-      border-radius: 50%;
+      height:
+        14px;
+
+      border-radius:
+        50%;
 
       background:
         #684d5c;
@@ -1167,19 +1496,29 @@
     }
 
     .password-camera-light {
-      width: 5px;
-      height: 5px;
+      width:
+        5px;
 
-      border-radius: 50%;
+      height:
+        5px;
+
+      border-radius:
+        50%;
 
       background:
         #fff6c6;
     }
 
-    .password-top-bezel {
-      position: relative;
 
-      width: 100%;
+
+    /* TOP SCREEN */
+
+    .password-top-bezel {
+      position:
+        relative;
+
+      width:
+        100%;
 
       padding:
         14px
@@ -1201,10 +1540,14 @@
     }
 
     .password-top-screen {
-      width: 100%;
-      height: 230px;
+      width:
+        100%;
 
-      overflow: hidden;
+      height:
+        230px;
+
+      overflow:
+        hidden;
 
       background:
         #fff;
@@ -1213,32 +1556,54 @@
         3px solid
         #332c30;
 
-      border-radius: 5px;
+      border-radius:
+        5px;
 
       box-shadow:
         inset 0 0 10px
         rgba(0,0,0,.22);
     }
 
+
+    /* UPDATED GIF FIT */
+
     .password-tomodachi {
-      display: block;
+      display:
+        block;
 
-      width: 100%;
-      height: 100%;
+      width:
+        112%;
 
-      border: 0;
+      height:
+        112%;
 
-      pointer-events: none;
+      margin-left:
+        -6%;
+
+      margin-top:
+        -6%;
+
+      border:
+        0;
+
+      pointer-events:
+        none;
     }
+
 
     .password-speaker-left,
     .password-speaker-right {
-      position: absolute;
+      position:
+        absolute;
 
-      top: 50%;
+      top:
+        50%;
 
-      width: 10px;
-      height: 70px;
+      width:
+        10px;
+
+      height:
+        70px;
 
       transform:
         translateY(-50%);
@@ -1255,36 +1620,51 @@
     }
 
     .password-speaker-left {
-      left: 8px;
+      left:
+        8px;
     }
 
     .password-speaker-right {
-      right: 8px;
+      right:
+        8px;
     }
 
-    .password-hinge-area {
-      position: relative;
 
-      height: 25px;
+
+    /* HINGE */
+
+    .password-hinge-area {
+      position:
+        relative;
+
+      height:
+        25px;
 
       margin:
-        -2px
-        0;
+        -2px 0;
 
-      z-index: 3;
+      z-index:
+        3;
     }
 
     .password-hinge {
-      position: absolute;
+      position:
+        absolute;
 
-      left: 50%;
-      top: 0;
+      left:
+        50%;
+
+      top:
+        0;
 
       transform:
         translateX(-50%);
 
-      width: 180px;
-      height: 25px;
+      width:
+        180px;
+
+      height:
+        25px;
 
       background:
         linear-gradient(
@@ -1304,12 +1684,19 @@
         rgba(255,255,255,.23);
     }
 
+
+
+    /* BOTTOM DS */
+
     .password-ds-bottom {
-      position: relative;
+      position:
+        relative;
 
-      width: 100%;
+      width:
+        100%;
 
-      min-height: 375px;
+      min-height:
+        375px;
 
       padding:
         28px
@@ -1338,9 +1725,13 @@
         rgba(255,255,255,.23);
     }
 
+
     .password-bottom-bezel {
-      width: 330px;
-      max-width: 85%;
+      width:
+        330px;
+
+      max-width:
+        85%;
 
       margin:
         0 auto;
@@ -1363,13 +1754,22 @@
         3px #9b7788;
     }
 
-    .password-bottom-screen {
-      min-height: 255px;
 
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+    .password-bottom-screen {
+      min-height:
+        255px;
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
 
       padding:
         18px
@@ -1389,14 +1789,14 @@
       border-radius:
         5px;
 
-      text-align: center;
+      text-align:
+        center;
     }
+
 
     .password-friends-title {
       margin:
-        0
-        0
-        4px;
+        0 0 4px;
 
       font-family:
         "Bonbon",
@@ -1416,11 +1816,10 @@
         2px 2px 0 #d8b79f;
     }
 
+
     .password-subtitle {
       margin:
-        4px
-        0
-        13px;
+        4px 0 13px;
 
       font-family:
         "Unkempt",
@@ -1433,6 +1832,10 @@
         #8d6757;
     }
 
+
+
+    /* PASSWORD INPUT */
+
     #sitePassword {
       width:
         230px;
@@ -1441,8 +1844,7 @@
         100%;
 
       padding:
-        9px
-        11px;
+        9px 11px;
 
       margin-bottom:
         8px;
@@ -1482,6 +1884,10 @@
         #fffaf3;
     }
 
+
+
+    /* BUTTONS */
+
     .password-buttons {
       display:
         flex;
@@ -1495,6 +1901,7 @@
       gap:
         4px;
     }
+
 
     #passwordButton,
     #hintButton {
@@ -1542,6 +1949,7 @@
         #fff3bd;
     }
 
+
     #passwordError {
       min-height:
         17px;
@@ -1557,10 +1965,12 @@
     }
 
 
+
     /* FLOATING HINT */
 
     #passwordHintCard {
-      position: absolute;
+      position:
+        absolute;
 
       left:
         calc(100% + 24px);
@@ -1619,6 +2029,7 @@
         20;
     }
 
+
     #passwordHintCard.show {
       display:
         block;
@@ -1627,6 +2038,7 @@
         passwordHintSlideIn
         .25s ease;
     }
+
 
     @keyframes passwordHintSlideIn {
 
@@ -1649,6 +2061,7 @@
       }
 
     }
+
 
     .password-hint-card-top {
       display:
@@ -1673,6 +2086,7 @@
       color:
         #ff6fa8;
     }
+
 
     #passwordCloseHint {
       width:
@@ -1717,6 +2131,7 @@
         bold;
     }
 
+
     #passwordCloseHint:hover {
       transform:
         scale(1.08);
@@ -1725,6 +2140,7 @@
         #fff0f4;
     }
 
+
     .password-hint-card-text {
       margin:
         0;
@@ -1732,6 +2148,7 @@
       color:
         #835f52;
     }
+
 
     .password-hint-card-text b {
       display:
@@ -1745,10 +2162,12 @@
     }
 
 
-    /* CONTROLS */
+
+    /* CIRCLE PAD */
 
     .password-circle-pad {
-      position: absolute;
+      position:
+        absolute;
 
       left:
         24px;
@@ -1785,6 +2204,10 @@
         3;
     }
 
+
+
+    /* DPAD */
+
     .password-dpad {
       position:
         absolute;
@@ -1805,6 +2228,7 @@
         3;
     }
 
+
     .password-dpad::before,
     .password-dpad::after {
       content:
@@ -1824,6 +2248,7 @@
         5px;
     }
 
+
     .password-dpad::before {
       width:
         18px;
@@ -1838,6 +2263,7 @@
         0;
     }
 
+
     .password-dpad::after {
       width:
         52px;
@@ -1851,6 +2277,10 @@
       top:
         17px;
     }
+
+
+
+    /* ABXY */
 
     .password-abxy {
       position:
@@ -1871,6 +2301,7 @@
       z-index:
         3;
     }
+
 
     .password-abxy span {
       position:
@@ -1922,28 +2353,49 @@
         bold;
     }
 
+
     .password-abxy .password-a {
-      right: 0;
-      top: 26px;
+      right:
+        0;
+
+      top:
+        26px;
     }
+
 
     .password-abxy .password-b {
-      left: 26px;
-      bottom: 0;
+      left:
+        26px;
+
+      bottom:
+        0;
     }
+
 
     .password-abxy .password-x {
-      left: 26px;
-      top: 0;
+      left:
+        26px;
+
+      top:
+        0;
     }
+
 
     .password-abxy .password-y {
-      left: 0;
-      top: 26px;
+      left:
+        0;
+
+      top:
+        26px;
     }
 
+
+
+    /* POWER */
+
     .password-power-light {
-      position: absolute;
+      position:
+        absolute;
 
       right:
         23px;
@@ -1968,11 +2420,16 @@
         #8ff49a;
     }
 
+
+
+    /* WRONG PASSWORD */
+
     .password-wrong {
       animation:
         passwordWrongShake
         .35s ease;
     }
+
 
     @keyframes passwordWrongShake {
 
@@ -1999,6 +2456,10 @@
 
     }
 
+
+
+    /* SUCCESS */
+
     .password-success-message {
       font-family:
         "Bonbon",
@@ -2011,6 +2472,9 @@
         #ff6ba8;
     }
 
+
+
+    /* PASSWORD MOBILE */
 
     @media
     (max-width: 900px) {
@@ -2145,11 +2609,14 @@
     }
 
   </style>
+
 </head>
 
 
 <body>
 
+
+<!-- PASSWORD WALL -->
 
 <div id="passwordGate">
 
@@ -2203,6 +2670,7 @@
       </div>
 
 
+
       <!-- HINGE -->
 
       <div class="password-hinge-area">
@@ -2210,6 +2678,7 @@
         <div class="password-hinge"></div>
 
       </div>
+
 
 
       <!-- BOTTOM 3DS -->
@@ -2358,6 +2827,8 @@
 
 
 
+<!-- SITE -->
+
 <div class="site">
 
 
@@ -2382,11 +2853,15 @@
   </div>
 
 
+
   <!-- TOP STAMP CAROUSEL -->
 
   <div class="marquee-box">
 
-    <marquee direction="right" scrollamount="4">
+    <marquee
+      direction="right"
+      scrollamount="4"
+    >
 
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/gabykirakira.png">
       <img src="https://fries-and-ice-cream.neocities.org/stamps%20and%20more/ostamp.gif">
@@ -2414,6 +2889,7 @@
   </div>
 
 
+
   <!-- MUSIC PLAYER -->
 
   <div class="music-player">
@@ -2421,6 +2897,7 @@
     <div class="music-label">
       ♫ now playing
     </div>
+
 
     <div class="music-controls">
 
@@ -2432,6 +2909,7 @@
         ◀
       </button>
 
+
       <button
         type="button"
         id="playButton"
@@ -2439,6 +2917,7 @@
       >
         ▶
       </button>
+
 
       <button
         type="button"
@@ -2450,6 +2929,7 @@
 
     </div>
 
+
     <div class="song-display">
 
       <span id="songName">
@@ -2457,6 +2937,7 @@
       </span>
 
     </div>
+
 
     <div class="volume-area">
 
@@ -2486,6 +2967,7 @@
   ></audio>
 
 
+
   <!-- COLUMNS -->
 
   <div class="columns">
@@ -2495,37 +2977,63 @@
 
     <div class="left">
 
+
       <div class="box nav">
 
         <h3>
           navigation ♡
         </h3>
 
-        <a href="home.html" target="content">
+
+        <a
+          href="home.html"
+          target="content"
+        >
           ★ home
         </a>
 
-        <a href="diary.html" target="content">
+
+        <a
+          href="diary.html"
+          target="content"
+        >
           ★ diary
         </a>
 
-        <a href="photos.html" target="content">
+
+        <a
+          href="photos.html"
+          target="content"
+        >
           ★ photo diary
         </a>
 
-        <a href="games.html" target="content">
+
+        <a
+          href="games.html"
+          target="content"
+        >
           ★ arcade
         </a>
 
-        <a href="movies.html" target="content">
+
+        <a
+          href="movies.html"
+          target="content"
+        >
           ★ original work
         </a>
 
-        <a href="about.html" target="content">
+
+        <a
+          href="about.html"
+          target="content"
+        >
           ★ about me
         </a>
 
       </div>
+
 
 
       <div class="box currently">
@@ -2551,6 +3059,7 @@
         </p>
 
       </div>
+
 
 
       <div class="box decor-panel">
@@ -2582,7 +3091,9 @@
 
       </div>
 
+
     </div>
+
 
 
     <!-- CENTER -->
@@ -2610,23 +3121,53 @@
       >
 
 
+
       <div class="sticker-wrap">
+
 
         <div class="pin-strip">
 
           <marquee direction="right">
 
-            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/rakko.png">
-            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/pinkwings.png">
-            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/dolphin.png">
-            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/cookie.png">
-            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/biscuit2.png">
-            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/KIIIKIII%20pin.png">
-            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/nct%20wish%20pin.png">
+            <img
+              class="spinning-pin"
+              src="https://fries-and-ice-cream.neocities.org/rakko.png"
+            >
+
+            <img
+              class="spinning-pin"
+              src="https://fries-and-ice-cream.neocities.org/pinkwings.png"
+            >
+
+            <img
+              class="spinning-pin"
+              src="https://fries-and-ice-cream.neocities.org/dolphin.png"
+            >
+
+            <img
+              class="spinning-pin"
+              src="https://fries-and-ice-cream.neocities.org/cookie.png"
+            >
+
+            <img
+              class="spinning-pin"
+              src="https://fries-and-ice-cream.neocities.org/biscuit2.png"
+            >
+
+            <img
+              class="spinning-pin"
+              src="https://fries-and-ice-cream.neocities.org/KIIIKIII%20pin.png"
+            >
+
+            <img
+              class="spinning-pin"
+              src="https://fries-and-ice-cream.neocities.org/nct%20wish%20pin.png"
+            >
 
           </marquee>
 
         </div>
+
 
 
         <img
@@ -2642,16 +3183,20 @@
           alt=""
         >
 
+
       </div>
+
 
 
       <!-- PHOTOBOOTH -->
 
       <div class="photobooth-section">
 
+
         <div class="photobooth-section-title">
           ♡ mina's photobooth ♡
         </div>
+
 
         <iframe
           class="photobooth-embed"
@@ -2660,15 +3205,20 @@
           title="mina's photobooth"
         ></iframe>
 
+
       </div>
 
 
     </div>
 
 
+
     <!-- RIGHT -->
 
     <div class="right">
+
+
+      <!-- PROFILE -->
 
       <div class="box profile-box">
 
@@ -2689,11 +3239,15 @@
       </div>
 
 
+
+      <!-- SOCIALS -->
+
       <div class="box socials">
 
         <h3>
           find me
         </h3>
+
 
         <a
           href="https://www.instagram.com/miinaisnotonfire/"
@@ -2702,12 +3256,14 @@
           instagram ♡
         </a>
 
+
         <a
           href="https://letterboxd.com/ilovemycatss/"
           target="_blank"
         >
           letterboxd ★
         </a>
+
 
         <a
           href="https://backloggd.com/u/minaisnotonfire/"
@@ -2716,7 +3272,9 @@
           backloggd 🖰
         </a>
 
+
       </div>
+
 
 
       <!-- STAMPS -->
@@ -2727,22 +3285,47 @@
           stamps ♡
         </h3>
 
+
         <div class="stamp-box">
 
           <div class="stamps">
 
-            <img src="https://blinkie-net.neocities.org/Stamps/2/devilish.png" alt="">
-            <img src="https://blinkie-net.neocities.org/Stamps/4/bubbline.png" alt="">
-            <img src="https://blinkie-net.neocities.org/Stamps/4/cereal.gif" alt="">
-            <img src="https://blinkie-net.neocities.org/Stamps/4/fanf.gif" alt="">
-            <img src="https://blinkie-net.neocities.org/Stamps/5/24.png" alt="">
-            <img src="https://blinkie-net.neocities.org/Stamps/7/nyancat.gif" alt="">
+            <img
+              src="https://blinkie-net.neocities.org/Stamps/2/devilish.png"
+              alt=""
+            >
+
+            <img
+              src="https://blinkie-net.neocities.org/Stamps/4/bubbline.png"
+              alt=""
+            >
+
+            <img
+              src="https://blinkie-net.neocities.org/Stamps/4/cereal.gif"
+              alt=""
+            >
+
+            <img
+              src="https://blinkie-net.neocities.org/Stamps/4/fanf.gif"
+              alt=""
+            >
+
+            <img
+              src="https://blinkie-net.neocities.org/Stamps/5/24.png"
+              alt=""
+            >
+
+            <img
+              src="https://blinkie-net.neocities.org/Stamps/7/nyancat.gif"
+              alt=""
+            >
 
           </div>
 
         </div>
 
       </div>
+
 
 
       <!-- CAMERA -->
@@ -2768,6 +3351,7 @@
       </div>
 
 
+
       <div class="box decor-panel">
 
         <img
@@ -2784,11 +3368,15 @@
 
       </div>
 
+
     </div>
+
 
   </div>
 
+
 </div>
+
 
 
 <img
@@ -2798,59 +3386,108 @@
 >
 
 
+
+<!-- MUSIC SCRIPT -->
+
 <script>
 
 const songs = [
+
   {
-    file: "music/allie-x-bitch.mp3",
-    name: "bitch — allie x"
+    file:
+      "music/allie-x-bitch.mp3",
+
+    name:
+      "bitch — allie x"
   },
+
   {
-    file: "music/chick-habit.mp3",
-    name: "chick habit — april march"
+    file:
+      "music/chick-habit.mp3",
+
+    name:
+      "chick habit — april march"
   },
+
   {
-    file: "music/jane-remover-how-to-teleport.mp3",
-    name: "how to teleport — jane remover"
+    file:
+      "music/jane-remover-how-to-teleport.mp3",
+
+    name:
+      "how to teleport — jane remover"
   },
+
   {
-    file: "music/secret-lyrics-the-pierces.mp3",
-    name: "secret — the pierces"
+    file:
+      "music/secret-lyrics-the-pierces.mp3",
+
+    name:
+      "secret — the pierces"
   },
+
   {
-    file: "music/vivica.mp3",
-    name: "vivica — jack off jill"
+    file:
+      "music/vivica.mp3",
+
+    name:
+      "vivica — jack off jill"
   }
+
 ];
 
 
 const audio =
-  document.getElementById("musicAudio");
+  document.getElementById(
+    "musicAudio"
+  );
+
 
 const playButton =
-  document.getElementById("playButton");
+  document.getElementById(
+    "playButton"
+  );
+
 
 const previousButton =
-  document.getElementById("previousButton");
+  document.getElementById(
+    "previousButton"
+  );
+
 
 const nextButton =
-  document.getElementById("nextButton");
+  document.getElementById(
+    "nextButton"
+  );
+
 
 const songName =
-  document.getElementById("songName");
+  document.getElementById(
+    "songName"
+  );
+
 
 const volumeSlider =
-  document.getElementById("volumeSlider");
+  document.getElementById(
+    "volumeSlider"
+  );
+
 
 const volumeText =
-  document.getElementById("volumeText");
+  document.getElementById(
+    "volumeText"
+  );
 
 
-let currentSong = 0;
+let currentSong =
+  0;
 
-let targetVolume = 0.22;
+
+let targetVolume =
+  0.22;
+
 
 let fadeTimer;
+
 
 
 /* LOAD SONG */
@@ -2858,283 +3495,411 @@ let fadeTimer;
 function loadSong() {
 
   audio.src =
-    songs[currentSong].file;
+    songs[
+      currentSong
+    ].file;
+
 
   songName.textContent =
-    songs[currentSong].name;
+    songs[
+      currentSong
+    ].name;
+
 
   audio.load();
 
 }
 
 
+
 /* GENTLE FADE */
 
 function fadeIn() {
 
-  clearInterval(fadeTimer);
+  clearInterval(
+    fadeTimer
+  );
 
-  audio.volume = 0;
+
+  audio.volume =
+    0;
+
 
   fadeTimer =
-    setInterval(() => {
+    setInterval(
+      function() {
 
-      let newVolume =
-        audio.volume + 0.01;
+
+        let newVolume =
+          audio.volume +
+          0.01;
+
+
+        if (
+          newVolume >=
+          targetVolume
+        ) {
+
+
+          audio.volume =
+            targetVolume;
+
+
+          clearInterval(
+            fadeTimer
+          );
+
+
+        }
+
+        else {
+
+
+          audio.volume =
+            newVolume;
+
+
+        }
+
+
+      },
+      100
+    );
+
+}
+
+
+
+/* PLAY / PAUSE */
+
+playButton
+  .addEventListener(
+    "click",
+    function() {
+
 
       if (
-        newVolume >= targetVolume
+        audio.paused
       ) {
 
-        audio.volume =
-          targetVolume;
 
-        clearInterval(
-          fadeTimer
-        );
+        audio.volume =
+          0;
+
+
+        const attempt =
+          audio.play();
+
+
+        if (
+          attempt !==
+          undefined
+        ) {
+
+
+          attempt
+            .then(
+              function() {
+
+
+                playButton.textContent =
+                  "Ⅱ";
+
+
+                fadeIn();
+
+
+              }
+            )
+
+            .catch(
+              function(error) {
+
+
+                console.error(
+                  "audio error:",
+                  error
+                );
+
+
+                playButton.textContent =
+                  "▶";
+
+
+                alert(
+                  "the audio file could not play :( try opening the mp3 directly to make sure github pages can access it."
+                );
+
+
+              }
+            );
+
+
+        }
+
 
       }
 
       else {
 
-        audio.volume =
-          newVolume;
+
+        clearInterval(
+          fadeTimer
+        );
+
+
+        audio.pause();
+
+
+        playButton.textContent =
+          "▶";
+
 
       }
 
-    }, 100);
-
-}
-
-
-/* PLAY / PAUSE */
-
-playButton.addEventListener(
-  "click",
-  function () {
-
-    if (audio.paused) {
-
-      audio.volume = 0;
-
-      const attempt =
-        audio.play();
-
-
-      if (
-        attempt !== undefined
-      ) {
-
-        attempt
-          .then(function () {
-
-            playButton.textContent =
-              "Ⅱ";
-
-            fadeIn();
-
-          })
-
-          .catch(function (error) {
-
-            console.error(
-              "audio error:",
-              error
-            );
-
-            playButton.textContent =
-              "▶";
-
-            alert(
-              "the audio file could not play :( try opening the mp3 directly to make sure github pages can access it."
-            );
-
-          });
-
-      }
 
     }
+  );
 
-    else {
-
-      clearInterval(
-        fadeTimer
-      );
-
-      audio.pause();
-
-      playButton.textContent =
-        "▶";
-
-    }
-
-  }
-);
 
 
 /* NEXT */
 
-nextButton.addEventListener(
-  "click",
-  function () {
-
-    const wasPlaying =
-      !audio.paused;
+nextButton
+  .addEventListener(
+    "click",
+    function() {
 
 
-    currentSong =
-      (
-        currentSong +
-        1
-      ) %
-      songs.length;
+      const wasPlaying =
+        !audio.paused;
 
 
-    loadSong();
+      currentSong =
+        (
+          currentSong +
+          1
+        ) %
+        songs.length;
 
 
-    if (wasPlaying) {
+      loadSong();
 
-      audio.volume = 0;
 
-      audio.play()
+      if (
+        wasPlaying
+      ) {
 
-        .then(function () {
-          fadeIn();
-        })
 
-        .catch(function (error) {
-          console.error(error);
-        });
+        audio.volume =
+          0;
+
+
+        audio.play()
+
+          .then(
+            function() {
+
+              fadeIn();
+
+            }
+          )
+
+          .catch(
+            function(error) {
+
+              console.error(
+                error
+              );
+
+            }
+          );
+
+
+      }
+
 
     }
+  );
 
-  }
-);
 
 
 /* PREVIOUS */
 
-previousButton.addEventListener(
-  "click",
-  function () {
-
-    const wasPlaying =
-      !audio.paused;
+previousButton
+  .addEventListener(
+    "click",
+    function() {
 
 
-    currentSong =
-      (
-        currentSong -
-        1 +
-        songs.length
-      ) %
-      songs.length;
+      const wasPlaying =
+        !audio.paused;
 
 
-    loadSong();
+      currentSong =
+        (
+          currentSong -
+          1 +
+          songs.length
+        ) %
+        songs.length;
 
 
-    if (wasPlaying) {
+      loadSong();
 
-      audio.volume = 0;
 
-      audio.play()
+      if (
+        wasPlaying
+      ) {
 
-        .then(function () {
-          fadeIn();
-        })
 
-        .catch(function (error) {
-          console.error(error);
-        });
+        audio.volume =
+          0;
+
+
+        audio.play()
+
+          .then(
+            function() {
+
+              fadeIn();
+
+            }
+          )
+
+          .catch(
+            function(error) {
+
+              console.error(
+                error
+              );
+
+            }
+          );
+
+
+      }
+
 
     }
+  );
 
-  }
-);
 
 
 /* VOLUME */
 
-volumeSlider.addEventListener(
-  "input",
-  function () {
-
-    targetVolume =
-      Number(
-        this.value
-      ) / 100;
+volumeSlider
+  .addEventListener(
+    "input",
+    function() {
 
 
-    volumeText.textContent =
-      this.value + "%";
+      targetVolume =
+        Number(
+          this.value
+        ) /
+        100;
 
 
-    if (!audio.paused) {
+      volumeText.textContent =
+        this.value +
+        "%";
 
-      audio.volume =
-        targetVolume;
+
+      if (
+        !audio.paused
+      ) {
+
+
+        audio.volume =
+          targetVolume;
+
+
+      }
+
 
     }
+  );
 
-  }
-);
 
 
 /* AUTO NEXT */
 
-audio.addEventListener(
-  "ended",
-  function () {
-
-    currentSong =
-      (
-        currentSong +
-        1
-      ) %
-      songs.length;
+audio
+  .addEventListener(
+    "ended",
+    function() {
 
 
-    loadSong();
-
-    audio.volume = 0;
-
-
-    audio.play()
-
-      .then(function () {
-        fadeIn();
-      })
-
-      .catch(function (error) {
-        console.error(error);
-      });
-
-  }
-);
+      currentSong =
+        (
+          currentSong +
+          1
+        ) %
+        songs.length;
 
 
-/* INITIAL SETUP */
+      loadSong();
+
+
+      audio.volume =
+        0;
+
+
+      audio.play()
+
+        .then(
+          function() {
+
+            fadeIn();
+
+          }
+        )
+
+        .catch(
+          function(error) {
+
+            console.error(
+              error
+            );
+
+          }
+        );
+
+
+    }
+  );
+
+
+
+/* INITIAL */
 
 volumeSlider.value =
   22;
 
+
 volumeText.textContent =
   "22%";
 
+
 loadSong();
+
 
 </script>
 
 
+
+<!-- PASSWORD SCRIPT -->
+
 <script>
+
 
 const PASSWORD_HASH =
   "99016520a0f3b6ebd7ea15ee2c67ab24daf8ff27b923eef8564aa92b64753ebe";
 
 
 async function hashSitePassword(text) {
+
 
   const encoded =
     new TextEncoder()
@@ -3162,10 +3927,13 @@ async function hashSitePassword(text) {
     )
     .join("");
 
+
 }
 
 
+
 async function checkSitePassword() {
+
 
   const input =
     document
@@ -3236,6 +4004,7 @@ async function checkSitePassword() {
     setTimeout(
       function() {
 
+
         document
           .getElementById(
             "passwordGate"
@@ -3244,14 +4013,13 @@ async function checkSitePassword() {
           .display =
             "none";
 
-      },
 
+      },
       900
     );
 
 
   }
-
 
   else {
 
@@ -3260,22 +4028,29 @@ async function checkSitePassword() {
       "wrong password!! (╥﹏╥)";
 
 
-    screen.classList.remove(
-      "password-wrong"
-    );
+    screen
+      .classList
+      .remove(
+        "password-wrong"
+      );
 
 
-    void screen.offsetWidth;
+    void
+      screen.offsetWidth;
 
 
-    screen.classList.add(
-      "password-wrong"
-    );
+    screen
+      .classList
+      .add(
+        "password-wrong"
+      );
 
 
   }
 
+
 }
+
 
 
 document
@@ -3288,6 +4063,7 @@ document
   );
 
 
+
 document
   .getElementById(
     "sitePassword"
@@ -3296,23 +4072,30 @@ document
     "keydown",
     function(event) {
 
+
       if (
         event.key ===
         "Enter"
       ) {
 
+
         checkSitePassword();
 
+
       }
+
 
     }
   );
 
 
+
 const passwordHintCard =
-  document.getElementById(
-    "passwordHintCard"
-  );
+  document
+    .getElementById(
+      "passwordHintCard"
+    );
+
 
 
 document
@@ -3323,14 +4106,17 @@ document
     "click",
     function() {
 
+
       passwordHintCard
         .classList
         .toggle(
           "show"
         );
 
+
     }
   );
+
 
 
 document
@@ -3341,14 +4127,17 @@ document
     "click",
     function() {
 
+
       passwordHintCard
         .classList
         .remove(
           "show"
         );
 
+
     }
   );
+
 
 
 if (
@@ -3358,6 +4147,7 @@ if (
   "yes"
 ) {
 
+
   document
     .getElementById(
       "passwordGate"
@@ -3366,7 +4156,9 @@ if (
     .display =
       "none";
 
+
 }
+
 
 </script>
 
