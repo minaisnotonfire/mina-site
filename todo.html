@@ -30,7 +30,6 @@
       padding: 0;
 
       width: 100%;
-      min-height: 100%;
 
       background: transparent;
 
@@ -40,26 +39,22 @@
 
       color:
         #725c66;
+
+      overflow: hidden;
     }
 
 
     body {
-      padding:
-        6px;
+      padding: 6px;
     }
 
 
     /* WHOLE CARD */
 
     .todo-wrap {
-      width:
-        100%;
+      width: 100%;
 
-      min-height:
-        395px;
-
-      position:
-        relative;
+      position: relative;
 
       background:
         radial-gradient(
@@ -83,19 +78,15 @@
         inset 0 0 0 2px rgba(255,255,255,.65),
         3px 4px 0 rgba(255,185,205,.22);
 
-      overflow:
-        hidden;
+      overflow: visible;
     }
 
 
     /* SCALLOP BORDER */
 
     .scallop {
-      height:
-        28px;
-
-      width:
-        100%;
+      height: 28px;
+      width: 100%;
 
       background:
         radial-gradient(
@@ -269,20 +260,11 @@
     /* LIST */
 
     .todo-list {
-      list-style:
-        none;
+      list-style: none;
+      margin: 0;
+      padding: 0;
 
-      margin:
-        0;
-
-      padding:
-        0 2px 0 0;
-
-      max-height:
-        260px;
-
-      overflow-y:
-        auto;
+      overflow: visible;
     }
 
 
@@ -327,8 +309,7 @@
 
 
     .todo-item input[type="checkbox"] {
-      margin:
-        0;
+      margin: 0;
 
       accent-color:
         #f18fb7;
@@ -339,11 +320,9 @@
 
 
     .todo-text {
-      flex:
-        1;
+      flex: 1;
 
-      min-width:
-        0;
+      min-width: 0;
 
       word-break:
         break-word;
@@ -365,14 +344,12 @@
     /* DELETE */
 
     .delete-btn {
-      border:
-        0;
+      border: 0;
 
       background:
         transparent;
 
-      padding:
-        0;
+      padding: 0;
 
       color:
         #cf789c;
@@ -439,41 +416,6 @@
 
       color:
         #a67f8c;
-    }
-
-
-    /* SCROLLBAR */
-
-    ::-webkit-scrollbar {
-      width:
-        7px;
-    }
-
-
-    ::-webkit-scrollbar-track {
-      background:
-        #f7eee8;
-
-      border-radius:
-        10px;
-    }
-
-
-    ::-webkit-scrollbar-thumb {
-      background:
-        linear-gradient(
-          #d6b39b,
-          #bd8d78
-        );
-
-      border-radius:
-        10px;
-    }
-
-
-    ::-webkit-scrollbar-thumb:hover {
-      background:
-        #b17e6b;
     }
 
   </style>
@@ -553,71 +495,46 @@
     const defaultTodos = [
 
       {
-        text:
-          "make my arcade",
-
-        done:
-          false
+        text: "make my arcade",
+        done: false
       },
 
       {
-        text:
-          "add more pics",
-
-        done:
-          false
+        text: "add more pics",
+        done: false
       },
 
       {
-        text:
-          "maybe change the background colour?",
-
-        done:
-          false
+        text: "maybe change the background colour?",
+        done: false
       },
 
       {
-        text:
-          "add more stuff to my diary",
-
-        done:
-          false
+        text: "add more stuff to my diary",
+        done: false
       },
 
       {
-        text:
-          "work on original art page",
-
-        done:
-          false
+        text: "work on original art page",
+        done: false
       },
 
       {
-        text:
-          "add more cute stamps",
-
-        done:
-          false
+        text: "add more cute stamps",
+        done: false
       },
 
       {
-        text:
-          "fix / add more music",
-
-        done:
-          false
+        text: "fix / add more music",
+        done: false
       },
 
       {
-        text:
-          "add more games ♡",
-
-        done:
-          false
+        text: "add more games ♡",
+        done: false
       }
 
     ];
-
 
 
     const todoForm =
@@ -636,7 +553,6 @@
       document.getElementById(
         "todoList"
       );
-
 
 
     const savedTodos =
@@ -662,7 +578,9 @@
       catch (error) {
 
         todos =
-          defaultTodos;
+          defaultTodos.map(
+            todo => ({...todo})
+          );
 
       }
 
@@ -671,17 +589,11 @@
     else {
 
       todos =
-        defaultTodos;
+        defaultTodos.map(
+          todo => ({...todo})
+        );
 
     }
-
-
-
-    /*
-    IF AN OLD EMPTY LIST
-    WAS SAVED BEFORE,
-    LOAD THE STARTER TASKS
-    */
 
 
     if (
@@ -690,7 +602,9 @@
     ) {
 
       todos =
-        defaultTodos;
+        defaultTodos.map(
+          todo => ({...todo})
+        );
 
       localStorage.setItem(
         STORAGE_KEY,
@@ -700,7 +614,6 @@
       );
 
     }
-
 
 
     function saveTodos() {
@@ -715,11 +628,9 @@
     }
 
 
-
     function renderTodos() {
 
-      todoList.innerHTML =
-        "";
+      todoList.innerHTML = "";
 
 
       if (
@@ -750,7 +661,6 @@
       }
 
 
-
       todos.forEach(
         function(todo, index) {
 
@@ -770,7 +680,6 @@
             );
 
 
-
           const checkbox =
             document.createElement(
               "input"
@@ -783,7 +692,6 @@
 
           checkbox.checked =
             todo.done;
-
 
 
           checkbox.addEventListener(
@@ -805,7 +713,6 @@
           );
 
 
-
           const text =
             document.createElement(
               "span"
@@ -818,7 +725,6 @@
 
           text.textContent =
             todo.text;
-
 
 
           const deleteButton =
@@ -837,7 +743,6 @@
 
           deleteButton.textContent =
             "×";
-
 
 
           deleteButton.addEventListener(
@@ -859,7 +764,6 @@
 
             }
           );
-
 
 
           item.appendChild(
@@ -888,7 +792,6 @@
     }
 
 
-
     todoForm.addEventListener(
       "submit",
       function(event) {
@@ -904,23 +807,16 @@
 
 
         if (!text) {
-
           return;
-
         }
-
 
 
         todos.push({
 
-          text:
-            text,
-
-          done:
-            false
+          text: text,
+          done: false
 
         });
-
 
 
         saveTodos();
@@ -938,7 +834,6 @@
 
       }
     );
-
 
 
     renderTodos();
