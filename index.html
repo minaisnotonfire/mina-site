@@ -980,7 +980,7 @@
 
     .todo-embed {
       width: 185px;
-      height: 355px;
+      height: 410px;
       display: block;
       margin: 15px auto 0;
       border: 0;
@@ -1058,548 +1058,86 @@
 
     /* PASSWORD WALL / 3DS */
 
-    #passwordGate {
-      position: fixed;
-      inset: 0;
-      z-index: 999999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 35px 15px;
-      overflow: auto;
-      background-image: url("https://valentines.neocities.org/index/pink.png");
-      background-repeat: repeat;
-      background-position: center;
-      font-family: "Sour Gummy", sans-serif;
-      color: #76596a;
-    }
+    #passwordGate { position: fixed; inset: 0; z-index: 999999; display: flex; align-items: center; justify-content: center; padding: 35px 15px; overflow: auto; background-image: url("https://valentines.neocities.org/index/pink.png"); background-repeat: repeat; background-position: center; font-family: "Sour Gummy", sans-serif; color: #76596a; }
+    #passwordGate::before { content: ""; position: fixed; inset: 0; background: rgba(255,245,249,.14); pointer-events: none; }
+    .password-gate-layout { position: relative; display: flex; align-items: center; justify-content: center; gap: 24px; z-index: 2; }
+    .password-ds { position: relative; width: 560px; max-width: 95vw; flex-shrink: 0; filter: drop-shadow(10px 13px 8px rgba(111,71,89,.22)); }
+    .password-ds-top { position: relative; width: 100%; padding: 22px 31px 27px; background: linear-gradient(#ffd7e8,#efabc8); border: 5px solid #b97996; border-radius: 34px 34px 12px 12px; box-shadow: inset 0 0 0 4px rgba(255,255,255,.23); }
+    .password-camera-row { height: 23px; display:flex; align-items:center; justify-content:center; gap:8px; }
+    .password-camera-dot { width:14px; height:14px; border-radius:50%; background:#684d5c; border:3px solid #f9dbea; box-shadow:inset 0 0 0 2px #382f35; }
+    .password-camera-light { width:5px; height:5px; border-radius:50%; background:#fff6c6; }
+    .password-top-bezel { position:relative; width:100%; padding:14px 30px; background:#735766; border:4px solid #5a414d; border-radius:13px; box-shadow:inset 0 0 0 3px #9b7788; }
+    .password-top-screen { width:100%; height:230px; overflow:hidden; background:#fff; border:3px solid #332c30; border-radius:5px; box-shadow:inset 0 0 10px rgba(0,0,0,.22); }
+    .password-tomodachi { display:block; width:112%; height:112%; margin-left:-6%; margin-top:-6%; border:0; pointer-events:none; }
+    .password-speaker-left,.password-speaker-right { position:absolute; top:50%; width:10px; height:70px; transform:translateY(-50%); background:radial-gradient(circle,#a8758d 2px,transparent 3px); background-size:8px 10px; }
+    .password-speaker-left{left:8px}.password-speaker-right{right:8px}
+    .password-hinge-area { position:relative; height:25px; margin:-2px 0; z-index:3; }
+    .password-hinge { position:absolute; left:50%; top:0; transform:translateX(-50%); width:180px; height:25px; background:linear-gradient(#ca8ca8,#a96e89); border:4px solid #8b5f73; border-radius:13px; box-shadow:inset 0 3px 3px rgba(255,255,255,.23); }
+    .password-ds-bottom { position:relative; width:100%; min-height:375px; padding:28px 31px 35px; background:linear-gradient(#efabc8,#ffd7e8); border:5px solid #b97996; border-radius:12px 12px 38px 38px; box-shadow:inset 0 0 0 4px rgba(255,255,255,.23); }
+    .password-bottom-bezel { width:330px; max-width:85%; margin:0 auto; padding:12px; background:#735766; border:4px solid #5a414d; border-radius:13px; box-shadow:inset 0 0 0 3px #9b7788; }
+    .password-bottom-screen { min-height:255px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:18px 15px; background:linear-gradient(rgba(255,255,255,.87),rgba(255,248,235,.89)),url("https://fries-and-ice-cream.neocities.org/newcutestuff/bluepolkarose.gif"); border:3px solid #332c30; border-radius:5px; text-align:center; }
+    .password-friends-title { margin:0 0 4px; font-family:"Bonbon",cursive; font-size:35px; line-height:1; color:#ff69a7; text-shadow:1px 1px 0 white,2px 2px 0 #d8b79f; }
+    .password-subtitle { margin:4px 0 13px; font-family:"Unkempt",cursive; font-size:15px; color:#8d6757; }
+    #sitePassword { width:230px; max-width:100%; padding:9px 11px; margin-bottom:8px; background:#fffdf7; border:3px double #d6b39b; border-radius:10px; outline:none; font-family:"Sour Gummy",sans-serif; font-size:14px; color:#755969; text-align:center; }
+    #sitePassword:focus { border-color:#aa8069; background:#fffaf3; }
+    .password-buttons { display:flex; justify-content:center; flex-wrap:wrap; gap:4px; }
+    #passwordButton,#hintButton { padding:7px 12px; background:linear-gradient(#fffdf6,#ffe6f0); border:3px double #d6b39b; border-radius:9px; font-family:"Sour Gummy",sans-serif; font-size:13px; font-weight:bold; color:#a45e80; transition:transform .15s ease,background .15s ease; }
+    #passwordButton:hover,#hintButton:hover { transform:scale(1.05); background:#fff3bd; }
+    #passwordError { min-height:17px; margin-top:7px; font-size:13px; color:#d55882; }
+    #passwordHintCard { position:absolute; left:calc(100% + 24px); top:54%; transform:translateY(-50%) translateX(10px); width:235px; padding:14px 15px; display:none; background:linear-gradient(#fff8f1,#ffe9f1); border:3px double #d6b39b; border-radius:16px; box-shadow:5px 6px 0 rgba(177,116,142,.18); color:#855f52; text-align:center; font-family:"Unkempt",cursive; font-size:14px; line-height:1.35; z-index:20; }
+    #passwordHintCard.show { display:block; animation:passwordHintSlideIn .25s ease; }
+    @keyframes passwordHintSlideIn { from{opacity:0;transform:translateY(-50%) translateX(20px)} to{opacity:1;transform:translateY(-50%) translateX(0)} }
+    .password-hint-card-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:7px; font-family:"Bonbon",cursive; font-size:24px; color:#ff6fa8; }
+    #passwordCloseHint { width:25px; height:25px; padding:0; display:flex; align-items:center; justify-content:center; background:#fffaf3; border:2px solid #d7af99; border-radius:50%; color:#9a6c5f; font-family:Arial,sans-serif; font-size:13px; font-weight:bold; }
+    #passwordCloseHint:hover { transform:scale(1.08); background:#fff0f4; }
+    .password-hint-card-text { margin:0; color:#835f52; }
+    .password-hint-card-text b { display:inline-block; margin-top:8px; color:#a65d79; }
+    .password-circle-pad { position:absolute; left:24px; top:88px; width:55px; height:55px; border-radius:50%; background:radial-gradient(circle at 40% 35%,#f3cedf,#d397b1 55%,#b77593 100%); border:4px solid #a66c87; box-shadow:inset 0 3px 3px rgba(255,255,255,.35),0 2px 2px rgba(90,50,70,.18); z-index:3; }
+    .password-dpad { position:absolute; left:24px; bottom:56px; width:52px; height:52px; z-index:3; }
+    .password-dpad::before,.password-dpad::after { content:""; position:absolute; background:#8d6377; border:2px solid #6e4e5e; border-radius:5px; }
+    .password-dpad::before { width:18px; height:52px; left:17px; top:0; }
+    .password-dpad::after { width:52px; height:18px; left:0; top:17px; }
+    .password-abxy { position:absolute; right:24px; bottom:50px; width:82px; height:82px; z-index:3; }
+    .password-abxy span { position:absolute; width:30px; height:30px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:linear-gradient(#d9a0ba,#bb7797); border:3px solid #9c647f; box-shadow:inset 0 2px 2px rgba(255,255,255,.35),0 2px 2px rgba(100,60,80,.18); color:#fff7fb; font-family:Arial,sans-serif; font-size:11px; font-weight:bold; }
+    .password-abxy .password-a{right:0;top:26px}.password-abxy .password-b{left:26px;bottom:0}.password-abxy .password-x{left:26px;top:0}.password-abxy .password-y{left:0;top:26px}
+    .password-power-light { position:absolute; right:23px; bottom:18px; width:7px; height:7px; background:#9cefa1; border-radius:50%; box-shadow:0 0 7px #8ff49a; }
+    .password-wrong { animation:passwordWrongShake .35s ease; }
+    @keyframes passwordWrongShake { 0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}50%{transform:translateX(8px)}75%{transform:translateX(-5px)} }
+    .password-success-message { font-family:"Bonbon",cursive; font-size:27px; color:#ff6ba8; }
 
-    #passwordGate::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: rgba(255,245,249,.14);
-      pointer-events: none;
-    }
-
-    .password-gate-layout {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 24px;
-      z-index: 2;
-    }
-
-    .password-ds {
-      position: relative;
-      width: 560px;
-      max-width: 95vw;
-      flex-shrink: 0;
-      filter: drop-shadow(10px 13px 8px rgba(111,71,89,.22));
-    }
-
-    .password-ds-top {
-      position: relative;
-      width: 100%;
-      padding: 22px 31px 27px;
-      background: linear-gradient(#ffd7e8,#efabc8);
-      border: 5px solid #b97996;
-      border-radius: 34px 34px 12px 12px;
-      box-shadow: inset 0 0 0 4px rgba(255,255,255,.23);
-    }
-
-    .password-camera-row {
-      height: 23px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-    }
-
-    .password-camera-dot {
-      width:14px;
-      height:14px;
-      border-radius:50%;
-      background:#684d5c;
-      border:3px solid #f9dbea;
-      box-shadow:inset 0 0 0 2px #382f35;
-    }
-
-    .password-camera-light {
-      width:5px;
-      height:5px;
-      border-radius:50%;
-      background:#fff6c6;
-    }
-
-    .password-top-bezel {
-      position:relative;
-      width:100%;
-      padding:14px 30px;
-      background:#735766;
-      border:4px solid #5a414d;
-      border-radius:13px;
-      box-shadow:inset 0 0 0 3px #9b7788;
-    }
-
-    .password-top-screen {
-      width:100%;
-      height:230px;
-      overflow:hidden;
-      background:#fff;
-      border:3px solid #332c30;
-      border-radius:5px;
-      box-shadow:inset 0 0 10px rgba(0,0,0,.22);
-    }
-
-    .password-tomodachi {
-      display:block;
-      width:112%;
-      height:112%;
-      margin-left:-6%;
-      margin-top:-6%;
-      border:0;
-      pointer-events:none;
-    }
-
-    .password-speaker-left,
-    .password-speaker-right {
-      position:absolute;
-      top:50%;
-      width:10px;
-      height:70px;
-      transform:translateY(-50%);
-      background:radial-gradient(circle,#a8758d 2px,transparent 3px);
-      background-size:8px 10px;
-    }
-
-    .password-speaker-left {
-      left:8px;
-    }
-
-    .password-speaker-right {
-      right:8px;
-    }
-
-    .password-hinge-area {
-      position:relative;
-      height:25px;
-      margin:-2px 0;
-      z-index:3;
-    }
-
-    .password-hinge {
-      position:absolute;
-      left:50%;
-      top:0;
-      transform:translateX(-50%);
-      width:180px;
-      height:25px;
-      background:linear-gradient(#ca8ca8,#a96e89);
-      border:4px solid #8b5f73;
-      border-radius:13px;
-      box-shadow:inset 0 3px 3px rgba(255,255,255,.23);
-    }
-
-    .password-ds-bottom {
-      position:relative;
-      width:100%;
-      min-height:375px;
-      padding:28px 31px 35px;
-      background:linear-gradient(#efabc8,#ffd7e8);
-      border:5px solid #b97996;
-      border-radius:12px 12px 38px 38px;
-      box-shadow:inset 0 0 0 4px rgba(255,255,255,.23);
-    }
-
-    .password-bottom-bezel {
-      width:330px;
-      max-width:85%;
-      margin:0 auto;
-      padding:12px;
-      background:#735766;
-      border:4px solid #5a414d;
-      border-radius:13px;
-      box-shadow:inset 0 0 0 3px #9b7788;
-    }
-
-    .password-bottom-screen {
-      min-height:255px;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      padding:18px 15px;
-      background:
-        linear-gradient(rgba(255,255,255,.87),rgba(255,248,235,.89)),
-        url("https://fries-and-ice-cream.neocities.org/newcutestuff/bluepolkarose.gif");
-      border:3px solid #332c30;
-      border-radius:5px;
-      text-align:center;
-    }
-
-    .password-friends-title {
-      margin:0 0 4px;
-      font-family:"Bonbon",cursive;
-      font-size:35px;
-      line-height:1;
-      color:#ff69a7;
-      text-shadow:1px 1px 0 white,2px 2px 0 #d8b79f;
-    }
-
-    .password-subtitle {
-      margin:4px 0 13px;
-      font-family:"Unkempt",cursive;
-      font-size:15px;
-      color:#8d6757;
-    }
-
-    #sitePassword {
-      width:230px;
-      max-width:100%;
-      padding:9px 11px;
-      margin-bottom:8px;
-      background:#fffdf7;
-      border:3px double #d6b39b;
-      border-radius:10px;
-      outline:none;
-      font-family:"Sour Gummy",sans-serif;
-      font-size:14px;
-      color:#755969;
-      text-align:center;
-    }
-
-    #sitePassword:focus {
-      border-color:#aa8069;
-      background:#fffaf3;
-    }
-
-    .password-buttons {
-      display:flex;
-      justify-content:center;
-      flex-wrap:wrap;
-      gap:4px;
-    }
-
-    #passwordButton,
-    #hintButton {
-      padding:7px 12px;
-      background:linear-gradient(#fffdf6,#ffe6f0);
-      border:3px double #d6b39b;
-      border-radius:9px;
-      font-family:"Sour Gummy",sans-serif;
-      font-size:13px;
-      font-weight:bold;
-      color:#a45e80;
-      transition:transform .15s ease,background .15s ease;
-    }
-
-    #passwordButton:hover,
-    #hintButton:hover {
-      transform:scale(1.05);
-      background:#fff3bd;
-    }
-
-    #passwordError {
-      min-height:17px;
-      margin-top:7px;
-      font-size:13px;
-      color:#d55882;
-    }
-
-    #passwordHintCard {
-      position:absolute;
-      left:calc(100% + 24px);
-      top:54%;
-      transform:translateY(-50%) translateX(10px);
-      width:235px;
-      padding:14px 15px;
-      display:none;
-      background:linear-gradient(#fff8f1,#ffe9f1);
-      border:3px double #d6b39b;
-      border-radius:16px;
-      box-shadow:5px 6px 0 rgba(177,116,142,.18);
-      color:#855f52;
-      text-align:center;
-      font-family:"Unkempt",cursive;
-      font-size:14px;
-      line-height:1.35;
-      z-index:20;
-    }
-
-    #passwordHintCard.show {
-      display:block;
-      animation:passwordHintSlideIn .25s ease;
-    }
-
-    @keyframes passwordHintSlideIn {
-      from {
-        opacity:0;
-        transform:translateY(-50%) translateX(20px);
-      }
-
-      to {
-        opacity:1;
-        transform:translateY(-50%) translateX(0);
-      }
-    }
-
-    .password-hint-card-top {
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      margin-bottom:7px;
-      font-family:"Bonbon",cursive;
-      font-size:24px;
-      color:#ff6fa8;
-    }
-
-    #passwordCloseHint {
-      width:25px;
-      height:25px;
-      padding:0;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:#fffaf3;
-      border:2px solid #d7af99;
-      border-radius:50%;
-      color:#9a6c5f;
-      font-family:Arial,sans-serif;
-      font-size:13px;
-      font-weight:bold;
-    }
-
-    #passwordCloseHint:hover {
-      transform:scale(1.08);
-      background:#fff0f4;
-    }
-
-    .password-hint-card-text {
-      margin:0;
-      color:#835f52;
-    }
-
-    .password-hint-card-text b {
-      display:inline-block;
-      margin-top:8px;
-      color:#a65d79;
-    }
-
-    .password-circle-pad {
-      position:absolute;
-      left:24px;
-      top:88px;
-      width:55px;
-      height:55px;
-      border-radius:50%;
-      background:radial-gradient(circle at 40% 35%,#f3cedf,#d397b1 55%,#b77593 100%);
-      border:4px solid #a66c87;
-      box-shadow:
-        inset 0 3px 3px rgba(255,255,255,.35),
-        0 2px 2px rgba(90,50,70,.18);
-      z-index:3;
-    }
-
-    .password-dpad {
-      position:absolute;
-      left:24px;
-      bottom:56px;
-      width:52px;
-      height:52px;
-      z-index:3;
-    }
-
-    .password-dpad::before,
-    .password-dpad::after {
-      content:"";
-      position:absolute;
-      background:#8d6377;
-      border:2px solid #6e4e5e;
-      border-radius:5px;
-    }
-
-    .password-dpad::before {
-      width:18px;
-      height:52px;
-      left:17px;
-      top:0;
-    }
-
-    .password-dpad::after {
-      width:52px;
-      height:18px;
-      left:0;
-      top:17px;
-    }
-
-    .password-abxy {
-      position:absolute;
-      right:24px;
-      bottom:50px;
-      width:82px;
-      height:82px;
-      z-index:3;
-    }
-
-    .password-abxy span {
-      position:absolute;
-      width:30px;
-      height:30px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      border-radius:50%;
-      background:linear-gradient(#d9a0ba,#bb7797);
-      border:3px solid #9c647f;
-      box-shadow:
-        inset 0 2px 2px rgba(255,255,255,.35),
-        0 2px 2px rgba(100,60,80,.18);
-      color:#fff7fb;
-      font-family:Arial,sans-serif;
-      font-size:11px;
-      font-weight:bold;
-    }
-
-    .password-abxy .password-a {
-      right:0;
-      top:26px;
-    }
-
-    .password-abxy .password-b {
-      left:26px;
-      bottom:0;
-    }
-
-    .password-abxy .password-x {
-      left:26px;
-      top:0;
-    }
-
-    .password-abxy .password-y {
-      left:0;
-      top:26px;
-    }
-
-    .password-power-light {
-      position:absolute;
-      right:23px;
-      bottom:18px;
-      width:7px;
-      height:7px;
-      background:#9cefa1;
-      border-radius:50%;
-      box-shadow:0 0 7px #8ff49a;
-    }
-
-    .password-wrong {
-      animation:passwordWrongShake .35s ease;
-    }
-
-    @keyframes passwordWrongShake {
-      0%,
-      100% {
-        transform:translateX(0);
-      }
-
-      25% {
-        transform:translateX(-8px);
-      }
-
-      50% {
-        transform:translateX(8px);
-      }
-
-      75% {
-        transform:translateX(-5px);
-      }
-    }
-
-    .password-success-message {
-      font-family:"Bonbon",cursive;
-      font-size:27px;
-      color:#ff6ba8;
-    }
-
-    @media (max-width:900px) {
-
-      #passwordGate {
-        align-items:flex-start;
-        padding-top:25px;
-      }
-
-      .password-gate-layout {
-        flex-direction:column;
-      }
-
-      .password-ds {
-        width:95vw;
-      }
-
-      #passwordHintCard {
+    @media (max-width:900px){
+      #passwordGate{align-items:flex-start;padding-top:25px}
+      .password-gate-layout{flex-direction:column}
+      .password-ds{width:95vw}
+      #passwordHintCard{
         position:relative;
         left:auto;
         top:auto;
         transform:none;
         width:min(90vw,340px);
-        margin:16px auto 0;
+        margin:16px auto 0
       }
-
-      #passwordHintCard.show {
+      #passwordHintCard.show{
         display:block;
-        animation:passwordHintSlideDown .25s ease;
+        animation:passwordHintSlideDown .25s ease
       }
-
-      @keyframes passwordHintSlideDown {
-        from {
-          opacity:0;
-          transform:translateY(-8px);
-        }
-
-        to {
-          opacity:1;
-          transform:translateY(0);
-        }
+      @keyframes passwordHintSlideDown{
+        from{opacity:0;transform:translateY(-8px)}
+        to{opacity:1;transform:translateY(0)}
       }
     }
 
-    @media (max-width:620px) {
-
-      .password-ds-top,
-      .password-ds-bottom {
+    @media (max-width:620px){
+      .password-ds-top,.password-ds-bottom{
         padding-left:18px;
-        padding-right:18px;
+        padding-right:18px
       }
-
-      .password-top-screen {
-        height:185px;
-      }
-
-      .password-bottom-bezel {
-        width:300px;
-        max-width:68%;
-      }
-
-      .password-circle-pad {
-        left:9px;
-        width:44px;
-        height:44px;
-      }
-
-      .password-dpad {
-        left:7px;
-        transform:scale(.76);
-      }
-
-      .password-abxy {
-        right:7px;
-        transform:scale(.76);
-      }
-
-      .password-friends-title {
-        font-size:29px;
-      }
+      .password-top-screen{height:185px}
+      .password-bottom-bezel{width:300px;max-width:68%}
+      .password-circle-pad{left:9px;width:44px;height:44px}
+      .password-dpad{left:7px;transform:scale(.76)}
+      .password-abxy{right:7px;transform:scale(.76)}
+      .password-friends-title{font-size:29px}
     }
 
   </style>
@@ -1610,13 +1148,9 @@
 
 
 <div id="passwordGate">
-
   <div class="password-gate-layout">
-
     <div class="password-ds">
-
       <div class="password-ds-top">
-
         <div class="password-camera-row">
           <div class="password-camera-light"></div>
           <div class="password-camera-dot"></div>
@@ -1624,11 +1158,9 @@
         </div>
 
         <div class="password-top-bezel">
-
           <div class="password-speaker-left"></div>
 
           <div class="password-top-screen">
-
             <iframe
               src="https://giphy.com/embed/TlxFVhOcW80JW"
               class="password-tomodachi"
@@ -1636,25 +1168,19 @@
               allowfullscreen
               title="tomodachi life"
             ></iframe>
-
           </div>
 
           <div class="password-speaker-right"></div>
-
         </div>
-
       </div>
-
 
       <div class="password-hinge-area">
         <div class="password-hinge"></div>
       </div>
 
-
       <div class="password-ds-bottom">
 
         <div class="password-circle-pad"></div>
-
         <div class="password-dpad"></div>
 
         <div class="password-abxy">
@@ -1664,9 +1190,7 @@
           <span class="password-y">Y</span>
         </div>
 
-
         <div class="password-bottom-bezel">
-
           <div
             class="password-bottom-screen"
             id="passwordBottomScreen"
@@ -1688,7 +1212,6 @@
             >
 
             <div class="password-buttons">
-
               <button
                 id="passwordButton"
                 type="button"
@@ -1702,30 +1225,21 @@
               >
                 hint? ★
               </button>
-
             </div>
 
             <div id="passwordError"></div>
 
           </div>
-
         </div>
-
 
         <div class="password-power-light"></div>
 
       </div>
-
     </div>
 
-
     <div id="passwordHintCard">
-
       <div class="password-hint-card-top">
-
-        <span>
-          hint! ♡
-        </span>
+        <span>hint! ♡</span>
 
         <button
           id="passwordCloseHint"
@@ -1734,21 +1248,18 @@
         >
           ×
         </button>
-
       </div>
 
       <p class="password-hint-card-text">
-        the fictional character i always post on my cf story and read ao3 fanfics abt.
+        the fictional character i always post on my cf story
+        and read ao3 fanfics abt.
         <br>
         <b>if you're my friend YOU'LL KNOW</b>
       </p>
-
     </div>
 
   </div>
-
 </div>
-
 
 
 <div class="site">
@@ -1888,7 +1399,6 @@
 
     <div class="left">
 
-
       <div class="box nav">
 
         <h3>
@@ -1922,7 +1432,6 @@
       </div>
 
 
-
       <div class="box currently">
 
         <h3>
@@ -1946,7 +1455,6 @@
         </p>
 
       </div>
-
 
 
       <div class="box decor-panel">
@@ -1987,9 +1495,7 @@
         title="mina's to-do list"
       ></iframe>
 
-
     </div>
-
 
 
     <!-- CENTER -->
@@ -2019,45 +1525,17 @@
 
       <div class="sticker-wrap">
 
-
         <div class="pin-strip">
 
           <marquee direction="right">
 
-            <img
-              class="spinning-pin"
-              src="https://fries-and-ice-cream.neocities.org/rakko.png"
-            >
-
-            <img
-              class="spinning-pin"
-              src="https://fries-and-ice-cream.neocities.org/pinkwings.png"
-            >
-
-            <img
-              class="spinning-pin"
-              src="https://fries-and-ice-cream.neocities.org/dolphin.png"
-            >
-
-            <img
-              class="spinning-pin"
-              src="https://fries-and-ice-cream.neocities.org/cookie.png"
-            >
-
-            <img
-              class="spinning-pin"
-              src="https://fries-and-ice-cream.neocities.org/biscuit2.png"
-            >
-
-            <img
-              class="spinning-pin"
-              src="https://fries-and-ice-cream.neocities.org/KIIIKIII%20pin.png"
-            >
-
-            <img
-              class="spinning-pin"
-              src="https://fries-and-ice-cream.neocities.org/nct%20wish%20pin.png"
-            >
+            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/rakko.png">
+            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/pinkwings.png">
+            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/dolphin.png">
+            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/cookie.png">
+            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/biscuit2.png">
+            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/KIIIKIII%20pin.png">
+            <img class="spinning-pin" src="https://fries-and-ice-cream.neocities.org/nct%20wish%20pin.png">
 
           </marquee>
 
@@ -2077,7 +1555,6 @@
           alt=""
         >
 
-
       </div>
 
 
@@ -2085,11 +1562,9 @@
 
       <div class="photobooth-section">
 
-
         <div class="photobooth-section-title">
           ♡ mina's photobooth ♡
         </div>
-
 
         <iframe
           class="photobooth-embed"
@@ -2098,18 +1573,15 @@
           title="mina's photobooth"
         ></iframe>
 
-
       </div>
 
 
     </div>
 
 
-
     <!-- RIGHT -->
 
     <div class="right">
-
 
       <div class="box profile-box">
 
@@ -2130,13 +1602,11 @@
       </div>
 
 
-
       <div class="box socials">
 
         <h3>
           find me
         </h3>
-
 
         <a
           href="https://www.instagram.com/miinaisnotonfire/"
@@ -2145,14 +1615,12 @@
           instagram ♡
         </a>
 
-
         <a
           href="https://letterboxd.com/ilovemycatss/"
           target="_blank"
         >
           letterboxd ★
         </a>
-
 
         <a
           href="https://backloggd.com/u/minaisnotonfire/"
@@ -2161,9 +1629,7 @@
           backloggd 🖰
         </a>
 
-
       </div>
-
 
 
       <!-- STAMPS -->
@@ -2174,47 +1640,22 @@
           stamps ♡
         </h3>
 
-
         <div class="stamp-box">
 
           <div class="stamps">
 
-            <img
-              src="https://blinkie-net.neocities.org/Stamps/2/devilish.png"
-              alt=""
-            >
-
-            <img
-              src="https://blinkie-net.neocities.org/Stamps/4/bubbline.png"
-              alt=""
-            >
-
-            <img
-              src="https://blinkie-net.neocities.org/Stamps/4/cereal.gif"
-              alt=""
-            >
-
-            <img
-              src="https://blinkie-net.neocities.org/Stamps/4/fanf.gif"
-              alt=""
-            >
-
-            <img
-              src="https://blinkie-net.neocities.org/Stamps/5/24.png"
-              alt=""
-            >
-
-            <img
-              src="https://blinkie-net.neocities.org/Stamps/7/nyancat.gif"
-              alt=""
-            >
+            <img src="https://blinkie-net.neocities.org/Stamps/2/devilish.png" alt="">
+            <img src="https://blinkie-net.neocities.org/Stamps/4/bubbline.png" alt="">
+            <img src="https://blinkie-net.neocities.org/Stamps/4/cereal.gif" alt="">
+            <img src="https://blinkie-net.neocities.org/Stamps/4/fanf.gif" alt="">
+            <img src="https://blinkie-net.neocities.org/Stamps/5/24.png" alt="">
+            <img src="https://blinkie-net.neocities.org/Stamps/7/nyancat.gif" alt="">
 
           </div>
 
         </div>
 
       </div>
-
 
 
       <!-- CAMERA -->
@@ -2240,7 +1681,6 @@
       </div>
 
 
-
       <div class="box decor-panel">
 
         <img
@@ -2257,15 +1697,11 @@
 
       </div>
 
-
     </div>
-
 
   </div>
 
-
 </div>
-
 
 
 <img
@@ -2275,106 +1711,59 @@
 >
 
 
-
 <script>
 
 const songs = [
-
   {
-    file:
-      "music/allie-x-bitch.mp3",
-
-    name:
-      "bitch — allie x"
+    file: "music/allie-x-bitch.mp3",
+    name: "bitch — allie x"
   },
-
   {
-    file:
-      "music/chick-habit.mp3",
-
-    name:
-      "chick habit — april march"
+    file: "music/chick-habit.mp3",
+    name: "chick habit — april march"
   },
-
   {
-    file:
-      "music/jane-remover-how-to-teleport.mp3",
-
-    name:
-      "how to teleport — jane remover"
+    file: "music/jane-remover-how-to-teleport.mp3",
+    name: "how to teleport — jane remover"
   },
-
   {
-    file:
-      "music/secret-lyrics-the-pierces.mp3",
-
-    name:
-      "secret — the pierces"
+    file: "music/secret-lyrics-the-pierces.mp3",
+    name: "secret — the pierces"
   },
-
   {
-    file:
-      "music/vivica.mp3",
-
-    name:
-      "vivica — jack off jill"
+    file: "music/vivica.mp3",
+    name: "vivica — jack off jill"
   }
-
 ];
 
 
 const audio =
-  document.getElementById(
-    "musicAudio"
-  );
-
+  document.getElementById("musicAudio");
 
 const playButton =
-  document.getElementById(
-    "playButton"
-  );
-
+  document.getElementById("playButton");
 
 const previousButton =
-  document.getElementById(
-    "previousButton"
-  );
-
+  document.getElementById("previousButton");
 
 const nextButton =
-  document.getElementById(
-    "nextButton"
-  );
-
+  document.getElementById("nextButton");
 
 const songName =
-  document.getElementById(
-    "songName"
-  );
-
+  document.getElementById("songName");
 
 const volumeSlider =
-  document.getElementById(
-    "volumeSlider"
-  );
-
+  document.getElementById("volumeSlider");
 
 const volumeText =
-  document.getElementById(
-    "volumeText"
-  );
+  document.getElementById("volumeText");
 
 
-let currentSong =
-  0;
+let currentSong = 0;
 
-
-let targetVolume =
-  0.22;
-
+let targetVolume = 0.22;
 
 let fadeTimer;
-
 
 
 /* LOAD SONG */
@@ -2382,402 +1771,277 @@ let fadeTimer;
 function loadSong() {
 
   audio.src =
-    songs[
-      currentSong
-    ].file;
-
+    songs[currentSong].file;
 
   songName.textContent =
-    songs[
-      currentSong
-    ].name;
-
+    songs[currentSong].name;
 
   audio.load();
 
 }
 
 
-
 /* GENTLE FADE */
 
 function fadeIn() {
 
-  clearInterval(
-    fadeTimer
-  );
+  clearInterval(fadeTimer);
 
-
-  audio.volume =
-    0;
-
+  audio.volume = 0;
 
   fadeTimer =
-    setInterval(
-      function() {
+    setInterval(() => {
 
-
-        let newVolume =
-          audio.volume +
-          0.01;
-
-
-        if (
-          newVolume >=
-          targetVolume
-        ) {
-
-
-          audio.volume =
-            targetVolume;
-
-
-          clearInterval(
-            fadeTimer
-          );
-
-
-        }
-
-        else {
-
-
-          audio.volume =
-            newVolume;
-
-
-        }
-
-
-      },
-      100
-    );
-
-}
-
-
-
-/* PLAY / PAUSE */
-
-playButton
-  .addEventListener(
-    "click",
-    function() {
-
+      let newVolume =
+        audio.volume + 0.01;
 
       if (
-        audio.paused
+        newVolume >= targetVolume
       ) {
 
-
         audio.volume =
-          0;
-
-
-        const attempt =
-          audio.play();
-
-
-        if (
-          attempt !==
-          undefined
-        ) {
-
-
-          attempt
-            .then(
-              function() {
-
-
-                playButton.textContent =
-                  "Ⅱ";
-
-
-                fadeIn();
-
-
-              }
-            )
-
-            .catch(
-              function(error) {
-
-
-                console.error(
-                  "audio error:",
-                  error
-                );
-
-
-                playButton.textContent =
-                  "▶";
-
-
-                alert(
-                  "the audio file could not play :( try opening the mp3 directly to make sure github pages can access it."
-                );
-
-
-              }
-            );
-
-
-        }
-
-
-      }
-
-      else {
-
+          targetVolume;
 
         clearInterval(
           fadeTimer
         );
 
+      }
 
-        audio.pause();
+      else {
 
-
-        playButton.textContent =
-          "▶";
-
+        audio.volume =
+          newVolume;
 
       }
 
+    }, 100);
+
+}
+
+
+/* PLAY / PAUSE */
+
+playButton.addEventListener(
+  "click",
+  function () {
+
+    if (audio.paused) {
+
+      audio.volume = 0;
+
+      const attempt =
+        audio.play();
+
+
+      if (
+        attempt !== undefined
+      ) {
+
+        attempt
+          .then(function () {
+
+            playButton.textContent =
+              "Ⅱ";
+
+            fadeIn();
+
+          })
+
+          .catch(function (error) {
+
+            console.error(
+              "audio error:",
+              error
+            );
+
+            playButton.textContent =
+              "▶";
+
+            alert(
+              "the audio file could not play :( try opening the mp3 directly to make sure github pages can access it."
+            );
+
+          });
+
+      }
 
     }
-  );
 
+    else {
+
+      clearInterval(
+        fadeTimer
+      );
+
+      audio.pause();
+
+      playButton.textContent =
+        "▶";
+
+    }
+
+  }
+);
 
 
 /* NEXT */
 
-nextButton
-  .addEventListener(
-    "click",
-    function() {
+nextButton.addEventListener(
+  "click",
+  function () {
+
+    const wasPlaying =
+      !audio.paused;
 
 
-      const wasPlaying =
-        !audio.paused;
+    currentSong =
+      (
+        currentSong +
+        1
+      ) %
+      songs.length;
 
 
-      currentSong =
-        (
-          currentSong +
-          1
-        ) %
-        songs.length;
+    loadSong();
 
 
-      loadSong();
+    if (wasPlaying) {
 
+      audio.volume = 0;
 
-      if (
-        wasPlaying
-      ) {
+      audio.play()
 
+        .then(function () {
+          fadeIn();
+        })
 
-        audio.volume =
-          0;
-
-
-        audio.play()
-
-          .then(
-            function() {
-
-              fadeIn();
-
-            }
-          )
-
-          .catch(
-            function(error) {
-
-              console.error(
-                error
-              );
-
-            }
-          );
-
-
-      }
-
+        .catch(function (error) {
+          console.error(error);
+        });
 
     }
-  );
 
+  }
+);
 
 
 /* PREVIOUS */
 
-previousButton
-  .addEventListener(
-    "click",
-    function() {
+previousButton.addEventListener(
+  "click",
+  function () {
+
+    const wasPlaying =
+      !audio.paused;
 
 
-      const wasPlaying =
-        !audio.paused;
+    currentSong =
+      (
+        currentSong -
+        1 +
+        songs.length
+      ) %
+      songs.length;
 
 
-      currentSong =
-        (
-          currentSong -
-          1 +
-          songs.length
-        ) %
-        songs.length;
+    loadSong();
 
 
-      loadSong();
+    if (wasPlaying) {
 
+      audio.volume = 0;
 
-      if (
-        wasPlaying
-      ) {
+      audio.play()
 
+        .then(function () {
+          fadeIn();
+        })
 
-        audio.volume =
-          0;
-
-
-        audio.play()
-
-          .then(
-            function() {
-
-              fadeIn();
-
-            }
-          )
-
-          .catch(
-            function(error) {
-
-              console.error(
-                error
-              );
-
-            }
-          );
-
-
-      }
-
+        .catch(function (error) {
+          console.error(error);
+        });
 
     }
-  );
 
+  }
+);
 
 
 /* VOLUME */
 
-volumeSlider
-  .addEventListener(
-    "input",
-    function() {
+volumeSlider.addEventListener(
+  "input",
+  function () {
+
+    targetVolume =
+      Number(
+        this.value
+      ) / 100;
 
 
-      targetVolume =
-        Number(
-          this.value
-        ) /
-        100;
+    volumeText.textContent =
+      this.value + "%";
 
 
-      volumeText.textContent =
-        this.value +
-        "%";
+    if (!audio.paused) {
 
-
-      if (
-        !audio.paused
-      ) {
-
-
-        audio.volume =
-          targetVolume;
-
-
-      }
-
+      audio.volume =
+        targetVolume;
 
     }
-  );
 
+  }
+);
 
 
 /* AUTO NEXT */
 
-audio
-  .addEventListener(
-    "ended",
-    function() {
+audio.addEventListener(
+  "ended",
+  function () {
+
+    currentSong =
+      (
+        currentSong +
+        1
+      ) %
+      songs.length;
 
 
-      currentSong =
-        (
-          currentSong +
-          1
-        ) %
-        songs.length;
+    loadSong();
+
+    audio.volume = 0;
 
 
-      loadSong();
+    audio.play()
+
+      .then(function () {
+        fadeIn();
+      })
+
+      .catch(function (error) {
+        console.error(error);
+      });
+
+  }
+);
 
 
-      audio.volume =
-        0;
-
-
-      audio.play()
-
-        .then(
-          function() {
-
-            fadeIn();
-
-          }
-        )
-
-        .catch(
-          function(error) {
-
-            console.error(
-              error
-            );
-
-          }
-        );
-
-
-    }
-  );
-
-
-
-/* INITIAL */
+/* INITIAL SETUP */
 
 volumeSlider.value =
   22;
 
-
 volumeText.textContent =
   "22%";
 
-
 loadSong();
-
 
 </script>
 
 
-
 <script>
-
 
 const PASSWORD_HASH =
   "99016520a0f3b6ebd7ea15ee2c67ab24daf8ff27b923eef8564aa92b64753ebe";
@@ -2785,11 +2049,8 @@ const PASSWORD_HASH =
 
 async function hashSitePassword(text) {
 
-
   const encoded =
-    new TextEncoder()
-      .encode(text);
-
+    new TextEncoder().encode(text);
 
   const hashBuffer =
     await crypto.subtle.digest(
@@ -2797,12 +2058,9 @@ async function hashSitePassword(text) {
       encoded
     );
 
-
   return Array
     .from(
-      new Uint8Array(
-        hashBuffer
-      )
+      new Uint8Array(hashBuffer)
     )
     .map(
       byte =>
@@ -2812,37 +2070,27 @@ async function hashSitePassword(text) {
     )
     .join("");
 
-
 }
-
 
 
 async function checkSitePassword() {
 
-
   const input =
     document
-      .getElementById(
-        "sitePassword"
-      )
+      .getElementById("sitePassword")
       .value
       .trim()
       .toLowerCase();
 
-
   const screen =
-    document
-      .getElementById(
-        "passwordBottomScreen"
-      );
-
+    document.getElementById(
+      "passwordBottomScreen"
+    );
 
   const error =
-    document
-      .getElementById(
-        "passwordError"
-      );
-
+    document.getElementById(
+      "passwordError"
+    );
 
   const enteredHash =
     await hashSitePassword(
@@ -2855,26 +2103,20 @@ async function checkSitePassword() {
     PASSWORD_HASH
   ) {
 
-
     sessionStorage.setItem(
       "minaSiteUnlocked",
       "yes"
     );
 
-
     error.textContent =
       "";
-
 
     document
       .getElementById(
         "passwordHintCard"
       )
       .classList
-      .remove(
-        "show"
-      );
-
+      .remove("show");
 
     screen.innerHTML =
       `
@@ -2885,10 +2127,8 @@ async function checkSitePassword() {
       </div>
       `;
 
-
     setTimeout(
       function() {
-
 
         document
           .getElementById(
@@ -2898,20 +2138,16 @@ async function checkSitePassword() {
           .display =
             "none";
 
-
       },
       900
     );
-
 
   }
 
   else {
 
-
     error.textContent =
       "wrong password!! (╥﹏╥)";
-
 
     screen
       .classList
@@ -2919,10 +2155,7 @@ async function checkSitePassword() {
         "password-wrong"
       );
 
-
-    void
-      screen.offsetWidth;
-
+    void screen.offsetWidth;
 
     screen
       .classList
@@ -2930,12 +2163,9 @@ async function checkSitePassword() {
         "password-wrong"
       );
 
-
   }
 
-
 }
-
 
 
 document
@@ -2948,7 +2178,6 @@ document
   );
 
 
-
 document
   .getElementById(
     "sitePassword"
@@ -2957,30 +2186,23 @@ document
     "keydown",
     function(event) {
 
-
       if (
         event.key ===
         "Enter"
       ) {
 
-
         checkSitePassword();
 
-
       }
-
 
     }
   );
 
 
-
 const passwordHintCard =
-  document
-    .getElementById(
-      "passwordHintCard"
-    );
-
+  document.getElementById(
+    "passwordHintCard"
+  );
 
 
 document
@@ -2991,17 +2213,14 @@ document
     "click",
     function() {
 
-
       passwordHintCard
         .classList
         .toggle(
           "show"
         );
 
-
     }
   );
-
 
 
 document
@@ -3012,17 +2231,14 @@ document
     "click",
     function() {
 
-
       passwordHintCard
         .classList
         .remove(
           "show"
         );
 
-
     }
   );
-
 
 
 if (
@@ -3032,7 +2248,6 @@ if (
   "yes"
 ) {
 
-
   document
     .getElementById(
       "passwordGate"
@@ -3041,12 +2256,9 @@ if (
     .display =
       "none";
 
-
 }
 
-
 </script>
-
 
 </body>
 
